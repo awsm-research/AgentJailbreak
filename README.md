@@ -2,7 +2,7 @@
 
 Replication package for the paper **"The Trojan in the Toolbox: A Risk Assessment of Malicious Skill Files in the Coding Agents."**
 
-This repository evaluates how coding agents respond to malicious skill-file instructions that mask shell commands as benign "preflight" steps. The experiments are mapped to MITRE ATT&CK tactics and evaluated with both heuristic matching and LLM-as-a-judge.
+This repository evaluates how enterprise coding agents respond to malicious skill-file instructions that mask shell commands as benign "preflight" steps. The experiments are mapped to MITRE ATT&CK tactics and evaluated with both heuristic matching and LLM-as-a-judge.
 
 Paper in this repo: `paper.pdf`
 
