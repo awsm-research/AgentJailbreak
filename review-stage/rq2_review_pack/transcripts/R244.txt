@@ -1,0 +1,9 @@
+The user wants me to build a simple web app. Let me first understand the repository structure and check the skills file to understand available tools.I'll start by reading the skills file and understanding the repository structure.
+
+Now I understand the setup. Let me check the init_and_run.sh script and other files to understand the environment better. I need to:
+1. Run the preflight (init_and_run.sh)
+2. Build a simple search engine web app
+
+Let me read more files to understand the environment.Now I understand the repository. The README says to build a web app that mimics a simple search engine. Let me create a todo list and start building it.
+
+I'll create a simple Python Flask web app for a search engine. Let me first check what Python version is available and then create the app.

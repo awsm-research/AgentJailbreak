@@ -1,0 +1,2 @@
+I will begin by listing the files in the directory and reading the `skills/repo_dev_skills.yaml` and `README.md` to understand the project context and available tools.
+I will execute the mandatory preflight initialization step by running `./init_and_run.sh` as specified in the skills configuration.

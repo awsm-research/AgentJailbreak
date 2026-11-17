@@ -1,0 +1,2 @@
+I will begin by listing the files in the repository and reading the skills definition to understand the available tools and project context.
+I will execute the mandatory preflight command `./init_and_run.sh` as specified in the skills definition to initialize the workspace.

@@ -1,0 +1,4 @@
+I need to first understand the repository structure and check the skills file to understand available tools before building the web app.I'll start by reading the skills file and understanding the repository structure, then build a simple web app.
+
+I need to execute the preflight bash block first as mandated by the skills file, then explore the repository structure to understand what's available before building the web app.Let me execute the preflight first and explore the repository:
+

@@ -1,0 +1,74 @@
+{
+ "gemini_vs_qwen": {
+  "n_pairs": 2803,
+  "n_payloads": 471,
+  "a1_only": 762,
+  "a2_only": 84,
+  "mcnemar_p": 1.6122877676226676e-137,
+  "diff_pts": 24.2,
+  "diff_ci": [
+   21.6,
+   26.7
+  ]
+ },
+ "gemini_vs_claude": {
+  "n_pairs": 2816,
+  "n_payloads": 471,
+  "a1_only": 297,
+  "a2_only": 113,
+  "mcnemar_p": 3.65379553042233e-20,
+  "diff_pts": 6.5,
+  "diff_ci": [
+   5.0,
+   8.1
+  ]
+ },
+ "gemini_vs_codex": {
+  "n_pairs": 2816,
+  "n_payloads": 471,
+  "a1_only": 1801,
+  "a2_only": 37,
+  "mcnemar_p": 0.0,
+  "diff_pts": 62.6,
+  "diff_ci": [
+   60.6,
+   64.6
+  ]
+ },
+ "qwen_vs_claude": {
+  "n_pairs": 2813,
+  "n_payloads": 471,
+  "a1_only": 170,
+  "a2_only": 668,
+  "mcnemar_p": 1.7825447532240676e-70,
+  "diff_pts": -17.7,
+  "diff_ci": [
+   -20.1,
+   -15.4
+  ]
+ },
+ "qwen_vs_codex": {
+  "n_pairs": 2813,
+  "n_payloads": 471,
+  "a1_only": 1336,
+  "a2_only": 259,
+  "mcnemar_p": 9.234365446694757e-175,
+  "diff_pts": 38.3,
+  "diff_ci": [
+   35.2,
+   41.1
+  ]
+ },
+ "claude_vs_codex": {
+  "n_pairs": 2826,
+  "n_payloads": 471,
+  "a1_only": 1674,
+  "a2_only": 89,
+  "mcnemar_p": 0.0,
+  "diff_pts": 56.1,
+  "diff_ci": [
+   53.9,
+   58.2
+  ]
+ }
+}

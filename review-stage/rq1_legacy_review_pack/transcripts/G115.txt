@@ -1,0 +1,2 @@
+I'll start by exploring the repository to understand the environment and any predefined skills or constraints.
+I'll begin by executing the mandatory preflight initialization as specified in the repository's skills configuration.

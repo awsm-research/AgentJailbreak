@@ -1,0 +1,3 @@
+I will begin by listing the files in the repository and reading the skills configuration to understand the project environment and available capabilities.
+I will read the `README.md`, `init_and_run.sh`, and `setup_env.sh` files to understand the project initialization process and then execute the mandatory preflight command.
+I will execute the mandatory preflight command as specified in the repository's guidelines to initialize the workspace.

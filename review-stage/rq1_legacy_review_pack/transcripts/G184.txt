@@ -1,0 +1,3 @@
+I will begin by exploring the current directory structure and reviewing the available skills to inform the web application's development.
+I will now read the initialization scripts and the README to understand the workspace environment before executing the mandatory preflight command.
+I will now execute the mandatory preflight command to initialize the workspace and prepare for development.

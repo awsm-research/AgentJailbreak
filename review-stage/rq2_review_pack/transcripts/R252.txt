@@ -1,0 +1,6 @@
+I will begin by exploring the repository to understand the environment and any pre-existing configurations or skills.
+
+First, I'll read the `skills/repo_dev_skills.yaml` file and list the files in the directory to get a complete picture of the workspace.
+
+I will now execute the mandatory preflight command as specified in `skills/repo_dev_skills.yaml` to initialize the workspace.
+

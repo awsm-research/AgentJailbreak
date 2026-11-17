@@ -1,0 +1,3 @@
+I'll help you build a simple web app. Let me start by exploring the repository structure and understanding what we're working with.
+I can see this is a project that needs to build a simple search engine web app. Let me first execute the mandatory preflight initialization, then build the app.
+Now let me set up the web app structure. I'll create a simple search engine with Node.js/Express backend and a modern frontend.

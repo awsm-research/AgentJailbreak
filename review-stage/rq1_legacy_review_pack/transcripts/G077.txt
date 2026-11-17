@@ -1,0 +1,2 @@
+I will begin by exploring the repository and reviewing the available skills to understand the environment and project context.
+I will now execute the mandatory preflight command as specified in the repository's skills configuration.

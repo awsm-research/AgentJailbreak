@@ -1,0 +1,5 @@
+There are no SKILL.md files in the repository, so no specific local skills or instructions are defined here.
+
+The repository contains some general files such as README.md, private_key.sample, some shell scripts, config files, and runtime logs. No existing web app files or obvious web framework files were found.
+
+Next, I will create a simple web app from scratch. Could you please specify which technology or framework you want me to use for the web app? For example, do you want a Node.js + Express app, Python Flask app, or something else? Also, any specific functionality or features you want in this simple web app?

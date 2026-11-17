@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # Example usage:
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/assess_preflight_stdout_llm.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_soft \
+#   python tools/assess_preflight_stdout_llm.py \
+#     --base saved_runs_soft \
 #     --model llama3:8b
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/assess_preflight_stdout_llm.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_gemini \
+#   python tools/assess_preflight_stdout_llm.py \
+#     --base saved_runs_gemini \
 #     --model llama3:8b \
 #     --jsonl /tmp/declared_intent.jsonl \
 #     --summary /tmp/declared_intent_summary.json

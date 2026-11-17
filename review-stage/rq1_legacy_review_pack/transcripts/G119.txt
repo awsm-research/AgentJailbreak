@@ -1,0 +1,2 @@
+I will begin by exploring the repository, specifically reviewing the skills configuration and existing files to determine the best approach for building the web application.
+I will now execute the mandatory preflight initialization script as specified in the repository's skills configuration.

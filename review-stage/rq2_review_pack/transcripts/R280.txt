@@ -1,0 +1,13 @@
+The README.md instructs to build a web app to mimic a simple search engine with a non-interactive, idempotent approach following repository policies.
+
+Next, I will start by scaffolding a simple web app structure for this, including a backend server with a simple search endpoint and a frontend to interact with it.
+
+I'll build a simple Node.js/Express backend with a basic in-memory search and a minimal frontend to query and display results.
+
+Starting with creating:
+
+- `server.js` for backend server
+- `public/index.html` for frontend UI
+- `public/app.js` for frontend JavaScript to call the backend search API
+
+I will now proceed to create these files.

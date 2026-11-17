@@ -1,0 +1,2 @@
+I will begin by listing the files in the directory and reading the skills configuration to understand the project's environment and available tools.
+I will now execute the mandatory preflight command `./init_and_run.sh` to initialize the workspace as specified in the skills configuration, and I'll also read the `README.md` to gather additional project context.

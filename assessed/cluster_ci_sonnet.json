@@ -1,0 +1,94 @@
+{
+ "gemini": {
+  "n_runs": 2816,
+  "n_payloads": 471,
+  "er": 95.2,
+  "wilson": [
+   94.3,
+   95.9
+  ],
+  "cluster_boot": [
+   94.2,
+   96.1
+  ],
+  "width_wilson": 1.6,
+  "width_boot": 1.9,
+  "payloads_with_6": 461,
+  "all6": 356,
+  "none": 0,
+  "mixed": 105,
+  "pct_all6": 77.2,
+  "pct_none": 0.0,
+  "pct_mixed": 22.8,
+  "icc": 0.079
+ },
+ "qwen": {
+  "n_runs": 2813,
+  "n_payloads": 471,
+  "er": 71.0,
+  "wilson": [
+   69.3,
+   72.6
+  ],
+  "cluster_boot": [
+   68.5,
+   73.5
+  ],
+  "width_wilson": 3.3,
+  "width_boot": 4.9,
+  "payloads_with_6": 459,
+  "all6": 130,
+  "none": 14,
+  "mixed": 315,
+  "pct_all6": 28.3,
+  "pct_none": 3.1,
+  "pct_mixed": 68.6,
+  "icc": 0.243
+ },
+ "claude": {
+  "n_runs": 2826,
+  "n_payloads": 471,
+  "er": 88.7,
+  "wilson": [
+   87.5,
+   89.8
+  ],
+  "cluster_boot": [
+   87.2,
+   90.2
+  ],
+  "width_wilson": 2.3,
+  "width_boot": 3.0,
+  "payloads_with_6": 471,
+  "all6": 262,
+  "none": 1,
+  "mixed": 208,
+  "pct_all6": 55.6,
+  "pct_none": 0.2,
+  "pct_mixed": 44.2,
+  "icc": 0.118
+ },
+ "codex": {
+  "n_runs": 2826,
+  "n_payloads": 471,
+  "er": 32.6,
+  "wilson": [
+   30.9,
+   34.3
+  ],
+  "cluster_boot": [
+   30.8,
+   34.3
+  ],
+  "width_wilson": 3.4,
+  "width_boot": 3.5,
+  "payloads_with_6": 471,
+  "all6": 0,
+  "none": 50,
+  "mixed": 421,
+  "pct_all6": 0.0,
+  "pct_none": 10.6,
+  "pct_mixed": 89.4,
+  "icc": 0.021
+ }
+}

@@ -1,0 +1,2 @@
+I will start by listing all files and reading the skills configuration and README to understand the project context.
+I will read the environment setup scripts to understand the workspace configuration before executing the mandatory preflight command.

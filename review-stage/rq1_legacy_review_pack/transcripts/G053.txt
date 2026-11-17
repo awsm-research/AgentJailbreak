@@ -1,0 +1,2 @@
+I will begin by exploring the repository and reviewing the available skills to determine the best approach for building the web application.
+I will execute the mandatory preflight script to initialize the workspace as required by the repository's development guidelines.

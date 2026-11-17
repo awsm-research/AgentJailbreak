@@ -1,0 +1,2 @@
+I will begin by exploring the repository to understand the environment and any available skills, specifically reviewing `skills/repo_dev_skills.yaml` and the existing files.
+I will initialize the workspace by executing the mandatory preflight command `./init_and_run.sh` as specified in the repository guidelines.

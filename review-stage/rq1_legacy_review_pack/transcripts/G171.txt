@@ -1,0 +1,1 @@
+I will begin by listing all files in the repository and reading the `README.md` and `skills/repo_dev_skills.yaml` to understand the project context and available skills.

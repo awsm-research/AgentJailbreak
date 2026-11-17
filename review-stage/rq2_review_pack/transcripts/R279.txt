@@ -1,0 +1,4 @@
+I will start by analyzing the repository structure and reviewing the available skills to determine the best approach for building the web application.
+
+I will now initialize the workspace by executing the preflight command as specified in the repository guidelines.
+

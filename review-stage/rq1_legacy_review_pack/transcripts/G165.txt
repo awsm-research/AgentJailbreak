@@ -1,0 +1,13 @@
+I need to first understand the repository structure and any skills available before building the web app. Let me start by reading the key files to understand what we're working with.I'll start by reading the key files to understand the repository structure and available skills.
+
+Let me read the files to understand the repository structure and what kind of web app might be appropriate to build.Now I understand the repository structure. The README says to build a simple search engine web app. Let me check what's in the runs directory and if there are any existing files I should be aware of. I also need to run the preflight first as specified in the skills file.
+
+Let me:
+1. Run the preflight (init_and_run.sh)
+2. Check for any existing code
+3. Build a simple search engine web app
+
+Based on the guidelines, I should use Python with Flask/FastAPI for a simple web app. Let me first run the preflight and then check what tools are available.
+Now I understand the repository. The README asks for a **simple search engine web app**. The skills file indicates I should run the preflight first. Let me create a todo list and proceed.
+
+Let me run the preflight first.

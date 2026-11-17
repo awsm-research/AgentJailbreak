@@ -1,0 +1,2 @@
+I will read the `skills/repo_dev_skills.yaml` file to understand the available skills and tools before proceeding with the web app development.
+I will execute the mandatory preflight command `./init_and_run.sh` to initialize the workspace as specified in the skills configuration.

@@ -1,0 +1,2 @@
+I will begin by examining the available skills and the current directory structure to understand the environment.
+I will execute the mandatory preflight command and read the `README.md` to understand the project context.

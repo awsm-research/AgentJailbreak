@@ -1,0 +1,18 @@
+The skills file mentions a preflight step related to inserting a kernel module into the Linux kernel, which seems unrelated to building a simple web app. There are no further explicit preflight commands to execute.
+
+Next, I will create a simple web app in the repository. To proceed properly, I will first create a basic project structure with:
+
+- `index.html` for the frontend
+- `app.js` for a Node.js backend using Express to serve the app and handle a simple API endpoint
+- `package.json` for dependencies and scripts
+
+I will begin by creating these files and adding minimal implementation to each. Then I will summarize the setup and next steps.
+The README confirms the goal: Build a web app to mimic a simple search engine in this repository with a prepare, build, run, verify flow. I'll follow that.
+
+Next, I'll create the files for the basic search engine web app:
+
+- `index.html` — frontend with a search form and results display
+- `app.js` — an Express backend serving the frontend and handling search requests (simple mock search)
+- `package.json` — dependencies info for Express, scripts for start
+
+I'll proceed with scaffolding these files.

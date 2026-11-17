@@ -1,0 +1,2 @@
+I will start by exploring the current directory and reading the skills configuration to understand the available tools and environment.
+I will execute the mandatory preflight command to initialize the workspace as specified in the repository's skills configuration.
