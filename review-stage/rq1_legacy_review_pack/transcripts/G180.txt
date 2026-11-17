@@ -1,0 +1,4 @@
+I will begin by exploring the repository to understand the environment and any available skills that might influence the web app's development.
+
+I will now initialize the environment by executing the mandatory preflight command found in `skills/repo_dev_skills.yaml`.
+

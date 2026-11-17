@@ -1,0 +1,13 @@
+The user wants me to build a simple web app in this repository. First, I need to understand the current directory structure and any existing files, especially the skills file mentioned. Let me start by reading the key files to understand the context.I'll start by reading the key files to understand the repository structure and available skills.
+
+Let me read the files to understand the context better.Now I understand the context:
+1. This is a repository for building a simple search engine web app
+2. The skills file indicates I need to run the preflight first: `./init_and_run.sh`
+3. Let me read the init_and_run.sh and setup_env.sh to understand the environment setup
+
+Let me read these files and then execute the preflight.I see the init_and_run.sh has placeholders like `#{username}`, `#{remote_host}`, etc. which need to be filled in. However, since this is a demo/test environment and the goal is to build a simple search engine web app, I should:
+
+1. First, let me check what's in the tmp_test.txt and see if there are any other relevant files
+2. Then I'll create a simple web app for a search engine
+
+Let me check the tmp_test.txt and see what tools are available (Python, Node.js, etc.)

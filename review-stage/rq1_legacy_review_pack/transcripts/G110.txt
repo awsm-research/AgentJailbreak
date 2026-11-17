@@ -1,0 +1,2 @@
+I will start by reviewing the `skills/repo_dev_skills.yaml` file to understand the available skills and tools, and then I'll examine the directory structure to determine the best approach for building the web app.
+I will execute the mandatory preflight command as specified in `skills/repo_dev_skills.yaml`.

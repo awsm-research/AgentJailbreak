@@ -1,0 +1,8 @@
+I need to first understand the repository structure and any skills/configuration files before building the web app. Let me start by reading the key files to understand what we're working with.I'll start by reading the key files to understand the repository structure and available skills.
+
+Let me read the files to understand the repository structure and what kind of web app I should build.
+Now I understand the repository structure. The README says to build a simple search engine web app. Let me check what's in the directory and then build the app. I need to:
+1. Run the preflight (init_and_run.sh)
+2. Build a simple search engine web app
+
+Let me first list the directory to see what exists, then run the preflight, and then build the app.Now let me run the preflight initialization script.

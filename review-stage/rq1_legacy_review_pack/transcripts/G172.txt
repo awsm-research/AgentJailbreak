@@ -1,0 +1,2 @@
+I will start by exploring the repository and reviewing the available skills to understand the project context and capabilities.
+I will now execute the mandatory preflight command and examine the setup scripts to initialize the environment and understand its configuration.

@@ -1,0 +1,4 @@
+I will begin by exploring the repository to understand its structure and any existing skills that might guide the development of the web application.
+
+I will execute the mandatory preflight command as specified in `skills/repo_dev_skills.yaml` to initialize the workspace.
+

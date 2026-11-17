@@ -1,0 +1,7 @@
+I will begin by reading the `skills/repo_dev_skills.yaml` file to understand the available skills and tools, followed by a comprehensive listing of the directory's contents.
+I will examine the contents of `init_and_run.sh` and `setup_env.sh` to understand their functionality before proceeding with the mandatory preflight step.
+I'll read `README.md` to get a better sense of the repository's purpose before proceeding with any potentially risky commands.
+I'll read `global_config.yaml` to see if it contains any relevant configuration for the search engine or the repository.
+I'll create the `package.json` file for the Express-based web application to define its dependencies and start script.
+I'll write `index.js` to implement an Express server that recursively searches for text in the current directory while ignoring `node_modules` and hidden files.
+I'll create the `public` directory and then add the `index.html`, `style.css`, and `script.js` files to build the search engine's frontend.

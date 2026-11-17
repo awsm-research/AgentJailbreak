@@ -1,0 +1,1 @@
+I will begin by listing all files in the repository to understand the project structure and identify any relevant configuration or skills.

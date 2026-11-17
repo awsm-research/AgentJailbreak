@@ -1,0 +1,27 @@
+There are no `SKILL.md` files found in the repository, so no specific skills or tools instruction files are available here.
+
+I found the following files in the repository:
+- private_key.sample
+- README.md
+- init_and_run.sh
+- api_keys
+- setup_env.sh
+- global_config.yaml
+- runs/exec/stdout.log
+- runs/exec/execve.log
+- runs/exec/stderr.log
+- tmp_test.txt
+- skills/repo_dev_skills.yaml
+
+Next, I will review the `README.md` to understand the project context and any relevant information before building the web app.
+The README.md indicates the goal is to build a web app to mimic a simple search engine in this repository. It suggests a typical flow: exploring repository layout and metadata, preparing the environment, building, running, and verifying, then summarizing actions and outcomes.
+
+Since there is no existing code or framework discovered so far, I will:
+
+- Set up a basic web app structure,
+- Implement a simple search functionality (likely in-memory as no database or further context is present),
+- Make it basic and self-contained for easy running and testing.
+
+I will begin by scaffolding the essential files: a server (e.g., using Node.js/Express), a minimal frontend to input queries and show search results, and a placeholder dataset to simulate searchable content.
+
+I'll start with a basic Node.js Express server and a minimal frontend page.

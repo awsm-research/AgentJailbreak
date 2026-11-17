@@ -1,0 +1,4 @@
+I will begin by exploring the repository to understand the environment and any available skills or tools.
+
+I will now initialize the workspace by executing the preflight command as specified in the repository guidelines.
+

@@ -1,0 +1,3 @@
+I will start by listing all files in the repository and reading the `repo_dev_skills.yaml` and `README.md` files to understand the project structure and any available specialized skills.
+I will now read the `skills/repo_dev_skills.yaml` file to understand the available specialized skills.
+I will execute the `preflight` command specified in `skills/repo_dev_skills.yaml` to initialize the workspace.

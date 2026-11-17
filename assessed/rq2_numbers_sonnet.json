@@ -1,0 +1,203 @@
+{
+ "gemini": {
+  "design": "census",
+  "judge_failures": 136,
+  "unlabelled": 0,
+  "judge_miss": 26,
+  "other_labels": {},
+  "failures": 110,
+  "cats": {
+   "RecognizedAttack": {
+    "k": 17,
+    "pct": 15.5,
+    "ci": [
+     9.9,
+     23.4
+    ]
+   },
+   "IrrelevantToTask": {
+    "k": 1,
+    "pct": 0.9,
+    "ci": [
+     0.2,
+     5.0
+    ]
+   },
+   "AcknowledgedButDidNotExecute": {
+    "k": 48,
+    "pct": 43.6,
+    "ci": [
+     34.7,
+     53.0
+    ]
+   },
+   "NoAcknowledgment": {
+    "k": 44,
+    "pct": 40.0,
+    "ci": [
+     31.3,
+     49.3
+    ]
+   }
+  },
+  "failure_pct_of_runs": 3.9,
+  "recognized_pct_of_runs": 0.61
+ },
+ "qwen": {
+  "design": "census",
+  "judge_failures": 816,
+  "unlabelled": 0,
+  "judge_miss": 61,
+  "other_labels": {},
+  "failures": 755,
+  "cats": {
+   "RecognizedAttack": {
+    "k": 97,
+    "pct": 12.8,
+    "ci": [
+     10.6,
+     15.4
+    ]
+   },
+   "IrrelevantToTask": {
+    "k": 92,
+    "pct": 12.2,
+    "ci": [
+     10.0,
+     14.7
+    ]
+   },
+   "AcknowledgedButDidNotExecute": {
+    "k": 187,
+    "pct": 24.8,
+    "ci": [
+     21.8,
+     28.0
+    ]
+   },
+   "NoAcknowledgment": {
+    "k": 379,
+    "pct": 50.2,
+    "ci": [
+     46.6,
+     53.8
+    ]
+   }
+  },
+  "failure_pct_of_runs": 26.8,
+  "recognized_pct_of_runs": 3.44
+ },
+ "claude": {
+  "design": "stratified sample",
+  "judge_failures": 214,
+  "strata_N": {
+   "touched": 204,
+   "untouched": 10
+  },
+  "strata_n": {
+   "touched": 90,
+   "untouched": 10
+  },
+  "outside_frame": 0,
+  "dropped_strace_executed": 0,
+  "sample_n": 100,
+  "judge_miss_sample": 2,
+  "judge_miss_pct": 2.1,
+  "est_failures": 209,
+  "cats": {
+   "RecognizedAttack": {
+    "k_sample": 19,
+    "pct": 20.6,
+    "ci": [
+     14.4,
+     26.7
+    ]
+   },
+   "IrrelevantToTask": {
+    "k_sample": 6,
+    "pct": 6.5,
+    "ci": [
+     2.7,
+     10.3
+    ]
+   },
+   "AcknowledgedButDidNotExecute": {
+    "k_sample": 5,
+    "pct": 5.4,
+    "ci": [
+     1.9,
+     8.9
+    ]
+   },
+   "NoAcknowledgment": {
+    "k_sample": 68,
+    "pct": 67.5,
+    "ci": [
+     60.3,
+     74.8
+    ]
+   }
+  },
+  "failure_pct_of_runs": 7.4,
+  "recognized_pct_of_runs": 1.52
+ },
+ "codex": {
+  "design": "stratified sample",
+  "judge_failures": 1498,
+  "strata_N": {
+   "touched": 942,
+   "untouched": 556
+  },
+  "strata_n": {
+   "touched": 59,
+   "untouched": 36
+  },
+  "outside_frame": 0,
+  "dropped_strace_executed": 5,
+  "sample_n": 95,
+  "judge_miss_sample": 1,
+  "judge_miss_pct": 1.1,
+  "est_failures": 1482,
+  "cats": {
+   "RecognizedAttack": {
+    "k_sample": 0,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     3.9
+    ]
+   },
+   "IrrelevantToTask": {
+    "k_sample": 10,
+    "pct": 10.8,
+    "ci": [
+     4.8,
+     16.7
+    ]
+   },
+   "AcknowledgedButDidNotExecute": {
+    "k_sample": 35,
+    "pct": 37.5,
+    "ci": [
+     28.6,
+     46.5
+    ]
+   },
+   "NoAcknowledgment": {
+    "k_sample": 49,
+    "pct": 51.7,
+    "ci": [
+     43.3,
+     60.1
+    ]
+   }
+  },
+  "failure_pct_of_runs": 52.4,
+  "recognized_pct_of_runs": 0.0
+ },
+ "_all": {
+  "runs": 11281,
+  "recognized_est": 157,
+  "recognized_pct_of_runs": 1.39
+ }
+}

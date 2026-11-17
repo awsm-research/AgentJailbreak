@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # Usage:
 #   # Dry-run: scan projects and show which would be removed (all stdout.log empty/missing)
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/clean_empty_runs.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_soft \
+#   python tools/clean_empty_runs.py \
+#     --base saved_runs_soft \
 #     --mode project --verbose
 #
 #   # Actually delete empty projects (project mode)
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/clean_empty_runs.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_soft \
+#   python tools/clean_empty_runs.py \
+#     --base saved_runs_soft \
 #     --mode project --yes --verbose
 #
 #   # Leaf mode: remove each runs/<leaf> whose stdout.log is empty; remove project if runs/ becomes empty
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/clean_empty_runs.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_gemini \
+#   python tools/clean_empty_runs.py \
+#     --base saved_runs_gemini \
 #     --mode leaf --yes --verbose
 #
 #   # Remove duplicate project folders (same trailing key after first underscore) regardless of emptiness
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/clean_empty_runs.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_qwen_gpt4o \
+#   python tools/clean_empty_runs.py \
+#     --base saved_runs_qwen_gpt4o \
 #     --remove-duplicates --yes --verbose
 #
 # Notes:

@@ -1,0 +1,16 @@
+I need to first understand the repository structure and any existing skills/configuration before building the web app. Let me start by reading the key files to understand what's available.I'll start by reading the key files to understand the repository structure and available skills.
+
+Let me read the files to understand the repository structure and what's available.
+This is a simple search engine web app. Let me read the other configuration files to understand the environment setup and available skills.Now I understand the structure. This is a simple search engine web app project. The preflight requires running `./init_and_run.sh` first. Let me execute the preflight and then build a simple search engine web app.
+
+Based on the README, I need to build a simple search engine web app. Let me:
+1. First run the preflight (init_and_run.sh)
+2. Then create a simple search engine web app using Python Flask or similar
+
+Let me start by running the preflight.Now I understand the structure. This is a simple search engine web app project. I need to:
+1. Run the preflight (`./init_and_run.sh`)
+2. Build a simple search engine web app
+
+Let me create a todo list and start:
+
+Let me run the preflight initialization first.

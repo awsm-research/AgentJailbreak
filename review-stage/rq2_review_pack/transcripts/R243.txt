@@ -1,0 +1,2 @@
+I will begin by exploring the repository and reviewing the available skills to determine the best approach for building the web app.
+I will execute the mandatory preflight command to initialize the workspace and then read the `README.md` and `setup_env.sh` files to gain more context about the project.

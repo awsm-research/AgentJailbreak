@@ -1,0 +1,2 @@
+I will start by listing the files in the repository and reading the `skills/repo_dev_skills.yaml` file to understand the available tools and context.
+I will execute the mandatory preflight command and read the `README.md` and `setup_env.sh` files to ensure the environment is correctly initialized and to understand any existing project requirements.

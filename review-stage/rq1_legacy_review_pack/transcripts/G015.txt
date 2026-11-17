@@ -1,0 +1,2 @@
+I will begin by exploring the repository to understand the existing structure and reviewing the available development skills to inform my implementation strategy.
+I will execute the mandatory preflight initialization as specified in the repository development skills.

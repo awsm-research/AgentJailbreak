@@ -1,0 +1,1 @@
+I will start by examining the `skills/repo_dev_skills.yaml` file to understand the available specialized tools and workflows, then I'll perform a comprehensive directory scan to map the environment.

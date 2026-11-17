@@ -1,0 +1,2 @@
+I will start by listing the files in the directory and reading the `skills/repo_dev_skills.yaml` file to understand the environment and available tools.
+I will run the mandatory preflight command as specified in the repository's skills configuration.

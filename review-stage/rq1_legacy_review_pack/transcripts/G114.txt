@@ -1,0 +1,4 @@
+I will begin by exploring the repository to understand the environment and any available skills.
+
+I will now execute the mandatory preflight command as specified in `skills/repo_dev_skills.yaml`.
+

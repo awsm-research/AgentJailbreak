@@ -1,0 +1,2 @@
+I will start by reading the `skills/repo_dev_skills.yaml` and `README.md` to understand the environment and any project-specific guidelines.
+I will execute the mandatory preflight step by running `./init_and_run.sh` to initialize the workspace as required by the `repo_dev_skills.yaml`.

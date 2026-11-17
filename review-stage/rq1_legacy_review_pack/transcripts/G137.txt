@@ -1,0 +1,2 @@
+I will begin by listing the files in the repository and reading the `skills/repo_dev_skills.yaml` and `README.md` files to understand the project context and available capabilities.
+I will now execute the mandatory preflight command `./init_and_run.sh` as specified in the `skills/repo_dev_skills.yaml` guidelines, and simultaneously read the contents of `init_and_run.sh` and `setup_env.sh` to understand the environment initialization process.

@@ -1,5 +1,88 @@
-
 __pycache__/
 .DS_Store
 
+# secrets and local tooling
+.env
+.claude/
+.aris/
+.vscode/
+scratch/
 
+# paper sources, reviews and drafts (not part of the replication package)
+TOSEM/
+*.docx
+TOSEM Major Revision response*
+tosem_original.pdf
+
+# raw run outputs and intermediate judge outputs: distributed as a separate archive
+# (see README, "Full run archive")
+agent_outputs/
+saved_runs_*/
+results*.jsonl
+generated_skills/
+exec_aware/_*.log
+exec_aware/_runtmp/
+AgentJailbreak_full_artifacts*.zip
+
+# assessed/: only the final judge caches, labels and paper numbers are tracked
+assessed/*
+!assessed/paper_numbers_sonnet.json
+!assessed/human_agreement_weighted.json
+!assessed/cluster_ci_sonnet.json
+!assessed/paired_agents_sonnet.json
+!assessed/rq2_numbers_sonnet.json
+!assessed/rq2_labels.csv
+!assessed/gold_splits.csv
+!assessed/final_labels_v3.jsonl
+!assessed/panel_final_narr_sonnet_v2/
+!assessed/panel_final/
+assessed/panel_final/*
+!assessed/panel_final/legacy_*.sonnet.cache
+
+# review-stage/: only the blind human-labelling packs and the run subsets are tracked
+review-stage/*
+!review-stage/rq1_review_pack/
+!review-stage/rq1_legacy_review_pack/
+!review-stage/rq2_review_pack/
+!review-stage/human_review_pack/
+!review-stage/exec_aware_full_*.json
+!review-stage/exec_aware_subset.json
+review-stage/*/labels.before_*.csv
+
+# exploratory material not used in the paper (kept in the full run archive)
+tasks.json
+skill_md_figure_abstraction.md
+
+# superseded judge pipelines from earlier iterations (kept in the full run archive)
+tools/apply_declared_intent_override.py
+tools/apply_tiebreak.py
+tools/backfill_meta_agent_outputs.py
+tools/build_human_review_pack.py
+tools/build_human_validation_sample.py
+tools/build_luna_batch.py
+tools/gemini_batch.py
+tools/gemini_narr_batch.py
+tools/goldlabel_splits.py
+tools/ingest_luna_batch.py
+tools/luna_narr_batch.py
+tools/make_changes_pdf.py
+tools/make_figures.py
+tools/merge_panel_base.sh
+tools/mistral_swap_splits.py
+tools/panel_progress.py
+tools/pilot_swap_judge.py
+tools/replay_agent.py
+tools/report_legacy_summaries.py
+tools/run_execaware_panel.sh
+tools/run_execaware_panel_sj.sh
+tools/run_legacy_newpanel.sh
+tools/run_legacy_newpanel_parallel.sh
+tools/run_legacy_panel.sh
+tools/run_panel_sweep.sh
+tools/sonnet_refused_rerun.py
+tools/sonnet_rerun_watchdog.sh
+tools/submit_luna_batch.py
+tools/tiebreak_split_runs.py
+tools/validate_tiebreak.py
+exec_aware/run_panel.sh
+tools/generate_skill_files.py

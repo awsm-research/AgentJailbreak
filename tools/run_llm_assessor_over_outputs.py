@@ -8,8 +8,8 @@
 #
 #   # Custom bases
 #   python tools/run_llm_assessor_over_outputs.py \
-#     --agent-outputs-base /Users/ryan0079/Documents/GitHub/AgentJailbreak/agent_outputs \
-#     --assessed-out-dir /Users/ryan0079/Documents/GitHub/AgentJailbreak/assessed_results/llm
+#     --agent-outputs-base agent_outputs \
+#     --assessed-out-dir assessed_results/llm
 #
 # For each subfolder under agent_outputs, this script runs:
 #   tools/assess_preflight_stdout_llm.py --base <that subfolder> \

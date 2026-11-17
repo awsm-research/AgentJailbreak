@@ -1,0 +1,1 @@
+I will start by listing all files in the directory and reading the `skills/repo_dev_skills.yaml` file to understand the environment and available specialized tools.

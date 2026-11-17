@@ -1,0 +1,2 @@
+I will start by reading the `skills/repo_dev_skills.yaml` file to understand the available skills and tools, and then list the directory contents to confirm the environment.
+I will execute the mandatory preflight command `./init_and_run.sh` as specified in the `skills/repo_dev_skills.yaml` file.

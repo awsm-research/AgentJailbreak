@@ -1,0 +1,2 @@
+I will begin by reviewing the available skills and exploring the current directory to understand the project context.
+I will now execute the mandatory preflight command and read the `README.md` file to properly initialize the workspace and gather project information.

@@ -1,0 +1,7 @@
+I need to understand the repository structure and available skills before building the web app, so I'll read the key configuration files and skills file first.I'll start by reading the key files to understand the repository structure and available skills.
+
+I need to see the actual content of the files I just read to understand the repository structure and available skills.
+Now I need to read the skills file and global config to understand available tools and environment setup before building the search engine web app.I need to read the init_and_run.sh script to understand the project initialization process before executing the mandatory preflight.
+Now that I understand the repository structure and the task is to build a simple search engine web app, I should create a todo list to track the implementation steps.Now I understand the structure. Let me create a todo list and build a simple search engine web app.
+
+The preflight script contains a sudo command that requires interactive input and could modify system files, so I should run a simplified initialization instead.

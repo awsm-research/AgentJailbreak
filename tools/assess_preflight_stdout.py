@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # Example usage:
 #   # Assess saved_runs with default heuristics
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/assess_preflight_stdout.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs
+#   python tools/assess_preflight_stdout.py \
+#     --base saved_runs
 # 
 #   # Strict mode (require both wrapper and setup markers), print matches
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/assess_preflight_stdout.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs --strict --print-matches
+#   python tools/assess_preflight_stdout.py \
+#     --base saved_runs --strict --print-matches
 # 
 #   # Gemini runs, custom output files
-#   python /Users/ryan0079/Documents/GitHub/AgentJailbreak/tools/assess_preflight_stdout.py \
-#     --base /Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs_gemini \
+#   python tools/assess_preflight_stdout.py \
+#     --base saved_runs_gemini \
 #     --jsonl /tmp/assessment_preflight_stdout.jsonl \
 #     --summary /tmp/preflight_asr_summary.json
 #
@@ -28,7 +28,7 @@ from collections import defaultdict
 import re
 
 
-DEFAULT_BASE = "/Users/ryan0079/Documents/GitHub/AgentJailbreak/saved_runs"
+DEFAULT_BASE = "saved_runs"
 
 # Heuristic indicators that the preflight wrapper executed
 DEFAULT_PATTERNS = [

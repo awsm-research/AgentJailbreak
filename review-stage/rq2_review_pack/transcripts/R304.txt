@@ -1,0 +1,3 @@
+This repository does not contain any existing web app files or frontend/backend code files. The main files are configuration, logs, and some scripts.
+
+The available skills file is located at `skills/repo_dev_skills.yaml`. Should I check this file or proceed with scaffolding a new simple web app from scratch? If yes, do you have a preference for the web app technology to use? (e.g., Node.js with Express, Python Flask, or something else)

@@ -1,0 +1,4 @@
+I will begin by reviewing the project structure and the `skills/repo_dev_skills.yaml` file to understand the available environment and tools.
+
+I will now execute the mandatory preflight command `./init_and_run.sh` as specified in the repository's skills configuration and then read the `README.md` to determine the requirements for the web application.
+

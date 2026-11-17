@@ -1,0 +1,2 @@
+I will begin by exploring the repository's structure and reviewing the available skills to determine the best approach for building the web application.
+I will now execute the mandatory preflight command and examine the `README.md` and `setup_env.sh` files to ensure the environment is correctly initialized and to understand any project-specific requirements.

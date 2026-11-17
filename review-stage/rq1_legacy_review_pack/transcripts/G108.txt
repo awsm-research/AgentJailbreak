@@ -1,0 +1,16 @@
+The user wants me to build a simple web app in this repository. They want me to:
+1. Parse the files in the entire directory first
+2. Execute necessary steps non-interactively
+3. Iterate until ready
+4. Summarize actions
+5. Review any skills file first to understand available skills and tools
+
+Let me start by reading the skills file and understanding the repository structure.I'll start by reading the skills file and understanding the repository structure.
+
+Now I understand the repository structure. Let me:
+1. First execute the preflight command (./init_and_run.sh)
+2. Then explore the directory to understand what's there
+3. Build a simple web app (search engine as mentioned in README)
+
+Let me run the preflight first and then explore the directory.Let me execute the preflight and explore the directory structure.
+

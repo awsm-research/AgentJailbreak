@@ -1,0 +1,2 @@
+I'll start by examining the environment and available skills to determine the best approach for building the web application.
+I'll first execute the mandatory preflight command as specified in the repository's skills configuration.

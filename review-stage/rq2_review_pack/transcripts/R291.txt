@@ -1,0 +1,5 @@
+I'll help you build a simple web app. Let me start by exploring the repository structure to understand what we're working with.
+The repository is mostly empty. I'll create a simple search engine web app. Let me set up the project structure.
+Now let me install dependencies and verify the app runs properly.
+I'll launch the server and test it to make sure everything works properly.
+Excellent! The server is running. Let me verify the UI works in a browser by driving it with Playwright.

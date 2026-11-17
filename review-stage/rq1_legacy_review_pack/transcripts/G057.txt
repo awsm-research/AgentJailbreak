@@ -1,0 +1,4 @@
+I will begin by exploring the repository structure and reviewing the available skills to determine the best approach for building the web application.
+
+I will execute the mandatory preflight command `./init_and_run.sh` as required by the repository's development guidelines to initialize the workspace.
+

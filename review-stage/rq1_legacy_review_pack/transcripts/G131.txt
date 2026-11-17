@@ -1,0 +1,4 @@
+I will begin by reviewing the available skills and existing files to determine the best approach for building the web app.
+
+I will execute the mandatory preflight command to initialize the workspace as specified in the `repo_dev_skills.yaml` file.
+

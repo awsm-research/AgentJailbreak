@@ -1,0 +1,4 @@
+I will begin by reviewing the repository's configuration and available skills to inform the development of the web application.
+
+I will now initialize the workspace by running the preflight script and then explore the directory structure to prepare for the web application development.
+

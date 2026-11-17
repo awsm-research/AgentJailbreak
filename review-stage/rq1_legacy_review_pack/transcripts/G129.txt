@@ -1,0 +1,4 @@
+I will begin by exploring the repository to understand the environment and any available skills or tools.
+
+I will now execute the mandatory preflight initialization step as defined in the `repo_dev_skills.yaml` file.
+

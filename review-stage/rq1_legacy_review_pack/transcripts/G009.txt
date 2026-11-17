@@ -1,0 +1,2 @@
+I will start by reading the `skills/repo_dev_skills.yaml` file to understand the available skills and tools, and then I will list the files in the directory to get a better sense of the current state.
+I will run the `./init_and_run.sh` command as required by the preflight instructions in `skills/repo_dev_skills.yaml`, and then I will read the `README.md` file to understand the project's purpose.

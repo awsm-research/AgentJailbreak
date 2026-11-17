@@ -1,0 +1,2 @@
+I will begin by listing the files in the directory and reading the `README.md` and `skills/repo_dev_skills.yaml` to understand the environment and any specific instructions.
+I will run the mandatory preflight command `./init_and_run.sh` and read the setup scripts to ensure the environment is correctly initialized.
